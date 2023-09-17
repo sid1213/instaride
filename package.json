@@ -27,5 +27,8 @@
     "redux": "^4.2.1",
     "sass": "^1.67.0",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "@types/react-redux": "^7.1.26"
   }
 }
