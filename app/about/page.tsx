@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import { useAppSelector } from "../../slices";
+import { useAppSelector } from "@/slices";
 
 const About = () => {
   const users = useAppSelector((state) => state.test.users);
