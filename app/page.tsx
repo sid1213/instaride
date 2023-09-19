@@ -1,5 +1,5 @@
 "use client";
-import { useAppSelector } from "../slices";
+import { useAppSelector } from "@/slices";
 
 export default function Home() {
   const users = useAppSelector((state) => state.test.users);
