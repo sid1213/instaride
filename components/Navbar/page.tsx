@@ -1,12 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import style from "./style.module.scss";
+import Style from "./_style.module.scss";
 import classNames from "classnames";
+import SideNavbar from "./sideNavbar/page";
 
 function Navbar() {
   // scrollY functionality in navbar
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) setIsScrolled(true);
@@ -17,13 +19,19 @@ function Navbar() {
     // remove the effect
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // handle for navigation show & hide
+
   return (
-    <nav className={classNames(style.navbar, { isScrolled: style.scrolled })}>
-      <Image src="/assests/logo.png" width={150} height={40} alt="logo" />
+    <nav className={classNames(Style.navbar, isScrolled ? "" : Style.scrolled)}>
+      <div className="logo">
+        <Image src="/assests/logo.png" width={150} height={40} alt="logo" />
+        <SideNavbar />
+      </div>
       <div className="nav_items">
-        <ul>
-          <li>Monthly-Rentals</li>
-          <li>Login</li>
+        <ul className={classNames(isScrolled ? "" : Style.scrolled)}>
+          <li>About</li>
+          <li>Contact</li>
           <li>Monthly-Rentals</li>
           <li>Login</li>
         </ul>
