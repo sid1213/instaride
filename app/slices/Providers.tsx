@@ -13,7 +13,7 @@ const Providers: React.FC<ProviderType> = ({ children }) => {
   return (
     <Provider store={store}>
       <Layout className={Style.layout}>
-        <Header className={Style.container}>
+        <Header>
           <Navbar />
         </Header>
         <Content className={Style.container}>{children}</Content>
