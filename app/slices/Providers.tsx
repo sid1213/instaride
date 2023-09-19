@@ -12,8 +12,8 @@ const Providers: React.FC<ProviderType> = ({ children }) => {
   return (
     <Provider store={store}>
       <Layout className={Style.layout}>
-        <Header>Header</Header>
-        <Content>{children}</Content>
+        <Header className={Style.container}>Header</Header>
+        <Content className={Style.container}>{children}</Content>
         <Footer>Footer</Footer>
       </Layout>
     </Provider>
