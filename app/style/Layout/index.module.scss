@@ -1,4 +1,8 @@
 .layout {
-  background: green;
-  color: red;
+  background: white;
+
+  :global(.ant-layout-header) {
+    background-color: black;
+    padding: 0px 0;
+  }
 }
