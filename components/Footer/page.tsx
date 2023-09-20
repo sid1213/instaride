@@ -1,37 +1,39 @@
 import React from "react";
 import Style from "./style.module.scss";
 import Image from "next/image";
+import { Col, Row } from "antd";
 
-function FooterComponent() {
+const style: React.CSSProperties = { background: "#0092ff", padding: "8px 0" };
+
+const FooterComponent: React.FC = () => {
   return (
-    <div className={Style.footer}>
-      <div className="links">INSTARIDE</div>
-
-      <div className="links">
+    <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} className={Style.footer}>
+      <Col className="gutter-row">
+        <div className="links">INSTARIDE</div>
+      </Col>
+      <Col className="gutter-row links">
         <ul>
           <li>Contact Us</li>
           <li>Privacy Policy</li>
           <li>Terms and Conditions</li>
         </ul>
-      </div>
-
-      <div className="links">
+      </Col>
+      <Col className="gutter-row links">
         <ul>
           <li>Offers</li>
           <li>List Of Vehicle</li>
           <li>FAQs</li>
         </ul>
-      </div>
-
-      <div className="links">
+      </Col>
+      <Col className="gutter-row links">
         <ul>
           <li>About Us</li>
           <li>Support @instride</li>
           <li>+1099191910</li>
         </ul>
-      </div>
-    </div>
+      </Col>
+    </Row>
   );
-}
+};
 
 export default FooterComponent;
