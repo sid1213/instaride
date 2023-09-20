@@ -1,0 +1,25 @@
+@import "../../../style/Modules/typography";
+
+.sideNavbar {
+  background-color: red;
+  :global(.ant-drawer-wrapper-body) {
+    background-color: $orange;
+  }
+  :global(.ant-drawer-header-title) {
+    justify-content: space-between;
+    flex-direction: row-reverse;
+  }
+  :global(.ant-drawer-close) {
+    color: white;
+    font-size: 1.5rem;
+  }
+  :global(ul) {
+    list-style: none;
+    color: white;
+    li {
+      margin: 1rem 0;
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+}
