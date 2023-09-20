@@ -1,6 +1,10 @@
 .layout {
-  background: green;
-  color: red;
+  background: white;
+
+  :global(.ant-layout-header) {
+    background-color: transparent;
+    padding: 0px 0;
+  }
 }
 .container {
   width: 100%;
