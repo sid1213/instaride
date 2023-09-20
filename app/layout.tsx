@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Providers from "./slices/Providers";
+import Providers from "../slices/Providers";
 import { Inter } from "next/font/google";
-import "@/style/index.scss";
+import "../style/index.scss";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
