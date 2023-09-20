@@ -23,7 +23,7 @@ const SideNavbar: React.FC = () => {
         title={
           <Image src="/assests/logo.png" width={100} height={40} alt="logo" />
         }
-        placement="left"
+        placement="right"
         size="default"
         onClose={onClose}
         open={open}
