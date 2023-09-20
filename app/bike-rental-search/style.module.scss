@@ -1,0 +1,17 @@
+@import "../../style/Modules/typography";
+
+.bike_rental_search {
+  background-color: red;
+  min-height: 100vh;
+  :global(.ant-layout-content) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 12px;
+    padding: 20px;
+    margin-bottom: 70px;
+    background-color: #108ee9;
+  }
+}
