@@ -3,8 +3,6 @@ import Style from "./style.module.scss";
 import Image from "next/image";
 import { Col, Row } from "antd";
 
-const style: React.CSSProperties = { background: "#0092ff", padding: "8px 0" };
-
 const FooterComponent: React.FC = () => {
   return (
     <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }} className={Style.footer}>
