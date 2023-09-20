@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <section>
       <Row justify={"center"} className={Style.main}>
-        <Col span={12} className={Style.left}>
+        <Col span={24} className={Style.left} md={24} lg={12}>
           <SearchCard />
         </Col>
         <Col span={12} className={Style.right}>
