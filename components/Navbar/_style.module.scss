@@ -1,7 +1,7 @@
 @import "../../style/Modules/typography";
 
 .navbar {
-  background-color: $darkOrange;
+  background-color: $darkblue_1;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -55,7 +55,7 @@
     }
     @include tablet {
       width: 100%;
-      background: $orange;
+      background: $darkblue_1;
       height: 0;
       transition: all 0.3s ease-in-out;
 
@@ -73,5 +73,5 @@
 }
 
 .scrolled {
-  background-color: $orange;
+  background-color: $darkblue_2;
 }
