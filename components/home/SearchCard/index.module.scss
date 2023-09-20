@@ -1,0 +1,50 @@
+.select {
+  :global(.ant-select-selector) {
+    border-radius: 0;
+    padding: 1.5rem !important;
+    font-size: 1.2rem;
+  }
+  :global(.ant-select-arrow) {
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 50% !important;
+    transform: translateY(10%) !important;
+    svg {
+      display: none;
+    }
+    :after {
+      content: "";
+      width: 1.5rem;
+      height: 1.5rem;
+      position: absolute;
+      background: url("/select-city-icon.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}
+.input {
+  border-radius: 0;
+  padding: 1rem !important;
+  width: 100%;
+  :global(.ant-picker-input) {
+    input {
+      font-size: 1.2rem;
+    }
+  }
+}
+.greenIcon {
+  :global(.ant-picker-suffix) {
+    svg {
+      fill: #9c3;
+    }
+  }
+}
+.redIcon {
+  :global(.ant-picker-suffix) {
+    svg {
+      fill: red;
+    }
+  }
+}

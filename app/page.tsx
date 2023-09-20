@@ -1,8 +1,18 @@
 "use client";
-import { useAppSelector } from "@/slices";
-
+import { Card, Col, DatePicker, Form, Input, Row, Select } from "antd";
+import Style from "./page.module.scss";
+import SearchCard from "@/components/home/SearchCard";
 export default function Home() {
-  const users = useAppSelector((state) => state.test.users);
-  console.log(users[0].name);
-  return <div>{users[0].name} </div>;
+  return (
+    <section>
+      <Row justify={"center"} className={Style.main}>
+        <Col span={12} className={Style.left}>
+          <SearchCard />
+        </Col>
+        <Col span={12} className={Style.right}>
+          col-12
+        </Col>
+      </Row>
+    </section>
+  );
 }
