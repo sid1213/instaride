@@ -5,6 +5,7 @@ import { Layout } from "antd";
 import { Provider } from "react-redux";
 import Style from "../style/Layout/index.module.scss";
 import Navbar from "../components/Navbar/page";
+import FooterComponent from "../components/Footer/page";
 const { Header, Footer, Content } = Layout;
 interface ProviderType {
   children: ReactNode;
@@ -17,7 +18,9 @@ const Providers: React.FC<ProviderType> = ({ children }) => {
           <Navbar />
         </Header>
         <Content className={Style.container}>{children}</Content>
-        <Footer>Footer</Footer>
+        <Footer>
+          <FooterComponent />
+        </Footer>
       </Layout>
     </Provider>
   );

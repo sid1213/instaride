@@ -1,0 +1,36 @@
+.footer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  padding: 2rem;
+
+  :global(.links) {
+    font-size: 14px;
+    font-weight: 400;
+    ul {
+      list-style: none;
+      li {
+        padding-bottom: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: red;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 968px) {
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+    :global(.links) {
+      margin-bottom: 10px;
+      font-size: 16px;
+      ul {
+        li {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
