@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Drawer, Space } from "antd";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Image from "next/image";
-import Style from "./_style.module.scss";
+import Style from "./style.module.scss";
 
 const SideNavbar: React.FC = () => {
   // Drawer functionality

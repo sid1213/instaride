@@ -4,8 +4,8 @@ import { store } from "../slices";
 import { Layout } from "antd";
 import { Provider } from "react-redux";
 import Style from "../style/Layout/index.module.scss";
-import Navbar from "../components/Navbar/page";
-import FooterComponent from "../components/Footer/page";
+import Navbar from "@/components/Navbar";
+import FooterComponent from "@/components/Footer";
 const { Header, Footer, Content } = Layout;
 interface ProviderType {
   children: ReactNode;
