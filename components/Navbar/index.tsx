@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Style from "./_style.module.scss";
+import Style from "./style.module.scss";
 import classNames from "classnames";
-import SideNavbar from "./sideNavbar/page";
+import SideNavbar from "@/components/Navbar/sideNavbar";
 
 function Navbar() {
   // scrollY functionality in navbar

@@ -1,6 +1,5 @@
 import React from "react";
 import Style from "./style.module.scss";
-import Image from "next/image";
 import { Col, Row } from "antd";
 
 const FooterComponent: React.FC = () => {
