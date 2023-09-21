@@ -3,6 +3,7 @@ import React from "react";
 import Style from "./style.module.scss";
 import { Layout } from "antd";
 import FilterCard from "@/components/FilterCard";
+import { Bike_Data } from "../../Mock_Data/bike";
 
 const { Header, Sider, Content } = Layout;
 
@@ -28,9 +29,10 @@ function BikeRentalSearch() {
       <Layout hasSider>
         <Sider style={siderStyle}>Sider</Sider>
         <Content>
-          <FilterCard />
-          <FilterCard />
-          <FilterCard />
+          {Bike_Data.length > 0 &&
+            Bike_Data?.map((item) => {
+              return <FilterCard data={item} />;
+            })}
         </Content>
       </Layout>
     </Layout>
