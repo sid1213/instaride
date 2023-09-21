@@ -1,26 +1,27 @@
-@import "../../style/Modules/typography";
+@import "/style/Modules/variables";
+@import "/style/Modules/mixins";
 
 .filterCard {
-  border-radius: 4px;
+  border-radius: 0.25rem;
   width: 280px;
   border-color: #d5d3d3;
 
   // card header
   :global(.ant-card-head) {
-    padding: 0 10px;
+    padding: 0 1rem;
 
     :global(.ant-card-head-title) {
-      font-size: 14px;
+      font-size: $text-sm;
     }
   }
   // Card img
   :global(.ant-card-cover) {
-    border-bottom: 1px solid $gray;
+    border-bottom: $border-thin solid $gray;
     overflow: hidden;
     padding: 0;
     img {
-      padding: 0 2px;
-      border-radius: 0px;
+      padding: 0;
+      border-radius: 0;
     }
   }
 
@@ -28,18 +29,21 @@
   :global(.ant-btn-default) {
     position: absolute;
     width: 125px;
-    bottom: -16px;
-    left: calc(50% - 60px);
-    padding: 2px 12px;
-    border: 1px solid #ebedef;
-    border-radius: 18px;
-    font-size: 12px;
+    bottom: -1rem;
+    left: calc(50% - 66px);
+    padding: 0.2rem 0;
+    border: $border-thin solid #ebedef;
+    border-radius: 2em;
+    font-size: $text-xs;
     font-weight: 500;
     color: #212121;
     z-index: 1;
+    text-align: center;
   }
+
   :global(.ant-ribbon-wrapper) {
-    right: -11px;
+    right: -1rem;
+    top: 0.7rem;
   }
 
   :global(.ant-card-body) {
@@ -48,13 +52,13 @@
 
   // card body
   :global(.card-body) {
-    padding: 0px;
+    padding: 0;
     height: inherit;
     width: 100%;
     transform-style: preserve-3d;
     transition: 0.5s;
-    border-end-start-radius: 4px;
-    border-end-end-radius: 4px;
+    border-end-start-radius: 0.25rem;
+    border-end-end-radius: 0.25rem;
   }
 
   :global(.flipCard) {
@@ -67,19 +71,19 @@
     width: inherit;
     position: absolute;
     backface-visibility: hidden;
-    border-end-start-radius: 4px;
-    border-end-end-radius: 4px;
+    border-end-start-radius: 0.25rem;
+    border-end-end-radius: 0.25rem;
 
     // select box
     :global(.select_box) {
-      padding: 24px 10px 0 10px;
+      padding: $space-sm 1rem 0 1rem;
       position: relative;
 
       :global(.ant-select) {
         position: relative;
       }
       :global(.ant-select-selector) {
-        border-radius: 2px;
+        border-radius: 0.125rem;
       }
       :global(label) {
         position: absolute;
@@ -87,48 +91,55 @@
         position: absolute;
         cursor: text;
         z-index: 1;
-        top: 13px;
-        left: 22px;
-        font-size: 10px;
-        background: #fff;
-        padding: 0 3px;
+        top: 1.3rem;
+        left: 2.2rem;
+        font-size: 1.2rem;
+        background: $white;
+        padding: 0 0.5rem;
         color: #999;
         transition: all 0.3s ease;
       }
     }
+
     // Price section
     :global(.price) {
       display: flex;
-      padding: 1rem 10px;
+      padding: 2rem 1.2rem;
+      align-items: center;
       justify-content: space-between;
       p {
-        font-size: 18px;
+        font-size: $text-xl;
         color: $darkblue_2;
         font-weight: 600;
         display: flex;
         flex-direction: column;
         span {
           font-weight: normal;
-          font-size: 10px;
+          font-size: 1rem;
         }
       }
     }
+
     // Book now button
     :global(.ant-btn-primary) {
       background-color: $darkblue_2;
       color: white;
-      padding: 4px 8px;
+      padding: 0.25rem 0.8rem;
     }
+
     // footer
     :global(.footer) {
       display: flex;
       justify-content: space-between;
-      font-size: 12px;
       font-weight: 500;
-      background-color: #f8f5f5;
-      padding: 14px 10px;
-      border-end-start-radius: 4px;
-      border-end-end-radius: 4px;
+      background-color: $darkblue_1;
+      color: $white;
+      padding: 1.4rem 1rem;
+      border-end-start-radius: 0.25rem;
+      border-end-end-radius: 0.25rem;
+      :global(p) {
+        font-size: $text-xs;
+      }
     }
   }
 
@@ -142,13 +153,13 @@
     display: grid;
     text-align: center;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    padding: 22px 0 0;
-    border-end-start-radius: 4px;
-    border-end-end-radius: 4px;
+    padding: 0;
+    border-end-start-radius: 0.25rem;
+    border-end-end-radius: 0.25rem;
 
     :global(.weeks_count) {
       border: 1px solid #d5d3d3;
-      padding: 10px;
+      padding: 1.2rem;
       &:first-child,
       &:nth-child(2) {
         border-top: none;
@@ -159,23 +170,23 @@
         border-right: none;
       }
       &:nth-child(3) {
-        border-end-start-radius: 4px;
+        border-end-start-radius: 0.25rem;
       }
       &:nth-child(4) {
-        border-end-end-radius: 4px;
+        border-end-end-radius: 0.25rem;
       }
       :global(p) {
-        font-size: 12px;
+        font-size: 1.2rem;
         font-weight: 500;
-        color: #9c3;
+        color: $blue;
       }
       :global(h3) {
-        font-size: 14px;
+        font-size: 1.4rem;
         font-weight: 500;
         color: #2c3135;
       }
       :global(h4) {
-        font-size: 10px;
+        font-size: 1rem;
         font-weight: 400;
         color: #717171;
       }
@@ -185,7 +196,7 @@
 
 .ribbon {
   :global(.ant-ribbon-text) {
-    font-size: 12px;
+    font-size: $text-sm;
     font-weight: 400;
     padding: 0;
   }
