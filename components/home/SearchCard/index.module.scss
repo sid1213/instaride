@@ -2,13 +2,19 @@
 @import "/style/Modules/mixins";
 
 .card {
-  padding: $padding;
+  padding: $space-2xl;
   box-shadow: 0 0.5rem 0.5rem 6px rgba(0, 0, 0, 0.05);
   :global(.ant-card-body) {
     padding: 0 !important;
   }
+  @include tablet() {
+    padding: $space-xl;
+  }
   @include mobile() {
-    padding: $padding-mobile;
+    padding: $space-lg;
+  }
+  @include xs-mobile() {
+    padding: $space-md;
   }
 }
 
@@ -17,10 +23,13 @@
 
   :global(.ant-select-selector) {
     border-radius: 0;
-    font-size: $text-desktop;
     padding: 1rem !important;
+    font-size: $text-xl;
     @include tablet() {
-      font-size: $text-tablet;
+      font-size: $text-lg;
+    }
+    @include xs-mobile() {
+      font-size: $text-sm;
     }
   }
   :global(.ant-select-arrow) {
@@ -49,9 +58,12 @@
   width: 100%;
   :global(.ant-picker-input) {
     input {
-      font-size: $text-desktop;
+      font-size: $text-xl;
       @include tablet() {
-        font-size: $text-tablet;
+        font-size: $text-lg;
+      }
+      @include xs-mobile() {
+        font-size: $text-sm;
       }
     }
   }
@@ -79,9 +91,12 @@
   background: #9c3;
   color: white;
   padding: 0.5rem 2rem;
-  font-size: $text-desktop;
+  font-size: $text-xl;
   @include tablet() {
-    font-size: $text-tablet;
+    font-size: $text-lg;
+  }
+  @include xs-mobile() {
+    font-size: $text-sm;
   }
 }
 .form {

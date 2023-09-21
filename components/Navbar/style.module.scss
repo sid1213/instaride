@@ -11,7 +11,7 @@
   z-index: 1000;
   position: fixed;
   top: 0;
-  transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 
   // logo
   :global(.logo) {
