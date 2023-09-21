@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import Style from "./style.module.scss";
-import { Layout, Space } from "antd";
-import FilterCard from "../../components/FilterCard/page";
+import { Layout } from "antd";
+import FilterCard from "@/components/FilterCard";
 
 const { Header, Sider, Content } = Layout;
 
