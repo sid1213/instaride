@@ -23,12 +23,15 @@
     }
   }
 
+  :global(.ant-card-extra) {
+    position: relative;
+  }
   // view package
   :global(.ant-btn-default) {
     position: absolute;
     width: 125px;
-    bottom: -1rem;
-    left: calc(50% - 66px);
+    bottom: -21rem;
+    left: -19rem;
     padding: 0.2rem 0;
     border: $border-thin solid #ebedef;
     border-radius: 2em;
@@ -46,6 +49,7 @@
 
   :global(.ant-card-body) {
     padding: 0;
+    height: 23vh;
   }
 
   // card body
@@ -81,9 +85,18 @@
       :global(.ant-select) {
         position: relative;
       }
+
       :global(.ant-select-selector) {
         border-radius: 0.125rem;
+        padding: 1.4rem 1rem;
       }
+      :global(
+          .ant-select:not(.ant-select-customize-input) .ant-select-selector
+        ) {
+        background-color: $white;
+        color: $black;
+      }
+
       :global(label) {
         position: absolute;
         cursor: text;
@@ -195,6 +208,9 @@
 }
 
 .ribbon {
+  :global(.ant-ribbon-corner) {
+    display: none;
+  }
   :global(.ant-ribbon-text) {
     font-size: $text-sm;
     font-weight: 400;
