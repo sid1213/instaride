@@ -11,13 +11,25 @@ $darkblue_1: #001529;
 $darkblue_2: #002140;
 $black: #212121;
 $white: #fff;
+$dark-red: #cb0000;
 
-// padding
-$padding: 5rem;
-$padding-mobile: 2.2rem;
+// padding & margin
+$space-2xl: 5rem;
+$space-xl: 4rem;
+$space-lg: 3.2rem;
+$space-md: 2.8rem;
+$space-sm: 2.4rem;
+$space-xs: 2rem;
+
+// heading font size
+$heading-2xl: 4.5rem;
+$heading-xl: 3.2rem;
+$heading-lg: 2.8rem;
+$heading-md: 2.4rem;
+$heading-sm: 2rem;
 
 // input font size
-$text-desktop: 1.8rem;
-$text-tablet: 1.6rem;
-$text-mobile: 1.4rem;
-$text-xs-mobile: 1.2rem;
+$text-xl: 1.8rem;
+$text-lg: 1.6rem;
+$text-sm: 1.4rem;
+$text-xs: 1.2rem;
