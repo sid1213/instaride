@@ -1,0 +1,15 @@
+@import "/style/Modules/typography";
+@import "/style/Modules/mixins";
+
+.main {
+  position: relative;
+}
+.left {
+  padding: $padding;
+  @include mobile() {
+    padding: $padding-mobile;
+  }
+}
+.right {
+  background: blue;
+}

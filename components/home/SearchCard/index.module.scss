@@ -1,0 +1,93 @@
+@import "/style/Modules/variables";
+@import "/style/Modules/mixins";
+
+.card {
+  padding: $padding;
+  box-shadow: 0 0.5rem 0.5rem 6px rgba(0, 0, 0, 0.05);
+  :global(.ant-card-body) {
+    padding: 0 !important;
+  }
+  @include mobile() {
+    padding: $padding-mobile;
+  }
+}
+
+.select {
+  height: fit-content;
+
+  :global(.ant-select-selector) {
+    border-radius: 0;
+    font-size: $text-desktop;
+    padding: 1rem !important;
+    @include tablet() {
+      font-size: $text-tablet;
+    }
+  }
+  :global(.ant-select-arrow) {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 50% !important;
+    transform: translateY(-20%) !important;
+    svg {
+      display: none;
+    }
+    :after {
+      content: "";
+      width: 2rem;
+      height: 2rem;
+      position: absolute;
+      background: url("/select-city-icon.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}
+.input {
+  border-radius: 0;
+  padding: 1rem !important;
+  width: 100%;
+  :global(.ant-picker-input) {
+    input {
+      font-size: $text-desktop;
+      @include tablet() {
+        font-size: $text-tablet;
+      }
+    }
+  }
+}
+.greenIcon {
+  :global(.ant-picker-suffix) {
+    svg {
+      width: 2rem;
+      height: 2rem;
+      fill: #9c3;
+    }
+  }
+}
+.redIcon {
+  :global(.ant-picker-suffix) {
+    svg {
+      width: 2rem;
+      height: 2rem;
+      fill: red;
+    }
+  }
+}
+.submit {
+  height: auto !important;
+  background: #9c3;
+  color: white;
+  padding: 0.5rem 2rem;
+  font-size: $text-desktop;
+  @include tablet() {
+    font-size: $text-tablet;
+  }
+}
+.form {
+  padding: 0;
+  margin-top: 1rem;
+  :global(.ant-form-item:last-child) {
+    margin-bottom: 0;
+  }
+}
