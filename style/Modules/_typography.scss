@@ -2,73 +2,40 @@
  - font size 
  - color of variables
  - responsive
-*/
-
-// padding & endpoints
-$padding: 50px;
-$padding-mobile: 22px;
-$desktop: 1024px;
-$tablet: 994px;
-$mobile: 600px;
-
-// colors
-$gray: #a6adb4;
-$blue: #1677ff;
-$darkblue_1: #001529;
-$darkblue_2: #002140;
-$black: #212121;
-$white: #fff;
-
-// mixins
-@mixin mobile {
-  @media screen and (max-width: #{$mobile}) {
-    @content;
-  }
-}
-
-@mixin tablet {
-  @media screen and (max-width: #{$tablet}) {
-    @content;
-  }
-}
-
-@mixin desktop {
-  @media screen and (max-width: #{$desktop}) {
-    @content;
-  }
-}
+ */
+@import "./variables";
+@import "./mixins";
 
 // Typography
 .heading-1 {
-  font-size: 2.125rem; //34px
+  font-size: 3.125rem; //34px
   font-weight: bold;
-  line-height: 1;
+  line-height: 2;
   @include mobile() {
-    font-size: 1.5rem; //24px
+    font-size: 2.5rem; //24px
   }
 }
 
 .heading-2 {
-  font-size: 1.875rem; //30px
+  font-size: 2.875rem; //30px
   font-weight: 600;
-  line-height: 1.067; //32px;
-
+  line-height: 2.8rem;
   @include mobile() {
-    font-size: 1.125rem; //18px
+    font-size: 2.125rem; //18px
   }
 }
 
 .heading-3 {
-  font-size: 1.5rem; //24px
+  font-size: 2.5rem; //24px
   font-weight: 500;
-  line-height: 1.083; //26px
+  line-height: 2.083; //26px
   @include mobile() {
-    font-size: 1.125rem; //18px
+    font-size: 2.125rem; //18px
   }
 }
 
 .heading-4 {
-  font-size: 1.25rem; //20px
+  font-size: 2.25rem; //20px
   line-height: 1.1; //22px
   font-weight: 500;
 }
