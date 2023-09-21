@@ -4,7 +4,6 @@
 .filterCard {
   border-radius: 0.25rem;
   width: 280px;
-  border-color: #d5d3d3;
 
   // card header
   :global(.ant-card-head) {
@@ -16,7 +15,6 @@
   }
   // Card img
   :global(.ant-card-cover) {
-    border-bottom: $border-thin solid $gray;
     overflow: hidden;
     padding: 0;
     img {
@@ -158,8 +156,9 @@
     border-end-end-radius: 0.25rem;
 
     :global(.weeks_count) {
-      border: 1px solid #d5d3d3;
+      border: $border-thin solid #d5d3d3;
       padding: 1.2rem;
+
       &:first-child,
       &:nth-child(2) {
         border-top: none;
