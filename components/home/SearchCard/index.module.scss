@@ -1,6 +1,15 @@
+@import "/style/Modules/variables";
+@import "/style/Modules/mixins";
+
 .card {
-  padding: 1rem;
+  padding: $padding;
   box-shadow: 0 0.5rem 0.5rem 6px rgba(0, 0, 0, 0.05);
+  :global(.ant-card-body) {
+    padding: 0 !important;
+  }
+  @include mobile() {
+    padding: $padding-mobile;
+  }
 }
 
 .select {
@@ -8,12 +17,15 @@
 
   :global(.ant-select-selector) {
     border-radius: 0;
-    font-size: 1.2rem;
+    font-size: $text-desktop;
     padding: 1rem !important;
+    @include tablet() {
+      font-size: $text-tablet;
+    }
   }
   :global(.ant-select-arrow) {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     position: absolute;
     top: 50% !important;
     transform: translateY(-20%) !important;
@@ -22,8 +34,8 @@
     }
     :after {
       content: "";
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 2rem;
+      height: 2rem;
       position: absolute;
       background: url("/select-city-icon.svg");
       background-repeat: no-repeat;
@@ -37,15 +49,18 @@
   width: 100%;
   :global(.ant-picker-input) {
     input {
-      font-size: 1.2rem;
+      font-size: $text-desktop;
+      @include tablet() {
+        font-size: $text-tablet;
+      }
     }
   }
 }
 .greenIcon {
   :global(.ant-picker-suffix) {
     svg {
-      width: 1rem;
-      height: 1rem;
+      width: 2rem;
+      height: 2rem;
       fill: #9c3;
     }
   }
@@ -53,8 +68,8 @@
 .redIcon {
   :global(.ant-picker-suffix) {
     svg {
-      width: 1rem;
-      height: 1rem;
+      width: 2rem;
+      height: 2rem;
       fill: red;
     }
   }
@@ -64,7 +79,10 @@
   background: #9c3;
   color: white;
   padding: 0.5rem 2rem;
-  font-size: 1.2rem;
+  font-size: $text-desktop;
+  @include tablet() {
+    font-size: $text-tablet;
+  }
 }
 .form {
   padding: 0;
