@@ -5,9 +5,9 @@ import SearchCard from "@/components/home/SearchCard";
 
 const Home = () => {
   return (
-    <section>
+    <section className={Style.container}>
       <Row justify={"center"} className={Style.main}>
-        <Col span={24} className={Style.left} sm={24} md={12} lg={12}>
+        <Col span={24} className={Style.left} md={24} lg={12}>
           <SearchCard />
         </Col>
         <Col span={12} className={Style.right}>

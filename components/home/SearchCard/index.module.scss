@@ -14,7 +14,7 @@
     padding: $space-lg;
   }
   @include xs-mobile() {
-    padding: $space-md;
+    padding: $space-xs;
   }
 }
 
@@ -31,6 +31,9 @@
     @include xs-mobile() {
       font-size: $text-sm;
     }
+  }
+  :global(.ant-select-selection-item) {
+    font-weight: 700;
   }
   :global(.ant-select-arrow) {
     width: 2rem;
@@ -58,6 +61,7 @@
   width: 100%;
   :global(.ant-picker-input) {
     input {
+      font-weight: 700;
       font-size: $text-xl;
       @include tablet() {
         font-size: $text-lg;
@@ -105,4 +109,8 @@
   :global(.ant-form-item:last-child) {
     margin-bottom: 0;
   }
+}
+.duration {
+  display: block;
+  margin-bottom: 2rem;
 }
