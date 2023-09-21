@@ -1,17 +1,32 @@
 @import "/style/Modules/typography";
 
-.main {
-  position: relative;
-}
-.left {
-  padding: $space-2xl;
-  @include tablet() {
-    padding: $space-xl;
+.container {
+  height: calc(100vh - 6.4rem);
+  min-height: calc(100vh - 6.4rem);
+  .main {
+    min-height: inherit;
+    background: green;
+    height: 100%;
+    position: relative;
   }
-  @include mobile() {
-    padding: $space-md;
+  .left,
+  .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-}
-.right {
-  background: blue;
+  .left {
+    height: 100%;
+    padding: $space-2xl;
+    @include tablet() {
+      padding: $space-xl;
+    }
+    @include mobile() {
+      padding: $space-md;
+    }
+  }
+  .right {
+    height: 100%;
+    background: blue;
+  }
 }

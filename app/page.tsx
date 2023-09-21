@@ -5,7 +5,7 @@ import SearchCard from "@/components/home/SearchCard";
 
 const Home = () => {
   return (
-    <section>
+    <section className={Style.container}>
       <Row justify={"center"} className={Style.main}>
         <Col span={24} className={Style.left} sm={24} md={12} lg={12}>
           <SearchCard />
