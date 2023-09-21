@@ -3,76 +3,190 @@
 .filterCard {
   border-radius: 4px;
   width: 280px;
-  border-color: #f8f5f5;
+  border-color: #d5d3d3;
 
-  :global(.ant-card-body) {
-    padding: 0px;
-  }
+  // card header
+  :global(.ant-card-head) {
+    padding: 0 10px;
 
-  :global(.select_box) {
-    padding: 24px 24px 0 24px;
-    position: relative;
-
-    :global(.ant-select) {
-      position: relative;
-    }
-    :global(.ant-select-selector) {
-      border-radius: 2px;
-    }
-    :global(label) {
-      position: absolute;
-      cursor: text;
-      position: absolute;
-      cursor: text;
-      z-index: 1;
-      top: 13px;
-      left: 32px;
-      font-size: 10px;
-      background: #fff;
-      padding: 0 3px;
-      color: #999;
-      transition: all 0.3s ease;
+    :global(.ant-card-head-title) {
+      font-size: 14px;
     }
   }
-
+  // Card img
   :global(.ant-card-cover) {
     border-bottom: 1px solid $gray;
     overflow: hidden;
-    padding: 0 2px;
+    padding: 0;
     img {
+      padding: 0 2px;
       border-radius: 0px;
     }
   }
-  :global(.price) {
-    display: flex;
-    padding: 1rem 24px;
-    justify-content: space-between;
-    p {
-      font-size: 18px;
-      color: $darkblue_2;
-      font-weight: 600;
-      display: flex;
-      flex-direction: column;
-      span {
-        font-weight: normal;
-        font-size: 10px;
+
+  // view package
+  :global(.ant-btn-default) {
+    position: absolute;
+    width: 125px;
+    bottom: -16px;
+    left: calc(50% - 60px);
+    padding: 2px 12px;
+    border: 1px solid #ebedef;
+    border-radius: 18px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #212121;
+    z-index: 1;
+  }
+  :global(.ant-ribbon-wrapper) {
+    right: -11px;
+  }
+
+  :global(.ant-card-body) {
+    padding: 0;
+  }
+
+  // card body
+  :global(.card-body) {
+    padding: 0px;
+    height: inherit;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: 0.5s;
+    border-end-start-radius: 4px;
+    border-end-end-radius: 4px;
+  }
+
+  :global(.flipCard) {
+    transform: rotateY(180deg) !important;
+  }
+
+  :global(.front-card) {
+    background-color: #ffffff;
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    backface-visibility: hidden;
+    border-end-start-radius: 4px;
+    border-end-end-radius: 4px;
+
+    // select box
+    :global(.select_box) {
+      padding: 24px 10px 0 10px;
+      position: relative;
+
+      :global(.ant-select) {
+        position: relative;
       }
+      :global(.ant-select-selector) {
+        border-radius: 2px;
+      }
+      :global(label) {
+        position: absolute;
+        cursor: text;
+        position: absolute;
+        cursor: text;
+        z-index: 1;
+        top: 13px;
+        left: 22px;
+        font-size: 10px;
+        background: #fff;
+        padding: 0 3px;
+        color: #999;
+        transition: all 0.3s ease;
+      }
+    }
+    // Price section
+    :global(.price) {
+      display: flex;
+      padding: 1rem 10px;
+      justify-content: space-between;
+      p {
+        font-size: 18px;
+        color: $darkblue_2;
+        font-weight: 600;
+        display: flex;
+        flex-direction: column;
+        span {
+          font-weight: normal;
+          font-size: 10px;
+        }
+      }
+    }
+    // Book now button
+    :global(.ant-btn-primary) {
+      background-color: $darkblue_2;
+      color: white;
+      padding: 4px 8px;
+    }
+    // footer
+    :global(.footer) {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 500;
+      background-color: #f8f5f5;
+      padding: 14px 10px;
+      border-end-start-radius: 4px;
+      border-end-end-radius: 4px;
     }
   }
 
-  :global(.ant-btn-primary) {
-    background-color: $darkblue_2;
-    color: white;
-    padding: 4px 8px;
+  :global(.back-card) {
+    background-color: #ffffff;
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 22px 0 0;
+    border-end-start-radius: 4px;
+    border-end-end-radius: 4px;
+
+    :global(.weeks_count) {
+      border: 1px solid #d5d3d3;
+      padding: 10px;
+      &:first-child,
+      &:nth-child(2) {
+        border-top: none;
+        border-bottom: none;
+      }
+      &:first-child,
+      &:nth-child(3) {
+        border-right: none;
+      }
+      &:nth-child(3) {
+        border-end-start-radius: 4px;
+      }
+      &:nth-child(4) {
+        border-end-end-radius: 4px;
+      }
+      :global(p) {
+        font-size: 12px;
+        font-weight: 500;
+        color: #9c3;
+      }
+      :global(h3) {
+        font-size: 14px;
+        font-weight: 500;
+        color: #2c3135;
+      }
+      :global(h4) {
+        font-size: 10px;
+        font-weight: 400;
+        color: #717171;
+      }
+    }
   }
-  :global(.footer) {
-    display: flex;
-    justify-content: space-between;
+}
+
+.ribbon {
+  :global(.ant-ribbon-text) {
     font-size: 12px;
-    font-weight: 500;
-    background-color: #f8f5f5;
-    padding: 14px 10px;
-    border-bottom-right-radius: 4px;
-    border-bottom-left-radius: 4px;
+    font-weight: 400;
+    padding: 0;
   }
 }
