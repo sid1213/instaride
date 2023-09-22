@@ -13,6 +13,7 @@
       font-size: $text-sm;
     }
   }
+
   // Card img
   :global(.ant-card-cover) {
     overflow: hidden;
@@ -26,6 +27,7 @@
   :global(.ant-card-extra) {
     position: relative;
   }
+
   // view package
   :global(.ant-btn-default) {
     position: absolute;
@@ -44,7 +46,10 @@
 
   :global(.ant-ribbon-wrapper) {
     right: -1rem;
-    top: 0.7rem;
+    top: 0rem;
+    :global(.ant-ribbon-text) {
+      font-size: $text-xs;
+    }
   }
 
   // ant-card body
@@ -171,7 +176,7 @@
     border-end-start-radius: 0.25rem;
     border-end-end-radius: 0.25rem;
 
-    :global(.weeks_count) {
+    :global(.duration) {
       border: $border-thin solid #d5d3d3;
       padding: 1.2rem;
 
@@ -209,13 +214,44 @@
   }
 }
 
+.disableCard {
+  :global(.ant-card-head),
+  :global(.ant-card-cover),
+  :global(.ant-card-body) {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
 .ribbon {
   :global(.ant-ribbon-corner) {
     display: none;
   }
   :global(.ant-ribbon-text) {
-    font-size: $text-sm;
+    font-size: 1.2rem;
     font-weight: 400;
     padding: 0;
+  }
+}
+
+.available_btn {
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #d1ecf1;
+  border: 1px solid #bee5eb;
+  border-radius: 18px;
+  padding: 5px 16px 9px;
+  color: #0c5460;
+  font-size: 12px;
+  font-weight: 500;
+  z-index: 11;
+  white-space: nowrap;
+  cursor: pointer;
+  width: fit-content;
+  &:hover {
+    border: $border-thin solid #bee5eb !important;
+    color: $darkblue_1 !important;
   }
 }
