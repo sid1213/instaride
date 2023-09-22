@@ -1,0 +1,13 @@
+@import "/style/Modules/typography";
+
+.container {
+  min-height: calc(100vh - 6.4rem);
+  .main {
+    background: red;
+    height: inherit;
+  }
+  .left {
+    padding: $space-2xl;
+    background: green;
+  }
+}
