@@ -1,0 +1,12 @@
+@import "/style/Modules/typography";
+.card {
+  background: white;
+  padding: $space-xs;
+  border: 0.1rem solid $gray;
+  border-radius: 0.5rem;
+  .ImgMain {
+    margin: 0 auto;
+    width: fit-content;
+    text-align: center;
+  }
+}
