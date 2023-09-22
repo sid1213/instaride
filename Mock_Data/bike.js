@@ -39,7 +39,8 @@ export const Bike_Data = [
             },
         ],
         available: true,
-        transmission: 'GEARLESS'
+        transmission: 'GEARLESS',
+        available_date: 'Sep 23 2023, 12:00 PM'
     },
     {
         id: 2,
@@ -78,7 +79,9 @@ export const Bike_Data = [
             },
         ],
         available: false,
-        transmission: 'GEARLESS'
+        transmission: 'GEARLESS',
+        available_date: null,
+
     },
     {
         id: 3,
@@ -118,6 +121,7 @@ export const Bike_Data = [
             },
         ],
         available: false,
-        transmission: 'GEAR'
+        transmission: 'GEAR',
+        available_date: null,
     },
 ]
