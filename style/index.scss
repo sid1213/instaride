@@ -21,12 +21,12 @@ body {
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: #9c3;
+    background: $dark-green;
   }
 
   /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
-    background: #9c3;
+    background: $dark-green;
   }
 }
 
