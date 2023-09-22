@@ -1,0 +1,24 @@
+@import "/style/Modules/typography";
+.box {
+  padding: 1rem;
+  width: fit-content;
+  .icon {
+    background: $bg-light-gray;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: $heading-md;
+    background: $gray;
+    color: $base-green;
+  }
+  .greenText {
+    color: $base-green;
+    font-weight: 600;
+  }
+  p {
+    font-size: $text-sm;
+  }
+}
