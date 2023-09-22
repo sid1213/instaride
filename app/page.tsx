@@ -1,7 +1,7 @@
 "use client";
 import { Col, Row } from "antd";
 import Style from "./page.module.scss";
-import SearchCard from "@/components/home/SearchCard";
+import SearchCard from "@/components/Home/SearchCard";
 
 const Home = () => {
   return (
