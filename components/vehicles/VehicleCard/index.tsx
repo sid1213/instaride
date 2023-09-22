@@ -23,6 +23,7 @@ interface filterProps {
     }[];
     available: boolean;
     transmission: string;
+    available_date: string;
   };
 }
 function FilterCard({ data }: filterProps) {
@@ -33,15 +34,25 @@ function FilterCard({ data }: filterProps) {
 
   // for select box
   const handleChange = (value: string) => {};
-
   return (
     <Badge.Ribbon
       text={data.pickup ? "Pay at Pickup Available" : ""}
       color="lime"
       className={Style.ribbon}
     >
+      {/* Available button */}
+      {data.available && (
+        <Button className={Style.available_btn}>
+          Available till {data.available_date}
+        </Button>
+      )}
+
+      {/* Vehicle Card */}
       <Card
-        className={Style.vehicleCard}
+        className={classNames(
+          Style.vehicleCard,
+          data.available ? Style.disableCard : ""
+        )}
         title={`${data.brand} ${data.name}`}
         extra={
           <>
@@ -111,7 +122,7 @@ interface Props {
 }
 export const DurationOfBike = ({ data }: Props) => {
   return (
-    <div className="weeks_count">
+    <div className="duration">
       <p>{data.name}</p>
       <h3>
         &#8377; {data.price} <small>Per Day</small>
