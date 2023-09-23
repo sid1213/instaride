@@ -1,0 +1,15 @@
+@import "/style/Modules/variables";
+@import "/style/Modules/mixins";
+
+.profile_container {
+  width: 90%;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding-top: 5rem;
+  background-color: $white;
+
+  :global(.profile_sidebar_container) {
+    min-width: 25% !important;
+    width: 25% !important;
+  }
+}
