@@ -11,5 +11,8 @@
   :global(.profile_sidebar_container) {
     min-width: 25% !important;
     width: 25% !important;
+    background-color: $white;
   }
+  // :global(.profile_content_container) {
+  // }
 }
