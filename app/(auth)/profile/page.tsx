@@ -12,7 +12,7 @@ function page() {
       <Sider className="profile_sidebar_container">
         <ProfileSidebar />
       </Sider>
-      <Content>
+      <Content className="profile_content_container">
         <ProfileContent />
       </Content>
     </Layout>
