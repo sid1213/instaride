@@ -1,2 +1,99 @@
 @import "/style/Modules/variables";
 @import "/style/Modules/mixins";
+
+.profile_content {
+  margin: 1rem 2rem;
+  padding-bottom: 2rem;
+  border-radius: 0.7rem;
+  border: 1px solid $light-gray;
+
+  :global(.profile_details_header) {
+    padding: 1.2rem 3.6rem;
+    border-bottom: 1px solid $light-gray;
+  }
+
+  :global(h5.ant-typography) {
+    margin-bottom: 0;
+  }
+
+  //Profile Edit
+  :global(.profile_edit_section) {
+    // Container for input section
+    :global(.profile_input_wrap) {
+      padding: 1.2rem 3.6rem;
+      border-bottom: 1px solid $light-gray;
+
+      //   edit btn and label
+      :global(.label_btn) {
+        display: flex;
+        justify-content: space-between;
+        label {
+          font-size: $text-sm;
+          color: $dark-gray;
+          font-weight: 500;
+        }
+        button {
+          background-color: transparent;
+          border: none;
+          color: $dark-green;
+          font-weight: 500;
+          font-size: $text-lg;
+          padding: 0;
+        }
+      }
+
+      // value of field
+      p {
+        font-size: $text-sm;
+        font-weight: 400;
+        margin-bottom: 0.5rem;
+      }
+
+      // Edit input fields
+      :global(.profile_input_edit) {
+        display: none;
+        :global(.input_container) {
+          display: flex;
+          gap: 2rem;
+        }
+        :global(.save_btn) {
+          background-color: $dark-green;
+          color: $white;
+          &:hover {
+            border: none;
+          }
+        }
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  // Custom Input Field
+  :global(.custom_input_field) {
+    position: relative;
+
+    label {
+      position: absolute;
+      top: 0.5rem;
+      left: 2rem;
+      z-index: 1;
+      color: $dark-green;
+      font-size: $text-xs;
+      background-color: $white;
+      padding: 0.1rem 0.3rem;
+    }
+
+    :global(.ant-input) {
+      margin: 1.3rem 0;
+      padding: 1rem;
+      background-color: transparent;
+      &:focus,
+      &:hover {
+        border-color: $dark-green;
+      }
+    }
+  }
+}
