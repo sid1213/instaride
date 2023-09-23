@@ -52,3 +52,13 @@ h5.ant-typography {
     font-size: $text-xl;
   }
 }
+
+.large {
+  font-size: $text-lg !important;
+}
+.medium {
+  font-size: $text-sm !important;
+}
+.small {
+  font-size: $text-xs !important;
+}
