@@ -1,0 +1,30 @@
+@import "/style/Modules/typography";
+.collapse {
+  position: relative;
+  :global(.ant-collapse-header) {
+    padding: 0 !important;
+    padding-top: 1rem !important;
+  }
+  :global(.ant-collapse-expand-icon) {
+    position: absolute;
+    left: 0%;
+    transform: translateX(-80%);
+    svg {
+      fill: $dark-red;
+      font-size: $text-xl !important;
+    }
+  }
+  :global(.ant-collapse-content-box) {
+    padding: 0.8rem 1rem !important;
+    border-left: 0.5px dashed #000;
+  }
+}
+
+.divider {
+  margin: 1rem 0 !important;
+}
+.formTag {
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0.4rem 1rem;
+}
