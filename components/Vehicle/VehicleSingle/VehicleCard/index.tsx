@@ -1,5 +1,5 @@
 "use client";
-import { Col, Row, Tag, Typography } from "antd";
+import { Carousel, Col, Row, Tag, Typography } from "antd";
 import React from "react";
 import Style from "./index.module.scss";
 import Image from "next/image";
@@ -18,15 +18,43 @@ const VehicleCard: React.FC = () => {
         <Col span={24}>
           <div className={Style.ImgMain}>
             <div>
-              <Image
-                src="/demo/Suzuki-Access-125.png"
-                width={400}
-                height={260}
-                objectFit="contain"
-                alt="demo"
-              />
+              <Carousel
+                arrows
+                className={Style.carousel}
+                dots={false}
+                waitForAnimate={true}
+                effect={"fade"}
+              >
+                <div>
+                  <Image
+                    src="/demo/Suzuki-Access-125.png"
+                    width={400}
+                    height={260}
+                    objectFit="contain"
+                    alt="demo"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/demo/Suzuki-Access-125.png"
+                    width={400}
+                    height={260}
+                    objectFit="contain"
+                    alt="demo"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/demo/Suzuki-Access-125.png"
+                    width={400}
+                    height={260}
+                    objectFit="contain"
+                    alt="demo"
+                  />
+                </div>
+              </Carousel>
             </div>
-            <Text>*Images are for representation purposes only.</Text>
+            <p>*Images are for representation purposes only.</p>
           </div>
         </Col>
         <Col>
