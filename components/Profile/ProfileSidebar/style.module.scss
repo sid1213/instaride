@@ -4,6 +4,7 @@
 .profile_sidebar {
   display: flex;
   flex-direction: column;
+  padding: 1rem;
 
   // profile image container
   :global(.profile_image_container) {
@@ -11,22 +12,43 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 3rem 3rem 2.8rem;
+    padding: 1.2rem 1rem;
     background-color: #fafafa;
-    border: 1px solid #ebedef;
+    border: 1px solid $light-gray;
     border-radius: 4px;
-
+    :global(.ant-image) {
+      width: 20rem;
+    }
     h5 {
-      margin-top: 2rem;
+      margin-top: 1.2rem;
     }
   }
 
   :global(.profile_sidebar_linklist) {
     list-style: none;
-    color: $white;
+    font-weight: 500;
 
     li {
-      background-color: $dark;
+      background-color: $white;
+      color: $dark-green;
+      padding: 1.2rem;
+      margin: 1.2rem 0;
+      border: 1px solid $gray;
+      border-radius: 0.2rem;
+      font-size: $text-sm;
+      cursor: pointer;
+      border: 1px solid $light-gray;
+
+      div {
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+      }
+    }
+    :global(.change_link) {
+      border: none;
+      background-color: $dark-green;
+      color: $white;
     }
   }
 }

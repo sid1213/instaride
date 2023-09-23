@@ -1,24 +1,61 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Style from "./style.module.scss";
 import Title from "antd/es/typography/Title";
 import { Image } from "antd";
+
+// icons
+import { FaUserAlt, FaLocationArrow, FaWallet } from "react-icons/fa";
+import classNames from "classnames";
+
+const Profile_List_Data = [
+  {
+    name: "Profile",
+    icon: <FaUserAlt />,
+  },
+  {
+    name: "Bookings",
+    icon: <FaLocationArrow />,
+  },
+  {
+    name: "Go Coins",
+    icon: <FaWallet />,
+  },
+];
+
 function ProfileSidebar() {
+  const [clickedButton, setClickedButton] = useState<number>();
+  const toggleTabs = (buttonId: number) => {
+    setClickedButton(buttonId);
+  };
+
   return (
     <div className={Style.profile_sidebar}>
+      {/* profile image */}
       <div className="profile_image_container">
-        <Image src="./assests/logo.png" preview={false} width={300} />
+        <Image src="./assests/profile.gif" preview={false} />
         <Title level={5}> Jagrati Gupta</Title>
       </div>
+
+      {/* Links */}
       <ul className="profile_sidebar_linklist">
-        <li className="profile_links">
-          <div>Profile</div>
-        </li>
-        <li className="profile_links">
-          <div>Profile</div>
-        </li>
-        <li className="profile_links">
-          <div>Profile</div>
-        </li>
+        {Profile_List_Data.map((data, i) => {
+          return (
+            <li
+              key={i}
+              className={classNames(
+                "profile_links",
+                clickedButton === i ? "change_link" : ""
+              )}
+              onClick={() => toggleTabs(i)}
+            >
+              <div>
+                {data.icon}
+                {data.name}
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
