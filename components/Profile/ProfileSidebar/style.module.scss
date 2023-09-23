@@ -1,0 +1,32 @@
+@import "/style/Modules/variables";
+@import "/style/Modules/mixins";
+
+.profile_sidebar {
+  display: flex;
+  flex-direction: column;
+
+  // profile image container
+  :global(.profile_image_container) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 3rem 2.8rem;
+    background-color: #fafafa;
+    border: 1px solid #ebedef;
+    border-radius: 4px;
+
+    h5 {
+      margin-top: 2rem;
+    }
+  }
+
+  :global(.profile_sidebar_linklist) {
+    list-style: none;
+    color: $white;
+
+    li {
+      background-color: $dark;
+    }
+  }
+}
