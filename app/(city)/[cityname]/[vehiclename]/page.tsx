@@ -2,6 +2,7 @@ import React from "react";
 import Style from "./index.module.scss";
 import { Col, Row } from "antd";
 import VehicleCard from "@/components/Vehicle/VehicleSingle/VehicleCard";
+import BookNowFrom from "@/components/Vehicle/VehicleSingle/BookNowForm/Index";
 
 const VehicleName = () => {
   return (
@@ -11,7 +12,7 @@ const VehicleName = () => {
           <VehicleCard />
         </Col>
         <Col span={10} className={Style.right}>
-          col-8
+          <BookNowFrom />
         </Col>
       </Row>
     </section>
