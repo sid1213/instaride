@@ -1,0 +1,28 @@
+@import "/style/Modules/variables";
+@import "/style/Modules/mixins";
+
+// Custom Input Field
+.custom_input_field {
+  position: relative;
+
+  label {
+    position: absolute;
+    top: 0.5rem;
+    left: 2rem;
+    z-index: 1;
+    color: $dark-green;
+    font-size: $text-xs;
+    background-color: $white;
+    padding: 0.1rem 0.3rem;
+  }
+
+  :global(.ant-input) {
+    margin: 1.3rem 0;
+    padding: 1rem;
+    background-color: transparent;
+    &:focus,
+    &:hover {
+      border-color: $dark-green;
+    }
+  }
+}
