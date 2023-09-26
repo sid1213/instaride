@@ -6,11 +6,8 @@ import ProfileInputWrap from "@/components/Profile/ProfileContent/ProfileInputWr
 
 const { Title, Paragraph } = Typography;
 function ProfileEditSection() {
-  const [isShow, setIsShow] = useState<boolean>(false);
+  const [isEdit, setIsEdit] = useState<boolean>(false);
 
-  const handleEdit = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
-    console.log("edit");
-  };
   return (
     <section className={Style.profile_edit_section}>
       <div className="profile_details_header">
@@ -24,6 +21,8 @@ function ProfileEditSection() {
           labelName={"Name"}
           inputLabel={"Name"}
           inputType={"text"}
+          inputValue={"jagrati gupta"}
+          keyName={isEdit}
         />
 
         {/* for email */}
@@ -31,6 +30,8 @@ function ProfileEditSection() {
           labelName={"Email"}
           inputLabel={"Email Id"}
           inputType={"email"}
+          inputValue={"123jagrati@gmail.com"}
+          keyName={isEdit}
         />
 
         {/* for mobile */}
@@ -44,6 +45,8 @@ function ProfileEditSection() {
           labelName={"Address"}
           inputLabel={"Address"}
           inputType={"text"}
+          inputValue={"Not Provided"}
+          keyName={isEdit}
         />
       </div>
     </section>
