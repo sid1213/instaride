@@ -11,23 +11,26 @@ import classNames from "classnames";
 const Profile_List_Data = [
   {
     name: "Profile",
+    btn_name: "profile",
     icon: <FaUserAlt />,
   },
   {
     name: "Bookings",
+    btn_name: "bookings",
     icon: <FaLocationArrow />,
   },
   {
     name: "Go Coins",
+    btn_name: "goCoins",
     icon: <FaWallet />,
   },
 ];
-
-function ProfileSidebar() {
-  const [clickedButton, setClickedButton] = useState<number>();
-  const toggleTabs = (buttonId: number) => {
-    setClickedButton(buttonId);
-  };
+interface PropsType {
+  setActive: React.Dispatch<React.SetStateAction<string>>;
+}
+function ProfileSidebar({ setActive }: PropsType) {
+  const [clickedButton, setClickedButton] = useState<number>(0);
+  const toggleTabs = (buttonId: number) => setClickedButton(buttonId);
 
   return (
     <div className={Style.profile_sidebar}>
@@ -47,21 +50,18 @@ function ProfileSidebar() {
                 "profile_links",
                 clickedButton === i ? "change_link" : ""
               )}
-              onClick={() => toggleTabs(i)}
+              onClick={() => {
+                if (data.btn_name === "profile") setActive("profile");
+                else if (data.btn_name === "bookings") setActive("bookings");
+                else setActive("goCoins");
+
+                toggleTabs(i);
+              }}
             >
-              {data.name === "Go Coins" ? (
-                <Tooltip title="Coming soon">
-                  <div>
-                    {data.icon}
-                    {data.name}
-                  </div>
-                </Tooltip>
-              ) : (
-                <div>
-                  {data.icon}
-                  {data.name}
-                </div>
-              )}
+              <div>
+                {data.icon}
+                {data.name}
+              </div>
             </li>
           );
         })}
