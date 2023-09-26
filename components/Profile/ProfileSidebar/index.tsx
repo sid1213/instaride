@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Style from "./style.module.scss";
 import Title from "antd/es/typography/Title";
-import { Image } from "antd";
+import { Image, Tooltip } from "antd";
 
 // icons
 import { FaUserAlt, FaLocationArrow, FaWallet } from "react-icons/fa";
@@ -49,10 +49,19 @@ function ProfileSidebar() {
               )}
               onClick={() => toggleTabs(i)}
             >
-              <div>
-                {data.icon}
-                {data.name}
-              </div>
+              {data.name === "Go Coins" ? (
+                <Tooltip title="Coming soon">
+                  <div>
+                    {data.icon}
+                    {data.name}
+                  </div>
+                </Tooltip>
+              ) : (
+                <div>
+                  {data.icon}
+                  {data.name}
+                </div>
+              )}
             </li>
           );
         })}
