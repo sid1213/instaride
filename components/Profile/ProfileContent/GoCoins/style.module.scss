@@ -1,0 +1,13 @@
+@import "/style/Modules/variables";
+@import "/style/Modules/mixins";
+
+.goCoins {
+  :global(.header) {
+    padding: 1.2rem 3.6rem;
+    :global(h5.ant-typography) {
+      margin-bottom: 0;
+      font-size: $heading-sm;
+      text-align: center;
+    }
+  }
+}
