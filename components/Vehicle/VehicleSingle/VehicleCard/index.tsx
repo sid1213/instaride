@@ -1,12 +1,9 @@
-"use client";
-import { Carousel, Col, Row, Tag, Typography } from "antd";
+import { Carousel, Col, Row, Tag } from "antd";
 import React from "react";
 import Style from "./index.module.scss";
 import Image from "next/image";
 import FeatureCard from "@/components/Ui/FeatureCard";
 import { Fa42Group } from "react-icons/fa6";
-
-const { Text } = Typography;
 
 const VehicleCard: React.FC = () => {
   return (
@@ -59,7 +56,10 @@ const VehicleCard: React.FC = () => {
         </Col>
         <Col>
           <div>
-            <Row gutter={25}>
+            <Row
+              gutter={{ xs: 14, lg: 18, xl: 24 }}
+              justify={{ xs: "center", xl: "space-between" }}
+            >
               <Col>
                 <FeatureCard
                   icon={<Fa42Group />}

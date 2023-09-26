@@ -7,10 +7,15 @@
   .ImgMain {
     margin: 2rem auto;
     width: 100%;
-
     text-align: center;
     img {
       margin: 0 auto;
+      @include mobile() {
+        width: 100%;
+        height: fit-content;
+        object-fit: contain;
+        margin-bottom: 4rem;
+      }
     }
     p {
       font-size: $text-xs;
@@ -32,13 +37,34 @@
       &::before {
         color: green;
         font-size: 2rem;
+        @include mobile() {
+          font-size: 1.6rem;
+        }
+        @include xs-mobile() {
+          font-size: 1.2rem;
+        }
+      }
+      @include mobile() {
+        width: 3.5rem;
+        height: 3.5rem;
+        top: 92% !important;
+      }
+      @include xs-mobile() {
+        width: 2.5rem;
+        height: 2.5rem;
       }
     }
     :global(.slick-next) {
       right: 0%;
+      @include mobile() {
+        right: 10%;
+      }
     }
     :global(.slick-prev) {
       left: 0%;
+      @include mobile() {
+        left: 10%;
+      }
     }
   }
 }
