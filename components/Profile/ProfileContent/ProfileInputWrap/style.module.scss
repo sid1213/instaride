@@ -1,0 +1,53 @@
+@import "/style/Modules/variables";
+@import "/style/Modules/mixins";
+
+.profile_input_wrap {
+  padding: 1.2rem 0;
+  border-bottom: 1px solid $light-gray;
+
+  //   edit btn and label
+  :global(.label_btn) {
+    display: flex;
+    justify-content: space-between;
+    label {
+      font-size: $text-sm;
+      color: $dark-gray;
+      font-weight: 500;
+    }
+    button {
+      background-color: transparent;
+      border: none;
+      color: $dark-green;
+      font-weight: 500;
+      font-size: $text-lg;
+      padding: 0;
+    }
+  }
+
+  // value of field
+  p {
+    font-size: $text-sm;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  // Edit input fields
+  :global(.profile_input_edit) {
+    display: none;
+    :global(.input_container) {
+      display: flex;
+      gap: 2rem;
+    }
+    :global(.save_btn) {
+      background-color: $dark-green;
+      color: $white;
+      &:hover {
+        border: none;
+      }
+    }
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
