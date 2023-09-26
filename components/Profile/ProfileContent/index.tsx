@@ -1,14 +1,18 @@
-"use client";
 import React from "react";
 import Style from "./style.module.scss";
 import ProfileEditSection from "./ProfileEditSection";
 import Booking from "./Booking";
+import GoCoins from "./GoCoins";
 
-function ProfileContent() {
+interface PropsType {
+  active: string;
+}
+function ProfileContent({ active }: PropsType) {
   return (
     <div className={Style.profile_content}>
-      <ProfileEditSection />
-      <Booking />
+      {active === "profile" && <ProfileEditSection />}
+      {active === "bookings" && <Booking />}
+      {active === "goCoins" && <GoCoins />}
     </div>
   );
 }
