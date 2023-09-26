@@ -1,0 +1,22 @@
+@import "/style/Modules/variables";
+@import "/style/Modules/mixins";
+
+.booking_empty_container {
+  display: flex;
+  justify-content: center;
+
+  :global(.ant-btn-default) {
+    margin: 2rem 0;
+    height: 40px;
+    background-color: $dark-green;
+    color: $white;
+    width: 100%;
+    &:focus,
+    &:hover {
+      border: none;
+    }
+  }
+  :global(.image) {
+    margin-top: 1.5rem;
+  }
+}
