@@ -1,0 +1,38 @@
+@import "/style/Modules/variables";
+@import "/style/Modules/mixins";
+
+.booking {
+  :global(.header) {
+    padding: 1.2rem 3.6rem;
+    :global(h5.ant-typography) {
+      margin-bottom: 0;
+      font-size: $heading-sm;
+    }
+    :global(div.ant-typography) {
+      color: $dark-gray;
+      font-size: 1.6rem;
+    }
+  }
+  :global(.ant-tabs-nav) {
+    background-color: $lightest-gray;
+    padding: 1.2rem 2rem 0 3.6rem;
+
+    :global(.ant-tabs-tab-active .ant-tabs-tab-btn) {
+      color: $black;
+    }
+
+    :global(.ant-tabs-tab) {
+      color: $dark-gray;
+      font-weight: 500;
+      &:hover {
+        color: $dark-green;
+      }
+    }
+    :global(.ant-tabs-ink-bar) {
+      background-color: $dark-green;
+    }
+  }
+  :global(.ant-tabs-content-holder) {
+    padding: 1.2rem 2rem;
+  }
+}
