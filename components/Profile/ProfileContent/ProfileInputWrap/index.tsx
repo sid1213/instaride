@@ -6,17 +6,28 @@ interface PropsType {
   labelName: string;
   inputLabel: string;
   inputType: string;
+  inputValue: string;
+  keyName: boolean;
 }
 
-function ProfileInputWrap({ labelName, inputLabel, inputType }: PropsType) {
+function ProfileInputWrap({
+  labelName,
+  inputLabel,
+  inputType,
+  inputValue,
+  keyName,
+}: PropsType) {
+  const handleEdit = () => {
+    console.log(keyName);
+  };
   return (
     <div className={Style.profile_input_wrap}>
       <div className="label_btn">
         <label>{labelName}</label>
-        <Button>edit</Button>
+        <Button onClick={handleEdit}>edit</Button>
       </div>
 
-      <p>Jagrati Gupta</p>
+      <p>{inputValue}</p>
 
       <div className="profile_input_edit">
         <div className="input_container">
