@@ -9,3 +9,14 @@ export interface ThingsToRemember {
   description: string;
   subtitle: string;
 }
+export interface BikesFeatures {
+  icon:
+    | "Displacement"
+    | "TopSpeed"
+    | "FuelCapacity"
+    | "Seats"
+    | "KerbWeight"
+    | "Mileage";
+  description: string;
+  subtitle: string;
+}
