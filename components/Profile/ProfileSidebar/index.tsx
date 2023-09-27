@@ -35,7 +35,7 @@ function ProfileSidebar({ setActive, setVisible, visible }: PropsType) {
   const toggleTabs = (buttonId: number) => setClickedButton(buttonId);
 
   return (
-    <div className={classNames(Style.profile_sidebar)}>
+    <div className={Style.profile_sidebar}>
       {/* profile image */}
       <div className="profile_image_container">
         <Image src="./assests/profile.gif" preview={false} />
