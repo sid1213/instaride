@@ -27,13 +27,15 @@ const Profile_List_Data = [
 ];
 interface PropsType {
   setActive: React.Dispatch<React.SetStateAction<string>>;
+  setVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  visible: boolean;
 }
-function ProfileSidebar({ setActive }: PropsType) {
+function ProfileSidebar({ setActive, setVisible, visible }: PropsType) {
   const [clickedButton, setClickedButton] = useState<number>(0);
   const toggleTabs = (buttonId: number) => setClickedButton(buttonId);
 
   return (
-    <div className={Style.profile_sidebar}>
+    <div className={classNames(Style.profile_sidebar)}>
       {/* profile image */}
       <div className="profile_image_container">
         <Image src="./assests/profile.gif" preview={false} />
@@ -51,10 +53,11 @@ function ProfileSidebar({ setActive }: PropsType) {
                 clickedButton === i ? "change_link" : ""
               )}
               onClick={() => {
-                if (data.btn_name === "profile") setActive("profile");
-                else if (data.btn_name === "bookings") setActive("bookings");
-                else setActive("goCoins");
+                if (data.btn_name) {
+                  setVisible(!visible);
+                }
 
+                setActive(data.btn_name);
                 toggleTabs(i);
               }}
             >
