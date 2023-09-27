@@ -98,8 +98,14 @@ const BookNowFrom = () => {
             Refundable Deposit - ₹ 2000 (To be paid at the time of pickup)
           </Tag>
         </Form.Item>
-        <Form.Item>
-          <Button title="Book now" />
+        <Form.Item className={Style.bookNowButtonMain}>
+          <div className={Style.bookNowButtonBig}>
+            <Button title="Book now" />
+          </div>
+          <Space className={Style.bookNowButton}>
+            <Title level={3}>$82947</Title>
+            <Button title="Book now" />
+          </Space>
         </Form.Item>
       </Form>
     </div>

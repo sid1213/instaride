@@ -1,5 +1,4 @@
 import React from "react";
-import Style from "./index.module.scss";
 import { Col, Row } from "antd";
 import Title from "antd/es/typography/Title";
 import FeatureCard from "@/components/Ui/FeatureCard";
@@ -40,9 +39,9 @@ const items: BikesFeatures[] = [
 
 const BikeFeatures = () => {
   return (
-    <div className={Style.card}>
+    <div>
       <Title level={4}>Bike Features</Title>
-      <Row className={Style.cardRow} justify={"space-between"}>
+      <Row justify={"space-between"}>
         {items.map((item) => (
           <Col key={item.icon} span={8} lg={4}>
             <FeatureCard

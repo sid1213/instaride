@@ -1,14 +1,15 @@
 "use client";
 import React from "react";
 import Style from "./index.module.scss";
-import { Col, Row } from "antd";
+import { Col, Row, Space } from "antd";
 import VehicleCard from "@/components/Vehicle/VehicleSingle/VehicleCard";
 import BookNowFrom from "@/components/Vehicle/VehicleSingle/BookNowForm/Index";
 import RulesTable from "@/components/Ui/RulesTable";
 import RulesList from "@/components/Ui/RulesList/Index";
 import InformationCard from "./InformationCard";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import BikeFeatures from "./BikeFeatures";
+import Title from "antd/es/typography/Title";
+import Button from "@/components/Ui/Button";
 
 const list = [
   `Documents Required:- Copy of Aadhar Card and Driving License. Digilocker documents are also accepted.
@@ -42,9 +43,6 @@ const VehicleSingle = () => {
       <Col span={24} className={Style.bottomOne}>
         <BikeFeatures />
       </Col>
-      {/* <Col span={14} className={Style.left}>
-        <h1>hello</h1>
-      </Col> */}
     </Row>
   );
 };
