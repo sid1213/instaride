@@ -2,12 +2,10 @@
 import React, { useState } from "react";
 import Style from "./style.module.scss";
 import { Typography } from "antd";
-import ProfileInputWrap from "@/components/Profile/ProfileContent/ProfileInputWrap";
+import ProfileInputWrap from "./ProfileInputWrap";
 
 const { Title, Paragraph } = Typography;
 function ProfileEditSection() {
-  const [isEdit, setIsEdit] = useState<boolean>(false);
-
   return (
     <section className={Style.profile_edit_section}>
       <div className="profile_details_header">
@@ -22,7 +20,6 @@ function ProfileEditSection() {
           inputLabel={"Name"}
           inputType={"text"}
           inputValue={"jagrati gupta"}
-          keyName={isEdit}
         />
 
         {/* for email */}
@@ -31,7 +28,6 @@ function ProfileEditSection() {
           inputLabel={"Email Id"}
           inputType={"email"}
           inputValue={"123jagrati@gmail.com"}
-          keyName={isEdit}
         />
 
         {/* for mobile */}
@@ -46,7 +42,6 @@ function ProfileEditSection() {
           inputLabel={"Address"}
           inputType={"text"}
           inputValue={"Not Provided"}
-          keyName={isEdit}
         />
       </div>
     </section>
