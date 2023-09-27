@@ -3,14 +3,30 @@ import React, { useState } from "react";
 import Style from "./style.module.scss";
 import { Typography } from "antd";
 import ProfileInputWrap from "./ProfileInputWrap";
+import { AiOutlineLeft } from "react-icons/ai";
 
 const { Title, Paragraph } = Typography;
-function ProfileEditSection() {
+interface PropsType {
+  setVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
+function ProfileEditSection({ setVisible }: PropsType) {
   return (
     <section className={Style.profile_edit_section}>
       <div className="profile_details_header">
-        <Title level={5}>Profile</Title>
-        <Paragraph>Basic Details</Paragraph>
+        <div>
+          <span
+            className="left_arrow"
+            onClick={() => {
+              setVisible(false);
+            }}
+          >
+            <AiOutlineLeft />
+          </span>
+        </div>
+        <div>
+          <Title level={5}>Profile</Title>
+          <Paragraph>Basic Details</Paragraph>
+        </div>
       </div>
 
       <div className="profile_details_body">
