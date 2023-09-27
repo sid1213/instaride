@@ -1,31 +1,5 @@
 @import "/style/Modules/typography";
 
 .container {
-  // height: calc(100vh - 6.4rem);
   min-height: calc(100vh - 6.4rem);
-  .main {
-    min-height: inherit;
-    height: 100%;
-    position: relative;
-  }
-  .left,
-  .right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .left {
-    height: 100%;
-    padding: $space-2xl;
-    @include tablet() {
-      padding: $space-xl;
-    }
-    @include mobile() {
-      padding: $space-md;
-    }
-  }
-  .right {
-    height: 100%;
-    background: blue;
-  }
 }

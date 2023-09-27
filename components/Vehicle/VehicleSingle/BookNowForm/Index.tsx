@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import {
   Collapse,
@@ -9,16 +8,14 @@ import {
   Radio,
   Space,
   Tag,
-  Typography,
 } from "antd";
 
-import Style from "./index.module.scss";
 import { AiOutlineMinusSquare, AiOutlinePlusSquare } from "react-icons/ai";
-import classNames from "classnames";
+
 import TableList from "@/components/Ui/TableList";
 import Button from "@/components/Ui/Button";
-
-const { Title } = Typography;
+import Title from "antd/es/typography/Title";
+import Style from "./index.module.scss";
 
 const listItem = [
   {
@@ -56,7 +53,12 @@ const BookNowFrom = () => {
     <div>
       <Title level={4}> Honda Activa</Title>
 
-      <Form name="basic" layout="vertical" title=" Honda Activa">
+      <Form
+        name="basic"
+        layout="vertical"
+        title=" Honda Activa"
+        className={Style.form}
+      >
         <Form.Item label="Select Package" name="username">
           <Input />
         </Form.Item>
@@ -91,7 +93,7 @@ const BookNowFrom = () => {
           <Divider className={Style.divider} />
           <TableList size="medium" list={listItem} />
           <Divider className={Style.divider} />
-          <TableList size="medium" list={listItemHead} />
+          <TableList size="medium" textSize="bold" list={listItemHead} />
           <Tag color="success" className={Style.formTag}>
             Refundable Deposit - ₹ 2000 (To be paid at the time of pickup)
           </Tag>

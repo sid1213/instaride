@@ -1,4 +1,9 @@
 @import "/style/Modules/typography";
+.form {
+  :global(.ant-form-item-label label) {
+    font-weight: 600;
+  }
+}
 .collapse {
   position: relative;
   :global(.ant-collapse-header) {
@@ -9,6 +14,9 @@
     position: absolute;
     left: 0%;
     transform: translateX(-80%);
+    @include xs-mobile {
+      transform: translateX(-65%);
+    }
     svg {
       fill: $dark-red;
       font-size: $text-xl !important;
@@ -26,5 +34,7 @@
 .formTag {
   width: 100%;
   margin: 1rem 0;
+  margin-bottom: 0;
   padding: 0.4rem 1rem;
+  white-space: pre-wrap;
 }

@@ -1,7 +1,10 @@
 @import "/style/Modules/typography";
 .box {
   padding: 1rem;
-  width: fit-content;
+  width: 100%;
+  @include mobile() {
+    flex-direction: column;
+  }
   .icon {
     background: $bg-light-gray;
     width: 4rem;
@@ -11,8 +14,10 @@
     align-items: center;
     border-radius: 50%;
     font-size: $heading-md;
-    background: $gray;
     color: $base-green;
+    @include mobile() {
+      font-size: $text-xl;
+    }
   }
   .greenText {
     color: $base-green;
@@ -20,5 +25,9 @@
   }
   p {
     font-size: $text-sm;
+    @include mobile() {
+      font-size: $text-xs;
+      text-align: center;
+    }
   }
 }
