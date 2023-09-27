@@ -12,7 +12,24 @@
     min-width: 25% !important;
     width: 25% !important;
     background-color: $white;
+
+    @include tablet {
+      min-width: 100% !important;
+      width: 100% !important;
+
+      &.none {
+        display: none;
+      }
+    }
   }
-  // :global(.profile_content_container) {
-  // }
+  :global(.profile_content_container) {
+    @include tablet {
+      min-width: 100% !important;
+      width: 100% !important;
+
+      &.none {
+        display: none;
+      }
+    }
+  }
 }
