@@ -1,5 +1,6 @@
 @import "Modules/typography";
 @import "Modules/variables";
+@import "AntComponent/table";
 
 * {
   margin: 0;
@@ -21,12 +22,12 @@ body {
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
-    background: $dark-green;
+    background: $base-green;
   }
 
   /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
-    background: $dark-green;
+    background: $base-green;
   }
 }
 
