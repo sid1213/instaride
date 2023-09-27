@@ -17,6 +17,5 @@ export interface BikesFeatures {
     | "Seats"
     | "KerbWeight"
     | "Mileage";
-  description: string;
   subtitle: string;
 }
