@@ -14,7 +14,6 @@ const FeatureCard: React.FC<ThingsToRemember> = ({
   description,
   subtitle,
 }) => {
-  const text = icon.split(/(?=[A-Z])/);
   return (
     <Space className={Style.card} direction="vertical" align="center">
       <div>
@@ -34,7 +33,7 @@ const FeatureCard: React.FC<ThingsToRemember> = ({
       </div>
       <div>
         <div className={Style.title}>
-          <p>{text[0] + " " + text[1]}</p>
+          <p>{icon.split(/(?=[A-Z])/).join(" ")}</p>
           <span className={Style.subTitle}>{subtitle}</span>
         </div>
         <p className={Style.content}>{description}</p>
