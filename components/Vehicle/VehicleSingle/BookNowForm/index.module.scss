@@ -1,0 +1,73 @@
+@import "/style/Modules/typography";
+.form {
+  :global(.ant-form-item-label label) {
+    font-weight: 600;
+  }
+}
+.collapse {
+  position: relative;
+  :global(.ant-collapse-header) {
+    padding: 0 !important;
+    padding-top: 1rem !important;
+  }
+  :global(.ant-collapse-expand-icon) {
+    position: absolute;
+    left: 0%;
+    transform: translateX(-80%);
+    @include xs-mobile {
+      transform: translateX(-65%);
+    }
+    svg {
+      fill: $dark-red;
+      font-size: $text-xl !important;
+    }
+  }
+  :global(.ant-collapse-content-box) {
+    padding: 0.8rem 1rem !important;
+    border-left: 0.5px dashed #000;
+  }
+}
+
+.divider {
+  margin: 1rem 0 !important;
+}
+.formTag {
+  width: 100%;
+  margin: 1rem 0;
+  margin-bottom: 0;
+  padding: 0.4rem 1rem;
+  white-space: pre-wrap;
+}
+.bookNowButtonBig {
+  @media screen and (max-width: 575px) {
+    display: none;
+  }
+}
+.bookNowButtonMain {
+  .bookNowButton {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    background: white !important;
+    padding: 1rem;
+    box-shadow: 0 -0.3rem 0.6rem rgba(0, 0, 0, 0.05);
+    h3 {
+      margin-bottom: 0;
+    }
+    button {
+      padding: 1rem 1.5rem;
+      font-size: $text-lg;
+    }
+    @media screen and (max-width: 575px) {
+      display: flex;
+    }
+  }
+  @media screen and (max-width: 575px) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 0;
+    z-index: 111111;
+  }
+}

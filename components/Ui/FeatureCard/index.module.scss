@@ -1,0 +1,36 @@
+@import "/style/Modules/typography";
+.box {
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  @include mobile() {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .icon {
+    background: $bg-light-gray;
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: $heading-md;
+    color: $base-green;
+    @include mobile() {
+      font-size: $text-xl;
+    }
+  }
+  .greenText {
+    color: $base-green;
+    font-weight: 600;
+  }
+  p {
+    font-size: $text-sm;
+    @include mobile() {
+      font-size: $text-xs;
+      text-align: center;
+    }
+  }
+}
