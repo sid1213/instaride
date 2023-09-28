@@ -1,4 +1,3 @@
-"use client";
 import { Col, Row } from "antd";
 import Style from "./page.module.scss";
 import SearchCard from "@/components/Home/SearchCard";

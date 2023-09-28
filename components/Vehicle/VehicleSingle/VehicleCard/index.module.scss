@@ -1,0 +1,70 @@
+@import "/style/Modules/typography";
+.card {
+  background: white;
+  padding: $space-xs;
+  border: 0.1rem solid $gray;
+  border-radius: 0.5rem;
+  .ImgMain {
+    margin: 2rem auto;
+    width: 100%;
+    text-align: center;
+    img {
+      margin: 0 auto;
+      @include mobile() {
+        width: 100%;
+        height: fit-content;
+        object-fit: contain;
+        margin-bottom: 4rem;
+      }
+    }
+    p {
+      font-size: $text-xs;
+      color: $base-text;
+      display: block;
+      margin-top: 3rem;
+    }
+  }
+  .carousel {
+    :global(.slick-arrow) {
+      background-color: $bg-light-gray;
+      padding: 1rem;
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 50%;
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
+      &::before {
+        color: green;
+        font-size: 2rem;
+        @include mobile() {
+          font-size: 1.6rem;
+        }
+        @include xs-mobile() {
+          font-size: 1.2rem;
+        }
+      }
+      @include mobile() {
+        width: 3.5rem;
+        height: 3.5rem;
+        top: 92% !important;
+      }
+      @include xs-mobile() {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+    :global(.slick-next) {
+      right: 0%;
+      @include mobile() {
+        right: 10%;
+      }
+    }
+    :global(.slick-prev) {
+      left: 0%;
+      @include mobile() {
+        left: 10%;
+      }
+    }
+  }
+}

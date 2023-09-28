@@ -1,0 +1,15 @@
+.labelList {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0.2rem;
+  list-style: none;
+  li {
+    width: 70%;
+    &:nth-child(even) {
+      width: 30%;
+      text-align: right;
+    }
+  }
+}
