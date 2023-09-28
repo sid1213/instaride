@@ -2,9 +2,12 @@
 .box {
   padding: 1rem;
   width: 100%;
+  height: 100%;
   @include mobile() {
     flex-direction: column;
+    justify-content: space-between;
   }
+
   .icon {
     background: $bg-light-gray;
     width: 4rem;
