@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Style from "./style.module.scss";
 import Title from "antd/es/typography/Title";
-import { Image, Tooltip } from "antd";
+import { Button, Col, Image, Row, Tooltip } from "antd";
 
 // icons
 import { FaUserAlt, FaLocationArrow, FaWallet } from "react-icons/fa";
@@ -35,41 +35,63 @@ function ProfileSidebar({ setActive, setVisible, visible }: PropsType) {
   const toggleTabs = (buttonId: number) => setClickedButton(buttonId);
 
   return (
-    <div className={Style.profile_sidebar}>
+    <Row className={Style.profile_sidebar} gutter={[0, 16]}>
       {/* profile image */}
-      <div className="profile_image_container">
-        <Image src="./assests/profile.gif" preview={false} />
+      <Col className={Style.profile_image_container} span={24}>
+        <Image
+          src="./assests/profile.gif"
+          preview={false}
+          className={Style.profile_img}
+        />
         <Title level={5}> Jagrati Gupta</Title>
-      </div>
+      </Col>
 
       {/* Links */}
-      <ul className="profile_sidebar_linklist">
+      <Col className={Style.profile_sidebar_linklist} span={24}>
         {Profile_List_Data.map((data, i) => {
           return (
-            <li
-              key={i}
-              className={classNames(
-                "profile_links",
-                clickedButton === i ? "change_link" : ""
+            <>
+              {data.btn_name === "goCoins" ? (
+                <Tooltip title="Coming Soon.." className={Style.disabled_btn}>
+                  <Button
+                    key={i}
+                    block
+                    disabled={true}
+                    className={Style.profile_links}
+                  >
+                    <div>
+                      {data.icon}
+                      {data.name}
+                    </div>
+                  </Button>
+                </Tooltip>
+              ) : (
+                <Button
+                  key={i}
+                  block
+                  className={classNames(
+                    Style.profile_links,
+                    clickedButton === i ? Style.change_link : ""
+                  )}
+                  onClick={() => {
+                    if (data.btn_name) {
+                      setVisible(!visible);
+                    }
+                    setActive(data.btn_name);
+                    toggleTabs(i);
+                  }}
+                >
+                  <div>
+                    {data.icon}
+                    {data.name}
+                  </div>
+                </Button>
               )}
-              onClick={() => {
-                if (data.btn_name) {
-                  setVisible(!visible);
-                }
-
-                setActive(data.btn_name);
-                toggleTabs(i);
-              }}
-            >
-              <div>
-                {data.icon}
-                {data.name}
-              </div>
-            </li>
+            </>
           );
         })}
-      </ul>
-    </div>
+      </Col>
+    </Row>
   );
 }
 
