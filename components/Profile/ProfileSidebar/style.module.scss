@@ -2,12 +2,10 @@
 @import "/style/Modules/mixins";
 
 .profile_sidebar {
-  display: flex;
-  flex-direction: column;
   padding: 1rem;
 
   // profile image container
-  :global(.profile_image_container) {
+  .profile_image_container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,28 +14,43 @@
     background-color: #fafafa;
     border: 1px solid $light-gray;
     border-radius: 4px;
-    :global(.ant-image) {
+    .profile_img {
       width: 20rem;
     }
     h5 {
       margin-top: 1.2rem;
+      font-size: $text-lg;
     }
   }
 
-  :global(.profile_sidebar_linklist) {
+  .profile_sidebar_linklist {
     list-style: none;
     font-weight: 500;
 
-    li {
+    .disabled_btn {
+      button {
+        border: none;
+        background-color: transparent;
+        border-color: $light-gray;
+      }
+    }
+
+    .profile_links {
       background-color: $white;
-      color: $dark-green;
-      padding: 1.2rem;
-      margin: 1.2rem 0;
+      color: $base-green;
       border: 1px solid $gray;
       border-radius: 0.2rem;
+      margin-bottom: $text-xs;
       font-size: $text-sm;
+      font-weight: 500;
+      height: 4.5rem;
       cursor: pointer;
-      border: 1px solid $light-gray;
+      border-color: $light-gray;
+
+      &:is(:hover, :focus) {
+        color: $base-green;
+        border-color: $light-gray;
+      }
 
       div {
         display: flex;
@@ -45,10 +58,15 @@
         column-gap: 1rem;
       }
     }
-    :global(.change_link) {
+
+    .change_link {
       border: none;
-      background-color: $dark-green;
+      background-color: $base-green;
       color: $white;
+      &:is(:hover, :focus) {
+        color: $white;
+        border: none;
+      }
     }
   }
 }
