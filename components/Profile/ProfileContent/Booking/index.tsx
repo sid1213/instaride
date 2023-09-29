@@ -1,12 +1,12 @@
 import React from "react";
-import { Tabs } from "antd";
+import { Col, Row, Space, Tabs } from "antd";
 import type { TabsProps } from "antd";
 import Style from "./style.module.scss";
 import { Typography } from "antd";
 import NotFound from "./NotFound";
 import { AiOutlineLeft } from "react-icons/ai";
 
-const { Title, Paragraph } = Typography;
+const { Title, Text } = Typography;
 const onChange = (key: string) => {
   console.log(key);
 };
@@ -33,26 +33,24 @@ const items: TabsProps["items"] = [
 ];
 function Booking({ setVisible }: PropsType) {
   return (
-    <section className={Style.booking}>
-      <div className="header">
-        <div>
-          <span
-            className="left_arrow"
-            onClick={() => {
-              setVisible(false);
-            }}
-          >
-            <AiOutlineLeft />
-          </span>
-        </div>
-        <div>
-          <Title level={5}>Bookings</Title>
-          <Paragraph>Manage your bookings</Paragraph>
-        </div>
-      </div>
+    <Row className={Style.booking}>
+      {/* Booking header */}
+      <Space className={Style.booking_header}>
+        <Col className={Style.left_arrow} onClick={() => setVisible(false)}>
+          <AiOutlineLeft />
+        </Col>
 
-      <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
-    </section>
+        <Col className={Style.heading}>
+          <Title level={5}>Bookings</Title>
+          <Text>Manage your bookings</Text>
+        </Col>
+      </Space>
+
+      {/* Booking Tab */}
+      <Col span={24}>
+        <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
+      </Col>
+    </Row>
   );
 }
 
