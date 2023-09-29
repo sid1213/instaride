@@ -1,24 +1,5 @@
-@import "/style/Modules/variables";
-@import "/style/Modules/mixins";
+@import "/style/Modules/typography";
 
 .goCoins {
-  :global(.header) {
-    padding: 1.2rem 1.6rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-
-    :global(.left_arrow) {
-      display: none;
-      @include tablet {
-        display: inline;
-        font-size: $text-lg;
-      }
-    }
-    :global(h5.ant-typography) {
-      margin-bottom: 0;
-      font-size: $heading-sm;
-      text-align: center;
-    }
-  }
+  background-color: red;
 }
