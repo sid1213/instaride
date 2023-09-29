@@ -18,7 +18,7 @@
           border-right-width: 0.1rem;
         }
       }
-      @media screen and (max-width: 991px) {
+      @include tablet() {
         &:nth-child(4),
         &:nth-child(2) {
           border-right-width: 0.1rem;
@@ -30,13 +30,13 @@
           border-bottom-width: 0;
         }
       }
-      @media screen and (max-width: 575px) {
+      @include mobile() {
         border: none;
         box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.08);
         border-radius: 0.5rem;
       }
     }
-    @media screen and (max-width: 575px) {
+    @include mobile() {
       gap: 1.5rem;
     }
   }

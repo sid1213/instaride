@@ -1,6 +1,7 @@
 @import "Modules/typography";
 @import "Modules/variables";
 @import "AntComponent/table";
+@import "AntComponent/heading";
 
 * {
   margin: 0;
@@ -30,53 +31,9 @@ body {
     background: $base-green;
   }
 }
-
 p {
   font-size: 1.6rem;
 }
-h1.ant-typography {
-  font-size: $heading-2xl;
-  @include tablet() {
-    font-size: $heading-xl;
-  }
-  @include mobile() {
-    font-size: $heading-lg;
-  }
-}
-h2.ant-typography {
-  font-size: $heading-xl;
-  @include tablet() {
-    font-size: $heading-lg;
-  }
-  @include mobile() {
-    font-size: $heading-md;
-  }
-  @include xs-mobile() {
-    font-size: $heading-sm;
-  }
-}
-h3.ant-typography {
-  font-size: $heading-lg;
-  @include tablet() {
-    font-size: $heading-md;
-  }
-  @include mobile() {
-    font-size: $heading-sm;
-  }
-}
-h4.ant-typography {
-  font-size: $heading-md;
-  @include mobile() {
-    font-size: $heading-sm;
-  }
-}
-h5.ant-typography {
-  font-size: $heading-sm;
-  @include xs-mobile() {
-    font-size: $text-xl;
-  }
-}
-
 .large {
   font-size: $text-lg !important;
 }
