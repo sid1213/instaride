@@ -11,13 +11,13 @@
     font-size: $heading-2xl;
     fill: $base-green;
     margin: 0 1rem;
-    @media screen and (max-width: 575px) {
+    @include mobile() {
       font-size: $heading-xl;
     }
   }
   .title {
     p {
-      @media screen and (max-width: 575px) {
+      @include mobile() {
         display: inline-block;
         &:first-child {
           margin-right: 1rem;
@@ -35,7 +35,7 @@
   .subTitle {
     font-size: 2rem;
     color: $base-green;
-    @media screen and (max-width: 575px) {
+    @include mobile() {
       font-size: $text-sm !important;
     }
   }
@@ -46,7 +46,7 @@
     font-size: 2rem;
     color: $bg-light-gray;
     fill: $gray !important;
-    @media screen and (max-width: 575px) {
+    @include mobile() {
       display: none;
     }
     cursor: pointer;
@@ -54,7 +54,7 @@
   .content {
     display: none;
   }
-  @media screen and (max-width: 575px) {
+  @include mobile() {
     flex-direction: row;
     align-items: center;
     padding: 1rem;
