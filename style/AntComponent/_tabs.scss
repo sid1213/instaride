@@ -1,0 +1,27 @@
+@use "/style/Modules/typography";
+.ant-tabs {
+  .ant-tabs-nav {
+    background-color: $whitesmoke;
+    border-top: 0.1rem solid $light-gray;
+    padding-left: $space-xs;
+
+    .ant-tabs-tab-active .ant-tabs-tab-btn {
+      color: $black;
+      font-weight: 500;
+    }
+
+    .ant-tabs-tab {
+      color: $base-gray-text;
+      font-weight: 500;
+      &:hover {
+        color: $base-green;
+      }
+    }
+    .ant-tabs-ink-bar {
+      background-color: $base-green;
+    }
+    @include tablet {
+      padding: 1.2rem 2rem 0 1.6rem;
+    }
+  }
+}
