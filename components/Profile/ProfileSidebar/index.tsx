@@ -50,7 +50,7 @@ function ProfileSidebar({ setActive, setVisible, visible }: PropsType) {
       <Col className={Style.profile_sidebar_linklist} span={24}>
         {Profile_List_Data.map((data, i) => {
           return (
-            <>
+            <React.Fragment key={i}>
               {data.btn_name === "goCoins" ? (
                 <Tooltip title="Coming Soon.." className={Style.disabled_btn}>
                   <Button
@@ -87,7 +87,7 @@ function ProfileSidebar({ setActive, setVisible, visible }: PropsType) {
                   </div>
                 </Button>
               )}
-            </>
+            </React.Fragment>
           );
         })}
       </Col>
