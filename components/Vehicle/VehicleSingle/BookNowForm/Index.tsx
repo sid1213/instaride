@@ -100,11 +100,16 @@ const BookNowFrom = () => {
         </Form.Item>
         <Form.Item className={Style.bookNowButtonMain}>
           <div className={Style.bookNowButtonBig}>
-            <Button title="Book now" />
+            <Button title="Book now" size="large" fit={100} htmlType="submit" />
           </div>
-          <Space className={Style.bookNowButton}>
-            <Title level={3}>$82947</Title>
-            <Button title="Book now" />
+          <Space className={Style.bookNowButton} align="center">
+            <Title level={4}>$82947</Title>
+            <Button
+              title="Book now"
+              fit={"fit"}
+              htmlType="submit"
+              size="medium"
+            />
           </Space>
         </Form.Item>
       </Form>
