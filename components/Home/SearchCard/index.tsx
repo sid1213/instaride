@@ -67,12 +67,14 @@ const SearchCard = () => {
         <Form.Item
           name="place"
           validateTrigger="onBlur"
+          label={"Pickup Location"}
           rules={[
             {
               required: true,
               message: "Please select Place",
             },
           ]}
+          className="primary bordered"
         >
           <Select
             className={Style.select}
@@ -88,6 +90,8 @@ const SearchCard = () => {
         <Form.Item
           name="startDate"
           rules={[{ required: true, message: "Please select Start Date" }]}
+          label={"Pickup Date & Time"}
+          className="primary bordered"
         >
           <DatePicker
             disabledDate={(date) => {
@@ -130,6 +134,8 @@ const SearchCard = () => {
               },
             },
           ]}
+          label={"Dropoff Date & Time"}
+          className="primary bordered"
         >
           <DatePicker
             showTime={{

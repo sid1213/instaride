@@ -21,20 +21,6 @@
 .select {
   height: fit-content;
 
-  :global(.ant-select-selector) {
-    border-radius: 0;
-    padding: 1rem !important;
-    font-size: $text-xl;
-    @include tablet() {
-      font-size: $text-lg;
-    }
-    @include xs-mobile() {
-      font-size: $text-sm;
-    }
-  }
-  :global(.ant-select-selection-item) {
-    font-weight: 700;
-  }
   :global(.ant-select-arrow) {
     width: 2rem;
     height: 2rem;
@@ -55,29 +41,17 @@
     }
   }
 }
+
 .input {
   border-radius: 0;
-  padding: 1rem !important;
   width: 100%;
-  :global(.ant-picker-input) {
-    input {
-      font-weight: 700;
-      font-size: $text-xl;
-      @include tablet() {
-        font-size: $text-lg;
-      }
-      @include xs-mobile() {
-        font-size: $text-sm;
-      }
-    }
-  }
 }
 .greenIcon {
   :global(.ant-picker-suffix) {
     svg {
       width: 2rem;
       height: 2rem;
-      fill: #9c3;
+      fill: $base-green;
     }
   }
 }
@@ -86,13 +60,13 @@
     svg {
       width: 2rem;
       height: 2rem;
-      fill: red;
+      fill: $dark-red;
     }
   }
 }
 .submit {
   height: auto !important;
-  background: #9c3;
+  background: $base-green;
   color: white;
   padding: 0.5rem 2rem;
   font-size: $text-xl;
