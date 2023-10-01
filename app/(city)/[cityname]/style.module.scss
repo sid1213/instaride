@@ -1,0 +1,32 @@
+@import "/style/Modules/typography";
+
+.city {
+  height: $screen;
+  padding: $space-2xl;
+  padding-top: 0;
+  @include mobile() {
+    padding: $space-lg $space-lg;
+  }
+  @include xs-mobile() {
+    padding: $space-sm;
+  }
+  position: relative;
+  .header {
+    height: fit-content;
+    line-height: inherit;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 11111;
+    padding: $space-sm;
+  }
+  .sider {
+    @include mobile {
+      display: none;
+    }
+  }
+  .content {
+    padding: $space-xl;
+    height: 100%;
+  }
+}
