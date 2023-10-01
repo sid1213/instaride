@@ -1,7 +1,7 @@
 @import "/style/Modules/typography";
 
 .container {
-  height: calc(100vh - 6.4rem);
+  height: $screen;
 }
 .main {
   height: 100%;
