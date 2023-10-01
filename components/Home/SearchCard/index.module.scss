@@ -2,16 +2,19 @@
 @import "/style/Modules/mixins";
 
 .card {
-  padding: $space-2xl;
+  max-width: 650px;
+  padding: $space-lg;
   box-shadow: 0 0.5rem 0.5rem 6px rgba(0, 0, 0, 0.05);
   :global(.ant-card-body) {
     padding: 0 !important;
   }
   @include tablet() {
-    padding: $space-xl;
+    padding: $space-md;
+    max-width: none;
   }
   @include mobile() {
-    padding: $space-lg;
+    padding: $space-sm;
+    max-width: none;
   }
   @include xs-mobile() {
     padding: $space-xs;
@@ -79,12 +82,8 @@
 }
 .form {
   padding: 0;
-  margin-top: 1rem;
+  margin-top: $space-lg;
   :global(.ant-form-item:last-child) {
     margin-bottom: 0;
   }
-}
-.duration {
-  display: block;
-  margin-bottom: 2rem;
 }
