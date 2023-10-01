@@ -1,47 +1,111 @@
-@import "/style/Modules/variables";
-@import "/style/Modules/mixins";
+@import "/style/Modules/typography";
 .profile_edit_section {
-  padding: 1.2rem 3.6rem;
-
-  :global(.profile_details_header) {
+  // profile header
+  .profile_header {
     border-bottom: 1px solid $light-gray;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    :global(.left_arrow) {
+    padding: $space-xs;
+    width: 100%;
+    .left_arrow {
       display: none;
       @include tablet {
         display: inline;
         font-size: $text-lg;
       }
     }
-  }
-  :global(h5.ant-typography) {
-    margin-bottom: 0;
-  }
-  :global(div.ant-typography) {
-    color: $dark-gray;
-    font-size: $text-lg;
+    .heading {
+      h5 {
+        margin-bottom: 0;
+        font-size: $heading-sm;
+      }
+      span {
+        color: $base-gray-text;
+        font-size: $text-lg;
+      }
+    }
   }
 
   //Profile Edit
-  :global(.profile_details_body) {
-    // Container for input section
-    :global(.profile_input_wrap) {
-      padding: 1.2rem 0;
+  .profile_details_body {
+    .flex_box {
+      display: flex;
+      padding: $space-xs;
+      border-bottom: 1px solid $light-gray;
+      :global(.ant-col) {
+        display: flex;
+        justify-content: space-between;
+
+        span {
+          font-size: $text-lg;
+          color: $base-text;
+          font-weight: 400;
+        }
+        .edit_btn {
+          border: none;
+          padding: 0;
+          span {
+            color: $base-green;
+            font-weight: 500;
+          }
+        }
+      }
+      .input_form {
+        :global(.ant-space) {
+          display: flex;
+          align-items: center;
+
+          :global(.ant-space-item) {
+            width: 50%;
+
+            :global(.ant-form-item-row) {
+              position: relative;
+              padding-top: 1rem;
+
+              :global(.ant-form-item-label) {
+                position: absolute;
+                z-index: 1;
+                top: 0rem;
+                left: 1rem;
+                background: white;
+                padding-bottom: 0;
+                label {
+                  color: $base-green;
+                  font-weight: 500;
+                }
+              }
+              :global(.ant-input) {
+                border-radius: 0.4rem;
+                padding: 0.9rem 0.6rem;
+                &:is(:hover, :focus) {
+                  border-color: $base-green;
+                  box-shadow: none;
+                }
+              }
+            }
+          }
+        }
+        .save_btn {
+          background-color: $base-green;
+          border-radius: 0.4rem;
+          height: 39px;
+          margin-bottom: 0;
+          span {
+            color: $white;
+          }
+        }
+      }
+    }
+    .profile_input_wrap {
+      padding: 1.1rem $space-sm;
       border-bottom: 1px solid $light-gray;
 
-      //   edit btn and label
-      label {
-        font-size: $text-sm;
-        color: $dark-gray;
-        font-weight: 500;
-        margin-bottom: 0.5rem;
+      span {
+        font-size: $text-lg;
+        color: $base-text;
+        font-weight: 400;
       }
-
       // value of field
       p {
-        font-size: $text-sm;
+        font-size: $text-lg;
         font-weight: 400;
         margin: 1rem 0;
       }
