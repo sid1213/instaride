@@ -1,5 +1,5 @@
 "use client";
-import { Button } from "antd";
+import { Button, Col, Row } from "antd";
 import React, { useState } from "react";
 import { CustomInputField } from "@/components/CustomInputField";
 import Style from "./style.module.scss";
@@ -9,7 +9,6 @@ interface PropsType {
   inputType: string;
   inputValue: string;
 }
-
 function ProfileInputWrap({
   labelName,
   inputLabel,
@@ -30,32 +29,29 @@ function ProfileInputWrap({
     }
   };
   return (
-    <div className={Style.profile_input_wrap}>
-      <div className="label_btn">
-        <label>{labelName}</label>
-        <Button onClick={() => handleEdit(labelName)}>
+    <Row className={Style.profile_input_wrap}>
+      <Col span={24} className={Style.field_header}>
+        <span>{labelName}</span>
+        <Button
+          onClick={() => handleEdit(labelName)}
+          className={Style.edit_btn}
+        >
           {!isEdit ? "Edit" : "Cancel"}
         </Button>
-      </div>
+      </Col>
       {!isEdit && <p>{value}</p>}
 
       {isEdit && (
-        <div className="profile_input_edit">
-          <div className="input_container">
-            <CustomInputField
-              labelName={inputLabel}
-              inputType={inputType}
-              Width={"100%"}
-              value={value}
-              setValue={setValue}
-            />
-          </div>
-          <Button className="save_btn" onClick={() => handleSave(labelName)}>
+        <Col span={24} className={Style.profile_input_edit}>
+          <Button
+            className={Style.save_btn}
+            onClick={() => handleSave(labelName)}
+          >
             Save
           </Button>
-        </div>
+        </Col>
       )}
-    </div>
+    </Row>
   );
 }
 
