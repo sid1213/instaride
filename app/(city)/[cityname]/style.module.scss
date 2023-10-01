@@ -1,22 +1,32 @@
 @import "/style/Modules/typography";
 
 .city {
-  min-height: 100vh;
-
-  .filter_sider {
+  height: $screen;
+  padding: $space-2xl;
+  padding-top: 0;
+  @include mobile() {
+    padding: $space-lg $space-lg;
+  }
+  @include xs-mobile() {
+    padding: $space-sm;
+  }
+  position: relative;
+  .header {
+    height: fit-content;
+    line-height: inherit;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 11111;
+    padding: $space-sm;
+  }
+  .sider {
     @include mobile {
       display: none;
     }
   }
-  .card_content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: start;
-    gap: $space-md;
+  .content {
     padding: $space-xl;
-    background-color: whitesmoke;
-    min-height: 100vh;
+    height: 100%;
   }
 }
