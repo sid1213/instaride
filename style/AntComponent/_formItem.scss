@@ -1,0 +1,67 @@
+@import "/style/Modules/typography";
+
+.ant-form-item.primary {
+  .ant-form-item-row {
+    position: relative;
+    .ant-form-item-label {
+      background: white;
+      width: fit-content;
+      height: fit-content;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 5%;
+      transform: translateY(-50%);
+      padding: 0;
+      label {
+        color: $base-text;
+        text-transform: capitalize;
+        padding: 0 0.5rem;
+        &::after,
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}
+.ant-form-item.primary.bordered {
+  .ant-form-item-control-input {
+    border: 0.18rem solid $gray;
+    .ant-picker,
+    .ant-select-selector,
+    .ant-picker-input input {
+      padding: 1rem;
+      font-weight: 500;
+      border-radius: 0;
+      border: none;
+      font-size: $text-xl;
+      @include tablet() {
+        font-size: $text-lg;
+      }
+      @include xs-mobile() {
+        font-size: $text-sm;
+      }
+      .ant-select-selection-item {
+        font-weight: 500;
+      }
+    }
+    .ant-select-selector {
+      outline: none;
+      border: none;
+
+      &:hover {
+        border: none;
+        outline: none;
+      }
+    }
+    .ant-select-selection-search-input {
+      height: 100%;
+    }
+    .ant-picker {
+      width: 100%;
+      padding: 0;
+      padding-right: 1rem;
+    }
+  }
+}
