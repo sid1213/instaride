@@ -1,0 +1,43 @@
+@import "/style/Modules/typography";
+.card {
+  .cardRow {
+    :global(.ant-col) {
+      text-align: center;
+      border: 0.1rem solid $gray;
+      border-right-width: 0;
+      &:last-child {
+        border-right-width: 0.1rem;
+      }
+      @media screen and (max-width: 1199px) {
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+          border-bottom-width: 0;
+        }
+        &:nth-child(3) {
+          border-right-width: 0.1rem;
+        }
+      }
+      @include tablet() {
+        &:nth-child(4),
+        &:nth-child(2) {
+          border-right-width: 0.1rem;
+        }
+        &:nth-child(3) {
+          border-right-width: 0;
+        }
+        &:nth-child(4) {
+          border-bottom-width: 0;
+        }
+      }
+      @include mobile() {
+        border: none;
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.08);
+        border-radius: 0.5rem;
+      }
+    }
+    @include mobile() {
+      gap: 1.5rem;
+    }
+  }
+}

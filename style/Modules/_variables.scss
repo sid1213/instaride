@@ -1,17 +1,23 @@
 // breakpoints
-$desktop: 1024px;
-$tablet: 994px;
-$mobile: 600px;
-$xs-mobile: 450px;
+$xxl: 1599px;
+$xl: 1199px;
+$lg: 991px;
+$md: 767px;
+$sm: 575px;
+$xs: 450px;
 
 // colors
-$gray: #a6adb4;
+$gray: #d9d9d9;
 $blue: #1677ff;
 $darkblue_1: #001529;
 $darkblue_2: #002140;
 $black: #212121;
 $white: #fff;
 $dark-red: #cb0000;
+$bg-light-gray: #f3f3f3;
+$base-green: #99cc33;
+$hover-green: #6b8e23;
+$base-text: #717171;
 
 // padding & margin
 $space-2xl: 5rem;
@@ -36,3 +42,5 @@ $text-xs: 1.2rem;
 
 // border for 1px
 $border-thin: 0.063rem;
+//height
+$screen: calc(100vh - 6.4rem);

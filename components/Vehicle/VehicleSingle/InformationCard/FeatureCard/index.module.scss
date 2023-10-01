@@ -1,0 +1,68 @@
+@import "/style/Modules/typography";
+.card {
+  width: 100%;
+  text-align: center;
+  padding: $space-sm;
+  position: relative;
+  h1 {
+    margin-bottom: 0 !important;
+  }
+  svg {
+    font-size: $heading-2xl;
+    fill: $base-green;
+    margin: 0 1rem;
+    @include mobile() {
+      font-size: $heading-xl;
+    }
+  }
+  .title {
+    p {
+      @include mobile() {
+        display: inline-block;
+        &:first-child {
+          margin-right: 1rem;
+        }
+        font-size: $text-sm !important;
+        position: relative;
+        &:after {
+          position: absolute;
+          content: ":";
+        }
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  .subTitle {
+    font-size: 2rem;
+    color: $base-green;
+    @include mobile() {
+      font-size: $text-sm !important;
+    }
+  }
+  .tooltip {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    font-size: 2rem;
+    color: $bg-light-gray;
+    fill: $gray !important;
+    @include mobile() {
+      display: none;
+    }
+    cursor: pointer;
+  }
+  .content {
+    display: none;
+  }
+  @include mobile() {
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    text-align: left !important;
+    .content {
+      display: inline;
+      width: 100%;
+      font-size: 1.2rem;
+    }
+  }
+}

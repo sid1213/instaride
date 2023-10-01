@@ -1,0 +1,11 @@
+@import "/style/Modules/typography";
+.button {
+  padding: $space-xs;
+  height: fit-content;
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
+  &:hover {
+    color: black !important;
+  }
+}
