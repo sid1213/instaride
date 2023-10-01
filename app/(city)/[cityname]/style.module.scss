@@ -1,4 +1,22 @@
 @import "/style/Modules/typography";
 
 .city {
+  min-height: 100vh;
+
+  .filter_sider {
+    @include mobile {
+      display: none;
+    }
+  }
+  .card_content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    gap: $space-md;
+    padding: $space-xl;
+    background-color: whitesmoke;
+    min-height: 100vh;
+  }
 }
