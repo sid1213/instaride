@@ -1,9 +1,10 @@
 @import "/style/Modules/typography";
 
 .city {
-  height: $screen;
-  padding: $space-2xl;
-  padding-top: 0;
+  // height: $screen;
+  // padding: $space-2xl;
+  // padding-top: 0;
+  min-height: 100vh;
   @include mobile() {
     padding: $space-lg $space-lg;
   }
@@ -28,5 +29,12 @@
   .content {
     padding: $space-xl;
     height: 100%;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    @include tablet {
+      padding: 0;
+      justify-content: center;
+    }
   }
 }
