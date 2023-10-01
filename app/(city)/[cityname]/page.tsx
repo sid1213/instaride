@@ -5,16 +5,15 @@ import { Layout } from "antd";
 
 const { Header, Sider, Content } = Layout;
 
-function City() {
+const City = () => {
   return (
     <Layout className={Style.city}>
-      <Header></Header>
+      <Header>Header</Header>
       <Layout hasSider>
-        <Sider></Sider>
-        <Content>Card</Content>
+        <Sider className={Style.filter_sider}>Sider</Sider>
+        <Content className={Style.card_content}>Card</Content>
       </Layout>
     </Layout>
   );
-}
-
+};
 export default City;
