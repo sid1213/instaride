@@ -1,9 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import Style from "./style.module.scss";
-import { Select, Card, Badge, Button, Col, Row } from "antd";
+import { Select, Card, Button, Col, Row, Tag, Space } from "antd";
+import { CheckCircleOutlined } from "@ant-design/icons";
+import { Typography } from "antd";
 import classNames from "classnames";
+import Image from "next/image";
 
+const { Title, Text } = Typography;
 interface vehicleProps {
   data: {
     id: number;
@@ -37,11 +41,7 @@ const VehicleCard = ({ data }: vehicleProps) => {
   const handleChange = (value: string) => {};
 
   return (
-    <Badge.Ribbon
-      text={data.pickup ? "Pay at Pickup Available" : ""}
-      color="lime"
-      className={Style.ribbon}
-    >
+    <Col>
       {/* Available button */}
       {data.available && (
         <Button className={Style.available_btn}>
@@ -52,31 +52,43 @@ const VehicleCard = ({ data }: vehicleProps) => {
       {/* Vehicle Card */}
       <Card
         className={classNames(
-          Style.vehicleCard,
-          data.available ? Style.disableCard : ""
+          Style.vehicle_card,
+          data.available ? Style.disable_card : ""
         )}
         title={`${data.brand} ${data.name}`}
         extra={
-          <>
-            <Badge.Ribbon
-              text={`${data.tips} Trips`}
-              color="gold"
-            ></Badge.Ribbon>
-            <Button onClick={handelFlipCard}>
-              {!isFlip ? "View All Packages" : "Back"}
-            </Button>
-          </>
+          <Space className={Style.tags}>
+            {data.pickup && (
+              <Tag
+                icon={<CheckCircleOutlined />}
+                color="success"
+                className={Style.ribbon}
+              >
+                Pay at Pickup Available
+              </Tag>
+            )}
+
+            <Tag color="warning" className={Style.ribbon}>
+              {data.tips} trips
+            </Tag>
+          </Space>
         }
         cover={
-          <img
-            alt="example"
-            src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+          <Image
+            width={100}
+            height={100}
+            alt={data.brand}
+            src={"/demo/Suzuki-Access-125.png"}
           />
         }
       >
-        <Row className={classNames("card-body", isFlip ? "flipCard" : "")}>
-          <Col className={classNames("front-card")}>
-            <div className={Style.select_box}>
+        <Button onClick={handelFlipCard} className={Style.flip_btn}>
+          {!isFlip ? "View All Packages" : "Back"}
+        </Button>
+
+        <Row className={classNames(Style.card, isFlip ? Style.flip_card : "")}>
+          <Col className={Style.front_card} span={24}>
+            <Col className={Style.select_box}>
               <Select
                 defaultValue={data.hubs[0]}
                 disabled={data.hubs.length === 1 ? true : false}
@@ -86,30 +98,32 @@ const VehicleCard = ({ data }: vehicleProps) => {
                 })}
               />
               <label>Available at</label>
-            </div>
+            </Col>
 
-            <div className="price">
-              <p>
+            <Col className={Style.price}>
+              <Text className={Style.pera}>
                 &#8377; {data.price}
                 <span>{data.limit} Km limit</span>
-              </p>
-              <Button type="primary"> Book Now</Button>
-            </div>
+              </Text>
+              <Button type="primary" className={Style.book_now_btn}>
+                Book Now
+              </Button>
+            </Col>
 
-            <div className="footer">
-              <p>Deposit : &#8377; {data.deposit}</p>
-              <p>Make Year : {data.make_year}</p>
-            </div>
+            <Col className={Style.footer}>
+              <Text>Deposit : &#8377; {data.deposit}</Text>
+              <Text>Make Year : {data.make_year}</Text>
+            </Col>
           </Col>
 
-          <Col className={classNames("back-card")}>
+          <Col className={Style.back_card} span={24}>
             {data.duration?.map((item, i) => {
               return <DurationOfBike data={item} key={i} />;
             })}
           </Col>
         </Row>
       </Card>
-    </Badge.Ribbon>
+    </Col>
   );
 };
 
@@ -124,12 +138,10 @@ interface Props {
 }
 export const DurationOfBike = ({ data }: Props) => {
   return (
-    <div className="duration">
-      <p>{data.name}</p>
-      <h3>
-        &#8377; {data.price} <small>Per Day</small>
-      </h3>
-      <h4>({data.limit} km included)</h4>
-    </div>
+    <Col className={Style.duration}>
+      <Text>{data.name}</Text>
+      <Title level={3}>&#8377; {data.price}</Title>
+      <Title level={4}>({data.limit} km included)</Title>
+    </Col>
   );
 };
