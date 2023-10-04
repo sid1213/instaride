@@ -39,7 +39,7 @@
   white-space: pre-wrap;
 }
 .bookNowButtonBig {
-  @media screen and (max-width: 575px) {
+  @include tablet() {
     display: none;
   }
 }
@@ -51,18 +51,18 @@
     background: white !important;
     padding: 1rem;
     box-shadow: 0 -0.3rem 0.6rem rgba(0, 0, 0, 0.05);
-    h3 {
+    h4 {
       margin-bottom: 0;
     }
     button {
       padding: 1rem 1.5rem;
       font-size: $text-lg;
     }
-    @media screen and (max-width: 575px) {
+    @include tablet() {
       display: flex;
     }
   }
-  @media screen and (max-width: 575px) {
+  @include tablet() {
     position: fixed;
     bottom: 0;
     left: 0;

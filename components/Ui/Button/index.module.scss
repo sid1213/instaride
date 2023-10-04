@@ -1,14 +1,11 @@
 @import "/style/Modules/typography";
 .button {
   padding: $space-xs;
+  height: fit-content;
   color: white;
-  background: $base-green;
-  border: none;
-  outline: none;
-  font-size: 1.6rem;
-  border-radius: 0.5rem;
+  font-weight: bolder;
   cursor: pointer;
   &:hover {
-    background: $hover-green;
+    color: black !important;
   }
 }

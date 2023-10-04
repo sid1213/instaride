@@ -1,0 +1,24 @@
+@import "/style/Modules/typography";
+
+.city {
+  min-height: $screen;
+  padding: $space-2xl;
+  position: relative;
+  @include mobile() {
+    padding: $space-lg $space-lg;
+  }
+  @include xs-mobile() {
+    padding: $space-sm;
+  }
+  .sider {
+    background: white;
+    border: 1px solid $gray;
+    @include tablet {
+      display: none;
+    }
+  }
+  .content {
+    padding: $space-xs;
+    height: 100%;
+  }
+}

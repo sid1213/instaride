@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Button, Card, DatePicker, Form, Select, Typography } from "antd";
+import { Card, Col, DatePicker, Form, Row, Select, Typography } from "antd";
 import Style from "./index.module.scss";
 import classNames from "classnames";
 import dayjs, { Dayjs } from "dayjs";
-import { start } from "repl";
+import Button from "@/components/Ui/Button";
 
 interface FormValues {
   place: string;
@@ -16,7 +16,6 @@ const { Title, Text } = Typography;
 
 const SearchCard = () => {
   const currentHour = dayjs().add(1, "hour").hour();
-
   const [form] = Form.useForm<FormValues>();
   const startDate = Form.useWatch<Dayjs>("startDate", form);
   const endDate = Form.useWatch<Dayjs>("endDate", form);
@@ -50,7 +49,7 @@ const SearchCard = () => {
 
   return (
     <Card className={Style.card}>
-      <Title level={2}>Commuting Made Easy, Affordable and Quick</Title>
+      <Title level={4}>Commuting Made Easy, Affordable and Quick</Title>
       <Text>Scooter/Scooty/Bike on Rent in Delhi</Text>
       <Form
         name="trigger"
@@ -67,12 +66,14 @@ const SearchCard = () => {
         <Form.Item
           name="place"
           validateTrigger="onBlur"
+          label={"Pickup Location"}
           rules={[
             {
               required: true,
               message: "Please select Place",
             },
           ]}
+          className="primary bordered"
         >
           <Select
             className={Style.select}
@@ -88,6 +89,8 @@ const SearchCard = () => {
         <Form.Item
           name="startDate"
           rules={[{ required: true, message: "Please select Start Date" }]}
+          label={"Pickup Date & Time"}
+          className="primary bordered"
         >
           <DatePicker
             disabledDate={(date) => {
@@ -130,6 +133,8 @@ const SearchCard = () => {
               },
             },
           ]}
+          label={"Dropoff Date & Time"}
+          className="primary bordered"
         >
           <DatePicker
             showTime={{
@@ -147,24 +152,32 @@ const SearchCard = () => {
           />
         </Form.Item>
 
-        <Text className={Style.duration}>
-          {startDate &&
-            endDate &&
-            `Duration: ${
-              endDate.diff(startDate, "day") > 0
-                ? `${endDate.diff(startDate, "day")} Day`
-                : ""
-            }  ${
-              endDate.diff(startDate, "hour") % 24 > 0
-                ? `${endDate.diff(startDate, "hour") % 24} hour`
-                : ""
-            } `}
-        </Text>
-
         <Form.Item>
-          <Button type="primary" htmlType="submit" className={Style.submit}>
-            Submit
-          </Button>
+          <Row justify={"space-between"} align={"middle"}>
+            <Col>
+              <Text>
+                {startDate &&
+                  endDate &&
+                  `Duration: ${
+                    endDate.diff(startDate, "day") > 0
+                      ? `${endDate.diff(startDate, "day")} Day`
+                      : ""
+                  }  ${
+                    endDate.diff(startDate, "hour") % 24 > 0
+                      ? `${endDate.diff(startDate, "hour") % 24} hour`
+                      : ""
+                  } `}
+              </Text>
+            </Col>
+            <Col>
+              <Button
+                title={"Submit"}
+                fit="fit"
+                size="medium"
+                htmlType="submit"
+              />
+            </Col>
+          </Row>
         </Form.Item>
       </Form>
     </Card>
