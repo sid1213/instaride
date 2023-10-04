@@ -1,0 +1,10 @@
+@import "/style/Modules/typography";
+
+.filter {
+  background: white;
+  padding: $space-xs;
+  width: 100%;
+  :global(.ant-space-item .ant-divider-horizontal) {
+    margin: 0.5rem 0 !important;
+  }
+}
