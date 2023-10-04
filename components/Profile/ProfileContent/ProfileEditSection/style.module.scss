@@ -2,7 +2,6 @@
 .profile_edit_section {
   // profile header
   .profile_header {
-    border-bottom: 1px solid $light-gray;
     padding: $space-xs;
     width: 100%;
     .left_arrow {
@@ -22,19 +21,24 @@
         font-size: $text-lg;
       }
     }
+    @include tablet {
+      padding: 0;
+    }
   }
 
   //Profile Edit
   .profile_details_body {
     .flex_box {
       display: flex;
-      padding: $space-xs;
-      border-bottom: 1px solid $light-gray;
+      padding: 0 $space-xs;
       :global(.ant-col) {
         display: flex;
         justify-content: space-between;
 
-        span {
+        .field_value {
+          font-size: $text-lg;
+        }
+        p {
           font-size: $text-lg;
           color: $base-text;
           font-weight: 400;
@@ -42,62 +46,22 @@
         .edit_btn {
           border: none;
           padding: 0;
-          span {
-            color: $base-green;
-            font-weight: 500;
-          }
+          color: $base-green;
+          font-weight: 500;
+          cursor: pointer;
         }
       }
       .input_form {
-        :global(.ant-space) {
-          display: flex;
-          align-items: center;
-
-          :global(.ant-space-item) {
-            width: 50%;
-
-            :global(.ant-form-item-row) {
-              position: relative;
-              padding-top: 1rem;
-
-              :global(.ant-form-item-label) {
-                position: absolute;
-                z-index: 1;
-                top: 0rem;
-                left: 1rem;
-                background: white;
-                padding-bottom: 0;
-                label {
-                  color: $base-green;
-                  font-weight: 500;
-                }
-              }
-              :global(.ant-input) {
-                border-radius: 0.4rem;
-                padding: 0.9rem 0.6rem;
-                &:is(:hover, :focus) {
-                  border-color: $base-green;
-                  box-shadow: none;
-                }
-              }
-            }
-          }
-        }
-        .save_btn {
-          background-color: $base-green;
-          border-radius: 0.4rem;
-          height: 39px;
-          margin-bottom: 0;
-          span {
-            color: $white;
-          }
+        margin-top: 1rem;
+        :global(.ant-input) {
+          position: static;
         }
       }
     }
-    .profile_input_wrap {
-      padding: 1.1rem $space-sm;
-      border-bottom: 1px solid $light-gray;
 
+    // mobile field
+    .profile_input_wrap {
+      padding: 0 $space-sm;
       span {
         font-size: $text-lg;
         color: $base-text;
@@ -111,6 +75,7 @@
       }
     }
   }
+
   @include tablet {
     padding: 1.2rem 1.6rem;
   }
