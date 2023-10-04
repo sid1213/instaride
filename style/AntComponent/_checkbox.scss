@@ -1,0 +1,18 @@
+@import "/style/Modules/typography";
+
+.ant-checkbox-wrapper {
+  input {
+    font-size: $text-sm;
+  }
+  .ant-checkbox-checked .ant-checkbox-inner {
+    background: $base-green;
+    border-color: $base-green;
+  }
+  &:hover .ant-checkbox-inner {
+    border-color: $base-green !important;
+  }
+  &:hover .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: $base-green !important;
+    border-color: $gray !important;
+  }
+}
