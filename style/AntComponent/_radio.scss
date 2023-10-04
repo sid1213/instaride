@@ -1,0 +1,17 @@
+@import "/style/Modules/typography";
+.ant-radio-group {
+  .ant-radio-wrapper {
+    .ant-radio-checked {
+      .ant-radio-inner {
+        border-color: $base-green;
+        background-color: $base-green;
+      }
+    }
+    .ant-radio-checked::after {
+      border-color: $base-green;
+    }
+    &:hover .ant-radio-inner {
+      border-color: $base-green;
+    }
+  }
+}
