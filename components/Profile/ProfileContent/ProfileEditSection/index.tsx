@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import Style from "./style.module.scss";
-import { Button, Col, Form, Input, Row, Space, Typography } from "antd";
-import ProfileInputWrap from "./ProfileInputWrap";
+import { Col, Divider, Form, Input, Row, Space, Typography } from "antd";
 import { AiOutlineLeft } from "react-icons/ai";
+import Button from "@/components/Ui/Button";
 
 const { Title, Text } = Typography;
 interface PropsType {
@@ -22,88 +22,142 @@ function ProfileEditSection({ setVisible }: PropsType) {
           <Text>Manage your details</Text>
         </Col>
       </Space>
+      <Divider />
 
       <Col span={24} className={Style.profile_details_body}>
         {/* form for name */}
-
         <Space direction="vertical" className={Style.flex_box}>
           <Col span={24}>
-            <span>Name</span>
-            <Button className={Style.edit_btn}>Edit</Button>
+            <p>Name</p>
+            <p className={Style.edit_btn}>Edit</p>
           </Col>
           <Col span={24}>
-            <p>Jagrati Gupta</p>
+            <span className={Style.field_value}>Jagrati Gupta</span>
           </Col>
-
           <Form
             name="name"
             className={Style.input_form}
             autoComplete="off"
             layout="vertical"
           >
-            <Space>
+            <Space.Compact direction="horizontal" block>
               <Form.Item
+                style={{ width: "100%" }}
                 label="First name"
                 name="firstname"
-                rules={[
-                  { required: true, message: "Please input your username!" },
-                ]}
+                rules={[{ required: true, message: "first name required" }]}
+                className="primary"
               >
                 <Input />
               </Form.Item>
 
               <Form.Item
+                style={{ width: "100%" }}
                 label="Last name"
                 name="lastname"
-                rules={[
-                  { required: true, message: "Please input your password!" },
-                ]}
+                rules={[{ required: true, message: "last name required" }]}
+                className="primary"
               >
                 <Input />
               </Form.Item>
-            </Space>
+            </Space.Compact>
 
             <Form.Item>
               <Button
-                type="primary"
+                title={"Save"}
+                fit="fit"
+                size="medium"
                 htmlType="submit"
-                className={Style.save_btn}
-              >
-                Submit
-              </Button>
+              />
             </Form.Item>
           </Form>
         </Space>
-
-        {/* for name */}
-        <ProfileInputWrap
-          labelName={"Name"}
-          inputLabel={"Name"}
-          inputType={"text"}
-          inputValue={"jagrati gupta"}
-        />
+        <Divider />
 
         {/* for email */}
-        <ProfileInputWrap
-          labelName={"Email"}
-          inputLabel={"Email Id"}
-          inputType={"email"}
-          inputValue={"123jagrati@gmail.com"}
-        />
+        <Space direction="vertical" className={Style.flex_box}>
+          <Col span={24}>
+            <p>Email</p>
+            <p className={Style.edit_btn}>Edit</p>
+          </Col>
+          <Col span={24}>
+            <span className={Style.field_value}>jagratigupta@gmail.com</span>
+          </Col>
+
+          <Form
+            name="email"
+            className={Style.input_form}
+            autoComplete="off"
+            layout="vertical"
+          >
+            <Space.Compact direction="horizontal" block>
+              <Form.Item
+                style={{ width: "100%" }}
+                label="Email Id"
+                name="email"
+                rules={[{ required: true, message: "email id required" }]}
+                className="primary"
+              >
+                <Input />
+              </Form.Item>
+            </Space.Compact>
+
+            <Form.Item>
+              <Button
+                title={"Save"}
+                fit="fit"
+                size="medium"
+                htmlType="submit"
+              />
+            </Form.Item>
+          </Form>
+        </Space>
+        <Divider />
 
         {/* for mobile */}
         <div className={Style.profile_input_wrap}>
           <span>Mobile</span>
           <p> +91 00000000</p>
         </div>
+        <Divider />
 
         {/* edit for address */}
-        <ProfileInputWrap
-          labelName={"Address"}
-          inputLabel={"Address"}
-          inputType={"text"}
-          inputValue={"Not Provided"}
-        />
+        <Space direction="vertical" className={Style.flex_box}>
+          <Col span={24}>
+            <p>Address</p>
+            <p className={Style.edit_btn}>Edit</p>
+          </Col>
+          <Col span={24}>
+            <span className={Style.field_value}>not provided</span>
+          </Col>
+
+          <Form
+            name="address"
+            className={Style.input_form}
+            autoComplete="off"
+            layout="vertical"
+          >
+            <Space.Compact direction="horizontal" block>
+              <Form.Item
+                style={{ width: "100%" }}
+                label="Address"
+                name="address"
+                className="primary"
+              >
+                <Input />
+              </Form.Item>
+            </Space.Compact>
+
+            <Form.Item>
+              <Button
+                title={"Save"}
+                fit="fit"
+                size="medium"
+                htmlType="submit"
+              />
+            </Form.Item>
+          </Form>
+        </Space>
       </Col>
     </Row>
   );
