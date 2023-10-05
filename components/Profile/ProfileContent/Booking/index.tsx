@@ -35,7 +35,7 @@ function Booking({ setVisible }: PropsType) {
   return (
     <Row className={Style.booking}>
       {/* Booking header */}
-      <Space className={Style.booking_header}>
+      <Space className={Style.booking_header} align="baseline">
         <Col className={Style.left_arrow} onClick={() => setVisible(false)}>
           <AiOutlineLeft />
         </Col>
