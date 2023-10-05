@@ -35,7 +35,7 @@
         display: flex;
         justify-content: space-between;
 
-        .field_value {
+        .field_label {
           font-size: $text-lg;
         }
         p {
@@ -51,7 +51,7 @@
           cursor: pointer;
         }
       }
-      .input_form {
+      .form {
         margin-top: 1rem;
         :global(.ant-input) {
           position: static;
