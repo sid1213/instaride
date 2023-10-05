@@ -12,13 +12,8 @@ function page() {
   const [visible, setVisible] = useState<boolean>(false);
 
   return (
-    <Layout hasSider className={Style.profile_container}>
-      <Sider
-        className={classNames(
-          "profile_sidebar_container",
-          visible ? Style.none : ""
-        )}
-      >
+    <Layout hasSider className={Style.profile_Layout}>
+      <Sider className={classNames(Style.sidebar, visible ? Style.hidden : "")}>
         <ProfileSidebar
           setActive={setActive}
           setVisible={setVisible}
@@ -26,10 +21,7 @@ function page() {
         />
       </Sider>
       <Content
-        className={classNames(
-          "profile_content_container",
-          !visible ? Style.none : ""
-        )}
+        className={classNames(Style.content, !visible ? Style.hidden : "")}
       >
         <ProfileContent active={active} setVisible={setVisible} />
       </Content>
