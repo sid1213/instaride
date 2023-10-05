@@ -1,7 +1,7 @@
 @import "/style/Modules/typography";
-.profile_edit_section {
+.profile {
   // profile header
-  .profile_header {
+  &_header {
     padding: $space-xs;
     width: 100%;
     .left_arrow {
@@ -27,8 +27,8 @@
   }
 
   //Profile Edit
-  .profile_details_body {
-    .flex_box {
+  &_details {
+    .flex {
       display: flex;
       padding: 0 $space-xs;
       :global(.ant-col) {
@@ -57,10 +57,13 @@
           position: static;
         }
       }
+      @include tablet {
+        padding: 0;
+      }
     }
 
     // mobile field
-    .profile_input_wrap {
+    .mobile_verify {
       padding: 0 $space-sm;
       span {
         font-size: $text-lg;
@@ -72,6 +75,19 @@
         font-size: $text-lg;
         font-weight: 400;
         margin: 1rem 0;
+      }
+      .verify_msg {
+        border: none;
+        background-color: transparent;
+        span {
+          font-size: $text-sm;
+          color: $base-green;
+          font-weight: 500;
+        }
+      }
+
+      @include tablet {
+        padding: 0;
       }
     }
   }
