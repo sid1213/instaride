@@ -1,7 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import Style from "./style.module.scss";
-import { Col, Divider, Form, Input, Row, Space, Typography } from "antd";
+import { Col, Divider, Form, Input, Row, Space, Tag, Typography } from "antd";
+import { CheckCircleOutlined } from "@ant-design/icons";
 import { AiOutlineLeft } from "react-icons/ai";
 import Button from "@/components/Ui/Button";
 
@@ -17,6 +18,7 @@ interface FormValues {
   address: string;
 }
 function ProfileEditSection({ setVisible }: PropsType) {
+  // initial Data for form values
   const initialData = {
     nameField: "Jagrati Gupta",
     emailField: "123jagratigupta@gmail.com",
@@ -67,8 +69,8 @@ function ProfileEditSection({ setVisible }: PropsType) {
   };
 
   return (
-    <Row className={Style.profile_edit_section}>
-      <Space className={Style.profile_header}>
+    <Row className={Style.profile}>
+      <Space className={Style.profile_header} align="baseline">
         <Col className={Style.left_arrow} onClick={() => setVisible(false)}>
           <AiOutlineLeft />
         </Col>
@@ -80,9 +82,9 @@ function ProfileEditSection({ setVisible }: PropsType) {
       </Space>
       <Divider />
 
-      <Col span={24} className={Style.profile_details_body}>
+      <Col span={24} className={Style.profile_details}>
         {/* form for name */}
-        <Space direction="vertical" className={Style.flex_box}>
+        <Space direction="vertical" className={Style.flex}>
           <Col span={24}>
             <p>Name</p>
             <p
@@ -94,14 +96,14 @@ function ProfileEditSection({ setVisible }: PropsType) {
           </Col>
           {!edit.nameField && (
             <Col span={24}>
-              <span className={Style.field_value}>{data.nameField}</span>
+              <span className={Style.field_label}>{data.nameField}</span>
             </Col>
           )}
           {edit.nameField && (
             <Form
               name="name"
               form={form}
-              className={Style.input_form}
+              className={Style.form}
               autoComplete="off"
               layout="vertical"
               onFinish={(values) => onFinish("nameField", values)}
@@ -143,7 +145,7 @@ function ProfileEditSection({ setVisible }: PropsType) {
         <Divider />
 
         {/* for email */}
-        <Space direction="vertical" className={Style.flex_box}>
+        <Space direction="vertical" className={Style.flex}>
           <Col span={24}>
             <p>Email</p>
             <p
@@ -156,13 +158,13 @@ function ProfileEditSection({ setVisible }: PropsType) {
 
           {!edit.emailField && (
             <Col span={24}>
-              <span className={Style.field_value}>{data.emailField}</span>
+              <span className={Style.field_label}>{data.emailField}</span>
             </Col>
           )}
           {edit.emailField && (
             <Form
               name="email"
-              className={Style.input_form}
+              className={Style.form}
               autoComplete="off"
               layout="vertical"
               onFinish={(values) => onFinish("emailField", values)}
@@ -194,14 +196,23 @@ function ProfileEditSection({ setVisible }: PropsType) {
         <Divider />
 
         {/* for mobile */}
-        <Space className={Style.profile_input_wrap} direction="vertical">
-          <span>Mobile</span>
-          <p> +91 00000000</p>
+        <Space className={Style.mobile_verify} direction="vertical">
+          <span>Mobile Number</span>
+          <p>
+            00000000{" "}
+            <Tag
+              icon={<CheckCircleOutlined />}
+              className={Style.verify_msg}
+              color="success"
+            >
+              Verified
+            </Tag>
+          </p>
         </Space>
         <Divider />
 
         {/* edit for address */}
-        <Space direction="vertical" className={Style.flex_box}>
+        <Space direction="vertical" className={Style.flex}>
           <Col span={24}>
             <p>Address</p>
             <p
@@ -213,13 +224,13 @@ function ProfileEditSection({ setVisible }: PropsType) {
           </Col>
           {!edit.addressField && (
             <Col span={24}>
-              <span className={Style.field_value}>{data.addressField}</span>
+              <span className={Style.field_label}>{data.addressField}</span>
             </Col>
           )}
           {edit.addressField && (
             <Form
               name="address"
-              className={Style.input_form}
+              className={Style.form}
               autoComplete="off"
               layout="vertical"
               onFinish={(values) => onFinish("emailField", values)}
