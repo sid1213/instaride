@@ -15,7 +15,7 @@ import {
   EnvironmentOutlined,
 } from "@ant-design/icons";
 import React from "react";
-import Style from "./style.module.scss";
+import Style from "./index.module.scss";
 import Image from "next/image";
 
 const { Title, Paragraph, Text } = Typography;
