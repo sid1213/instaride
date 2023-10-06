@@ -13,10 +13,12 @@ import {
   PlusOutlined,
   MinusOutlined,
   EnvironmentOutlined,
+  FieldTimeOutlined,
 } from "@ant-design/icons";
 import React from "react";
 import Style from "./index.module.scss";
 import Image from "next/image";
+import classNames from "classnames";
 
 const { Title, Paragraph, Text } = Typography;
 const Reminder_Data = [
@@ -43,7 +45,7 @@ function SummaryOfVehicle() {
   return (
     <Row className={Style.vehicle_summary}>
       {/* vehicle details */}
-      <Space align="start">
+      <Space align="start" className={Style.vehicle}>
         <Col>
           <Image
             src={"/demo/Suzuki-Access-125.png"}
@@ -149,8 +151,38 @@ function SummaryOfVehicle() {
         </Space>
       </Space>
 
+      <Space
+        direction="vertical"
+        className={classNames(
+          Style.pickup_date_container,
+          Style.pickup_date_mobile
+        )}
+      >
+        {/* pickup dates*/}
+        <Space direction="vertical">
+          <Paragraph className={Style.heading}>Pickup and Drop Date</Paragraph>
+          <Text className={Style.location}>
+            <FieldTimeOutlined />6 October 2023, 10:00AM
+          </Text>
+          <Text className={Style.location}>
+            <FieldTimeOutlined />6 October 2023, 10:00AM
+          </Text>
+        </Space>
+
+        {/* pickup  location */}
+        <Space direction="vertical">
+          <Paragraph className={Style.heading}>
+            Pickup and Drop Location
+          </Paragraph>
+          <Text className={Style.location}>
+            <EnvironmentOutlined />
+            ABES Engineering college
+          </Text>
+        </Space>
+      </Space>
+
       {/* reminder things */}
-      <Row gutter={[16, 5]} className={Style.reminder}>
+      <Row gutter={[16, { xs: 0, xl: 5 }]} className={Style.reminder}>
         <Col span={24}>
           <Paragraph className={Style.heading}>Things to remember</Paragraph>
         </Col>
