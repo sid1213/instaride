@@ -13,8 +13,8 @@ function Checkout() {
       <Header className={Style.header}>
         <Title level={5}>Summary</Title>
       </Header>
-      <Layout hasSider>
-        <Sider className={Style.sider} width={800}>
+      <Layout hasSider className={Style.innerlayout}>
+        <Sider className={Style.sider}>
           <SummaryOfVehicle />
         </Sider>
         <Content className={Style.content}>
