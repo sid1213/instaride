@@ -156,7 +156,7 @@ function SummaryOfVehicle() {
         </Col>
         {Reminder_Data.map((item, i) => {
           return (
-            <Col xl={{ span: 12 }} md={{ span: 24 }} span={24} key={i}>
+            <Col xl={12} md={24} span={24} key={i}>
               <Row justify={"space-between"}>
                 <Paragraph>{item.title}</Paragraph>
                 <Paragraph>{item.limit}</Paragraph>
