@@ -9,6 +9,10 @@
     border: 1px solid $gray;
     border-radius: 0.4rem;
     background-color: #fafafa;
+
+    @include tablet {
+      padding: $space-xs;
+    }
   }
   :global(.ant-select-arrow) {
     color: $base-green;
