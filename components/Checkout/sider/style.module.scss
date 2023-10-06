@@ -3,6 +3,7 @@
 .vehicle_summary {
   padding: $space-sm;
   flex-direction: column;
+  display: block;
 
   .fare_details {
     h5 {
@@ -75,6 +76,7 @@
     }
   }
   .pickup_date_container {
+    width: 100%;
     :global(.ant-space) {
       width: 100%;
     }
