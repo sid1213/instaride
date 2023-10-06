@@ -32,6 +32,9 @@
         min-width: 100% !important;
         width: 100% !important;
       }
+      @include tablet {
+        border: none;
+      }
     }
     .content {
       padding: $space-xs;
@@ -39,6 +42,9 @@
       height: 100%;
       @include desktop {
         width: 100%;
+      }
+      @include tablet {
+        padding: $space-xs 0;
       }
     }
     @include desktop {
