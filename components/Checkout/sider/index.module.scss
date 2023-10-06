@@ -119,6 +119,20 @@
         margin-right: 0.5rem;
       }
     }
+    @include tablet {
+      display: none;
+    }
+  }
+  .pickup_date_mobile {
+    display: none;
+    @include tablet {
+      display: flex;
+      border: 1px solid $gray;
+      padding: 1.2rem;
+      background-color: #fafafa;
+      margin-top: 2rem;
+      border-radius: 0.4rem;
+    }
   }
   .reminder {
     background-color: #fafafa;
@@ -133,5 +147,23 @@
     :global(.ant-typography) {
       margin-bottom: 0;
     }
+    @include tablet {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding: $space-xs 0;
+    }
+  }
+  .vehicle {
+    @include min-tablet {
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  @include tablet {
+    padding: 0;
+    box-shadow: none;
+    border: none;
   }
 }
