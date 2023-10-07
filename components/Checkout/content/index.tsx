@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { Collapse, CollapseProps, Divider, Form, Select, Space } from "antd";
 import { AiOutlineMinusSquare, AiOutlinePlusSquare } from "react-icons/ai";
@@ -41,8 +40,10 @@ const items: CollapseProps["items"] = [
     ),
   },
 ];
-
-function FareDetails() {
+type FareProps = {
+  isPartial: boolean;
+};
+function FareDetails({ isPartial }: FareProps) {
   const handleChange = (value: string) => {
     console.log(`selected ${value}`);
   };
@@ -82,10 +83,12 @@ function FareDetails() {
             collapsible={"icon"}
           />
           <Divider className={Style.divider} />
-
-          <TableList size="medium" textSize="normal" list={listItem} />
-
-          <Divider className={Style.divider} />
+          {isPartial && (
+            <>
+              <TableList size="medium" textSize="normal" list={listItem} />
+              <Divider className={Style.divider} />
+            </>
+          )}
 
           <TableList size="medium" textSize="bold" list={listItem} />
         </Form.Item>
