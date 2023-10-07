@@ -1,4 +1,3 @@
-"use client";
 import {
   Button,
   Col,
@@ -15,13 +14,13 @@ import {
   EnvironmentOutlined,
   FieldTimeOutlined,
 } from "@ant-design/icons";
-import React from "react";
+import React, { SetStateAction } from "react";
 import Style from "./index.module.scss";
 import Image from "next/image";
 import classNames from "classnames";
 
 const { Title, Paragraph, Text } = Typography;
-const Reminder_Data = [
+const Remember_Data = [
   {
     title: "Kilometer Limit",
     limit: "150 kms",
@@ -39,9 +38,15 @@ const Reminder_Data = [
     limit: "150 kms",
   },
 ];
-function SummaryOfVehicle() {
-  const [form] = Form.useForm();
-  const onFinish = () => {};
+type SummaryProps = {
+  setIsPartial: React.Dispatch<SetStateAction<boolean>>;
+};
+function SummaryOfVehicle({ setIsPartial }: SummaryProps) {
+  const handleChange = (value: string) => {
+    if (value === "Payment Mode : Partial Payment") setIsPartial(true);
+    else setIsPartial(false);
+  };
+
   return (
     <Row className={Style.vehicle_summary}>
       {/* vehicle details */}
@@ -88,28 +93,22 @@ function SummaryOfVehicle() {
             </Button>
           </Space>
 
-          <Form
-            form={form}
-            layout="vertical"
-            onFinish={onFinish}
-            className={Style.form}
-          >
-            <Form.Item>
-              <Select
-                defaultValue="Payment Mode : Full Payment"
-                options={[
-                  {
-                    value: "Payment Mode : Full Payment",
-                    label: "Payment Mode : Full Payment",
-                  },
-                  {
-                    value: "Payment Mode : Partial Payment",
-                    label: "Payment Mode : Partial Payment",
-                  },
-                ]}
-              />
-            </Form.Item>
-          </Form>
+          <div className={Style.form}>
+            <Select
+              onChange={handleChange}
+              defaultValue="Payment Mode : Full Payment"
+              options={[
+                {
+                  value: "Payment Mode : Full Payment",
+                  label: "Payment Mode : Full Payment",
+                },
+                {
+                  value: "Payment Mode : Partial Payment",
+                  label: "Payment Mode : Partial Payment",
+                },
+              ]}
+            />
+          </div>
         </Space>
       </Space>
 
@@ -181,12 +180,12 @@ function SummaryOfVehicle() {
         </Space>
       </Space>
 
-      {/* reminder things */}
-      <Row gutter={[16, { xs: 0, xl: 5 }]} className={Style.reminder}>
+      {/* remember things */}
+      <Row gutter={[16, { xs: 0, xl: 5 }]} className={Style.remember}>
         <Col span={24}>
           <Paragraph className={Style.heading}>Things to remember</Paragraph>
         </Col>
-        {Reminder_Data.map((item, i) => {
+        {Remember_Data.map((item, i) => {
           return (
             <Col xl={12} md={24} span={24} key={i}>
               <Row justify={"space-between"}>
