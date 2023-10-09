@@ -1,0 +1,28 @@
+@import "/style/Modules/typography";
+
+.login_popup {
+  :global(.ant-modal-body) {
+    margin: $space-xl 0;
+  }
+  .flex_box {
+    width: 100%;
+    .heading {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: $space-xl;
+    }
+    :global(.ant-space-item) {
+      width: 100%;
+    }
+    button {
+      margin-top: 2rem;
+    }
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+  :global(.ant-modal-footer) {
+    display: none;
+  }
+}
