@@ -7,9 +7,16 @@ interface PropType {
   htmlType?: "button" | "submit" | "reset" | undefined;
   fit?: number | "fit";
   size?: "small" | "medium" | "large";
+  disabled?: boolean;
 }
 
-const Button: React.FC<PropType> = ({ title, htmlType, fit, size }) => {
+const Button: React.FC<PropType> = ({
+  title,
+  htmlType,
+  fit,
+  size,
+  disabled,
+}) => {
   return (
     <>
       <ConfigProvider
@@ -26,6 +33,7 @@ const Button: React.FC<PropType> = ({ title, htmlType, fit, size }) => {
       >
         <Btn
           type="primary"
+          disabled={disabled}
           htmlType={htmlType ? htmlType : "button"}
           className={Style.button}
           style={{
