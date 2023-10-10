@@ -17,6 +17,7 @@
         color: $base-text;
         text-transform: capitalize;
         padding: 0 0.5rem;
+        font-size: $text-xs;
         &::after,
         &::before {
           display: none;
@@ -35,7 +36,7 @@
       font-weight: 500;
       border-radius: 0;
       border: none;
-      font-size: $text-xl;
+      font-size: $text-sm;
       @include tablet() {
         font-size: $text-lg;
       }
