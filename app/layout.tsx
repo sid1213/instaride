@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Providers from "@/slices/Providers";
 import { Inter } from "next/font/google";
 import "../style/index.scss";
+import AntdStyledComponents from "@/components/AntdStyledComponents";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <AntdStyledComponents> {children}</AntdStyledComponents>
+        </Providers>
       </body>
     </html>
   );
