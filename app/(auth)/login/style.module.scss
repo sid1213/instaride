@@ -10,12 +10,19 @@
       text-align: center;
       font-size: 2rem;
       margin-bottom: $space-xl;
+      span {
+        color: $base-green;
+      }
     }
     :global(.ant-space-item) {
       width: 100%;
     }
     button {
       margin-top: 2rem;
+    }
+    :global(.ant-input),
+    :global(.ant-select-selector) {
+      border-radius: 0;
     }
   }
   input::-webkit-outer-spin-button,
