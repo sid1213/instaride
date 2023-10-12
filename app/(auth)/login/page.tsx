@@ -1,14 +1,19 @@
 "use client";
 import React, { useState } from "react";
 import Style from "./style.module.scss";
-import { Select, Input, Modal, Space, Typography } from "antd";
+import { Select, Input, Modal, Space, Button } from "antd";
 import Image from "next/image";
 import Title from "antd/es/typography/Title";
-import Button from "@/components/Ui/Button";
-// const { Text } = Typography;
-// const { Option } = Select;
+// import Button from "@/components/Ui/Button";
+import PersonalDetailsPopUp from "@/components/Login/PersonalDetailsPopUp";
+
 function Login() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
+  const [phoneNumber, setPhoneNumber] = useState<number | null>(null);
+  const [isDisable, setIsDisable] = useState<boolean>(true);
+  // for personal details
+  const [isPersonalModelOpen, setIsPersonalModelOpen] =
+    useState<boolean>(false);
   const [items, setItems] = useState([
     {
       label: (
@@ -35,8 +40,6 @@ function Login() {
     },
   ]);
 
-  const [phoneNumber, setPhoneNumber] = useState<Number | null>(null);
-  const [isDisable, setIsDisable] = useState<boolean>(true);
   const showLoginModel = () => {
     setIsModalOpen(true);
   };
@@ -89,14 +92,24 @@ function Login() {
               onChange={(e) => handleForMobile(e)}
             />
           </Space.Compact>
+
           <Button
             title="SEND OTP"
-            fit={100}
-            size="medium"
+            block
+            size="middle"
             disabled={isDisable}
+            onClick={() => {
+              console.log(isPersonalModelOpen);
+              setIsPersonalModelOpen(true);
+            }}
           />
         </Space>
       </Modal>
+      <PersonalDetailsPopUp
+        PhoneNumber={phoneNumber}
+        isPersonalModelOpen={isPersonalModelOpen}
+        setIsPersonalModelOpen={setIsPersonalModelOpen}
+      />
     </section>
   );
 }
