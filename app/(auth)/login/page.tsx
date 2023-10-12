@@ -35,7 +35,7 @@ function Login() {
     },
   ]);
 
-  const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [phoneNumber, setPhoneNumber] = useState<Number | null>(null);
   const [isDisable, setIsDisable] = useState<boolean>(true);
   const showLoginModel = () => {
     setIsModalOpen(true);
@@ -48,8 +48,8 @@ function Login() {
     setIsModalOpen(false);
   };
   const handleForMobile = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.value.length <= 10) {
-      setPhoneNumber(e.target.value);
+    if (Number(e.target.value.length) <= 10) {
+      setPhoneNumber(Number(e.target.value));
       e.target.value.length == 10 ? setIsDisable(false) : setIsDisable(true);
     } else {
       setIsDisable(false);
@@ -85,7 +85,7 @@ function Login() {
             <Input
               type="number"
               placeholder="Phone Number"
-              value={phoneNumber}
+              value={phoneNumber ? phoneNumber.toString() : ""}
               onChange={(e) => handleForMobile(e)}
             />
           </Space.Compact>
