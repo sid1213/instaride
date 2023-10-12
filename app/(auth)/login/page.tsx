@@ -94,7 +94,6 @@ function Login() {
           </Space.Compact>
 
           <Button
-            title="SEND OTP"
             block
             size="middle"
             disabled={isDisable}
@@ -102,7 +101,9 @@ function Login() {
               console.log(isPersonalModelOpen);
               setIsPersonalModelOpen(true);
             }}
-          />
+          >
+            Send OTP
+          </Button>
         </Space>
       </Modal>
       <PersonalDetailsPopUp
