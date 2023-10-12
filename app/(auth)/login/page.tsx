@@ -98,14 +98,15 @@ function Login() {
             size="middle"
             disabled={isDisable}
             onClick={() => {
-              console.log(isPersonalModelOpen);
               setIsPersonalModelOpen(true);
+              setIsModalOpen(false);
             }}
           >
             Send OTP
           </Button>
         </Space>
       </Modal>
+      {/* personal details popup */}
       <PersonalDetailsPopUp
         PhoneNumber={phoneNumber}
         isPersonalModelOpen={isPersonalModelOpen}
