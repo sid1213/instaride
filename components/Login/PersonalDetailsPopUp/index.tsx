@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { PhoneOutlined, UserOutlined, FolderOutlined } from "@ant-design/icons";
 import Style from "./index.module.scss";
-import { Modal, Space, Form, Input, Button } from "antd";
+import { Modal, Space, Form, Input, Button, Checkbox } from "antd";
 import Title from "antd/es/typography/Title";
 
 interface PersonalDetailsPropsType {
@@ -34,12 +34,12 @@ function PersonalDetailsPopUp({
   }, []);
 
   return (
-    <section className="details_modal">
+    <>
       <Modal
         title=""
         open={isPersonalModelOpen}
         onCancel={handleCancel}
-        className={Style.login_popup}
+        className={Style.details_popup}
         centered
       >
         <Space align="center" direction="vertical" className={Style.flex_box}>
@@ -100,6 +100,11 @@ function PersonalDetailsPopUp({
               />
             </Form.Item>
 
+            {/* check box */}
+            <Form.Item name="agree">
+              <Checkbox>I agree the term and conditions</Checkbox>
+            </Form.Item>
+
             {/* submit button */}
             <Form.Item shouldUpdate>
               {() => (
@@ -122,7 +127,7 @@ function PersonalDetailsPopUp({
           </Form>
         </Space>
       </Modal>
-    </section>
+    </>
   );
 }
 
