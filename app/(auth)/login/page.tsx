@@ -4,16 +4,25 @@ import Style from "./style.module.scss";
 import { Select, Input, Modal, Space, Button } from "antd";
 import Image from "next/image";
 import Title from "antd/es/typography/Title";
-// import Button from "@/components/Ui/Button";
 import PersonalDetailsPopUp from "@/components/Login/PersonalDetailsPopUp";
+import OtpPopUp from "@/components/Login/OtpPopUp";
 
 function Login() {
+  // for phone number
   const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
   const [phoneNumber, setPhoneNumber] = useState<number | null>(null);
   const [isDisable, setIsDisable] = useState<boolean>(true);
+
   // for personal details
   const [isPersonalModelOpen, setIsPersonalModelOpen] =
     useState<boolean>(false);
+
+  // for otp
+  const [isOtpModalOpen, setIsOtpModalOpen] = useState<boolean>(false);
+
+  // check is new PhoneNumber added or not
+  const [isNewNumber, setIsNewNumber] = useState<boolean>(true);
+
   const [items, setItems] = useState([
     {
       label: (
@@ -40,17 +49,10 @@ function Login() {
     },
   ]);
 
-  const showLoginModel = () => {
-    setIsModalOpen(true);
-  };
+  const showLoginModel = () => setIsModalOpen(true);
+  const handleCancel = () => setIsModalOpen(false);
 
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
-  const handleForMobile = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleForDisableButton = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (Number(e.target.value.length) <= 10) {
       setPhoneNumber(Number(e.target.value));
       e.target.value.length == 10 ? setIsDisable(false) : setIsDisable(true);
@@ -62,13 +64,14 @@ function Login() {
   return (
     <section className="container">
       <li onClick={showLoginModel}>Login</li>
+      {/* login popup */}
       <Modal
         title=""
         open={isModalOpen}
-        onOk={handleOk}
         onCancel={handleCancel}
         className={Style.login_popup}
         centered
+        footer={false}
       >
         <Space align="center" direction="vertical" className={Style.flex_box}>
           <Title level={4} className={Style.heading}>
@@ -89,7 +92,7 @@ function Login() {
               type="number"
               placeholder="Phone Number"
               value={phoneNumber ? phoneNumber.toString() : ""}
-              onChange={(e) => handleForMobile(e)}
+              onChange={(e) => handleForDisableButton(e)}
             />
           </Space.Compact>
 
@@ -98,7 +101,9 @@ function Login() {
             size="middle"
             disabled={isDisable}
             onClick={() => {
-              setIsPersonalModelOpen(true);
+              isNewNumber
+                ? setIsPersonalModelOpen(true)
+                : setIsOtpModalOpen(true);
               setIsModalOpen(false);
             }}
           >
@@ -106,11 +111,20 @@ function Login() {
           </Button>
         </Space>
       </Modal>
+
       {/* personal details popup */}
       <PersonalDetailsPopUp
         PhoneNumber={phoneNumber}
         isPersonalModelOpen={isPersonalModelOpen}
         setIsPersonalModelOpen={setIsPersonalModelOpen}
+        setIsOtpModalOpen={setIsOtpModalOpen}
+      />
+
+      {/* Otp popup */}
+      <OtpPopUp
+        PhoneNumber={phoneNumber}
+        isOtpModalOpen={isOtpModalOpen}
+        setIsOtpModalOpen={setIsOtpModalOpen}
       />
     </section>
   );
