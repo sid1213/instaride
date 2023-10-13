@@ -4,8 +4,8 @@ import Style from "./style.module.scss";
 import { Select, Input, Modal, Space, Button } from "antd";
 import Image from "next/image";
 import Title from "antd/es/typography/Title";
-import PersonalDetailsPopUp from "@/components/Login/PersonalDetailsPopUp";
-import OtpPopUp from "@/components/Login/OtpPopUp";
+import PersonalDetailsModal from "@/components/Login/PersonalDetailsModal";
+import OtpModal from "@/components/Login/OtpModal";
 
 function Login() {
   // for phone number
@@ -113,7 +113,7 @@ function Login() {
       </Modal>
 
       {/* personal details popup */}
-      <PersonalDetailsPopUp
+      <PersonalDetailsModal
         PhoneNumber={phoneNumber}
         isPersonalModelOpen={isPersonalModelOpen}
         setIsPersonalModelOpen={setIsPersonalModelOpen}
@@ -121,7 +121,7 @@ function Login() {
       />
 
       {/* Otp popup */}
-      <OtpPopUp
+      <OtpModal
         PhoneNumber={phoneNumber}
         isOtpModalOpen={isOtpModalOpen}
         setIsOtpModalOpen={setIsOtpModalOpen}
