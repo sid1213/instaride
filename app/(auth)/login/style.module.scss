@@ -23,6 +23,10 @@
       background-color: $base-green;
       border: none;
       color: $white;
+      &:is(:hover) {
+        background-color: $hover-green;
+        color: $white;
+      }
       &:disabled {
         border-color: #d9d9d9;
         color: rgba(0, 0, 0, 0.25);
@@ -37,8 +41,5 @@
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
-  }
-  :global(.ant-modal-footer) {
-    display: none;
   }
 }
