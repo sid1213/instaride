@@ -11,9 +11,7 @@
       }
     }
   }
-  :global(.ant-modal-footer) {
-    display: none;
-  }
+
   :global(.ant-btn) {
     background-color: $base-green;
     border: none;
@@ -22,11 +20,6 @@
       border-color: #d9d9d9;
       color: rgba(0, 0, 0, 0.25);
       background-color: rgba(0, 0, 0, 0.04);
-    }
-    &:is(:hover, :focus) {
-      background-color: $base-green;
-      border: none;
-      color: $white;
     }
   }
 }
