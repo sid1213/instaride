@@ -1,0 +1,31 @@
+@import "/style/Modules/typography";
+.about {
+  :global(.heading) {
+    width: 100%;
+    background-color: $darkblue_1;
+    min-height: 30rem;
+    justify-content: center;
+
+    :global(h3.ant-typography) {
+      color: $white;
+      margin-bottom: 0;
+    }
+    :global(.para) {
+      color: $base-green;
+      font-size: 1.7rem;
+      margin-bottom: 0;
+      letter-spacing: 0.5rem;
+    }
+  }
+  :global(.intro_container) {
+    padding: $space-xl $space-sm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    :global(.para) {
+      text-align: center;
+      min-width: 20rem;
+      font-size: $text-xl;
+    }
+  }
+}
