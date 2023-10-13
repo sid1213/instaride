@@ -47,6 +47,7 @@ function OtpModal({
             numInputs={4}
             renderSeparator={<span> </span>}
             renderInput={(props) => <input {...props} />}
+            inputType="number"
             containerStyle={{
               color: "green",
               justifyContent: "space-evenly",
