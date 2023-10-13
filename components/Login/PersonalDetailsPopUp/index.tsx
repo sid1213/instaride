@@ -8,23 +8,24 @@ import Title from "antd/es/typography/Title";
 interface PersonalDetailsPropsType {
   isPersonalModelOpen: boolean;
   setIsPersonalModelOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsOtpModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
   PhoneNumber: number | null;
 }
 function PersonalDetailsPopUp({
   isPersonalModelOpen,
   setIsPersonalModelOpen,
+  setIsOtpModalOpen,
   PhoneNumber,
 }: PersonalDetailsPropsType) {
   // state
   const [form] = Form.useForm();
   const [clientReady, setClientReady] = useState<boolean>(false);
 
-  const handleCancel = () => {
-    setIsPersonalModelOpen(false);
-  };
+  const handleCancel = () => setIsPersonalModelOpen(false);
 
   const onFinish = (values: any) => {
     console.log("Finish:", values);
+    setIsOtpModalOpen(true);
     setIsPersonalModelOpen(false);
   };
 
@@ -41,6 +42,7 @@ function PersonalDetailsPopUp({
         onCancel={handleCancel}
         className={Style.details_popup}
         centered
+        footer={false}
       >
         <Space align="center" direction="vertical" className={Style.flex_box}>
           <Title level={4} className={Style.heading}>
@@ -114,7 +116,6 @@ function PersonalDetailsPopUp({
                   block
                   disabled={
                     !clientReady ||
-                    // !form.isFieldsTouched(true) ||
                     !!form
                       .getFieldsError()
                       .filter(({ errors }) => errors.length).length
