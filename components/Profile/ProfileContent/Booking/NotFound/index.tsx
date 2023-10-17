@@ -9,7 +9,7 @@ function NotFound() {
       justify={"center"}
       align={"middle"}
     >
-      <Col>
+      <Col className="tag">
         <Tag color="gold">No Orders Found!</Tag>
       </Col>
 
