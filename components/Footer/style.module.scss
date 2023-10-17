@@ -1,12 +1,13 @@
+@import "/style/Modules/typography";
 .footer {
   width: 100%;
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   padding: 2rem;
-
   :global(.links) {
-    font-size: 14px;
-    font-weight: 400;
+    font-size: $text-sm;
+    // font-weight: 500;
+    color: $whiteSmoke;
     ul {
       list-style: none;
       li {
@@ -14,15 +15,25 @@
         cursor: pointer;
         transition: all 0.3s ease-in-out;
         &:hover {
-          color: red;
+          color: $base-green;
         }
+      }
+    }
+  }
+  :global(.logo) {
+    img {
+      @include tablet {
+        width: 84px;
+        height: 36px;
+        margin-bottom: 1rem;
       }
     }
   }
   @media screen and (max-width: 968px) {
     padding: 0rem;
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
     :global(.links) {
       margin-bottom: 10px;
       font-size: 16px;
