@@ -8,6 +8,7 @@ interface PropType {
   fit?: number | "fit";
   size?: "small" | "medium" | "large";
   handleClick?: (e?: any) => void;
+  disabled?: boolean;
 }
 
 const Button: React.FC<PropType> = ({
@@ -16,6 +17,7 @@ const Button: React.FC<PropType> = ({
   fit,
   size,
   handleClick,
+  disabled,
 }) => {
   return (
     <>
@@ -33,6 +35,7 @@ const Button: React.FC<PropType> = ({
       >
         <Btn
           type="primary"
+          disabled={disabled}
           htmlType={htmlType ? htmlType : "button"}
           className={Style.button}
           onClick={handleClick}
