@@ -22,6 +22,8 @@ $base-text: #717171;
 $base-gray-text: #777777;
 $whitesmoke: #fafafa;
 
+$whiteSmoke: #fafafa;
+
 // padding & margin
 $space-2xl: 5rem;
 $space-xl: 4rem;
@@ -43,5 +45,7 @@ $text-lg: 1.6rem;
 $text-sm: 1.4rem;
 $text-xs: 1.2rem;
 
+// border for 1px
+$border-thin: 0.063rem;
 //height
 $screen: calc(100vh - 6.4rem);

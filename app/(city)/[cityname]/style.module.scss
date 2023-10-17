@@ -20,5 +20,12 @@
   .content {
     padding: $space-xs;
     height: 100%;
+    display: flex;
+    gap: 2rem 1.2rem;
+    flex-wrap: wrap;
+    @include tablet {
+      padding: 0;
+      justify-content: center;
+    }
   }
 }
