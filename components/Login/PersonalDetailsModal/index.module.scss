@@ -1,0 +1,25 @@
+@import "/style/Modules/typography";
+
+.details_modal {
+  .flex_box {
+    width: 100%;
+    :global(.ant-space-item) {
+      width: 100%;
+      :global(h4.ant-typography) {
+        margin-top: $space-sm;
+        text-align: center;
+      }
+    }
+  }
+
+  :global(.ant-btn) {
+    background-color: $base-green;
+    border: none;
+    color: $white;
+    &:disabled {
+      border-color: #d9d9d9;
+      color: rgba(0, 0, 0, 0.25);
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+  }
+}

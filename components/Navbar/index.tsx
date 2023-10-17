@@ -4,11 +4,11 @@ import Image from "next/image";
 import Style from "./style.module.scss";
 import classNames from "classnames";
 import SideNavbar from "@/components/Navbar/sideNavbar";
+import Login from "@/(auth)/login/page";
 
 function Navbar() {
   // scrollY functionality in navbar
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) setIsScrolled(true);
@@ -33,7 +33,7 @@ function Navbar() {
           <li>About</li>
           <li>Contact</li>
           <li>Monthly-Rentals</li>
-          <li>Login</li>
+          <Login />
         </ul>
       </div>
     </nav>
