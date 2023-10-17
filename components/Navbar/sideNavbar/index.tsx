@@ -9,7 +9,6 @@ import Link from "next/link";
 const SideNavbar: React.FC = () => {
   // Drawer functionality
   const [open, setOpen] = useState<boolean>(false);
-
   const showDefaultDrawer = () => setOpen(!open);
   const onClose = () => setOpen(!open);
   return (
