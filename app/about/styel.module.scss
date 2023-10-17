@@ -2,12 +2,13 @@
 .about {
   :global(.heading) {
     width: 100%;
-    background-color: $darkblue_1;
+    background-color: $white;
     min-height: 30rem;
     justify-content: center;
+    border-bottom: 0.1rem solid $bg-light-gray;
 
     :global(h2.ant-typography) {
-      color: $white;
+      color: $darkblue_1;
       margin-bottom: 0;
     }
     :global(.para) {
@@ -15,6 +16,7 @@
       font-size: 1.7rem;
       margin-bottom: 0;
       letter-spacing: 0.5rem;
+      font-weight: 500;
     }
   }
   :global(h3.ant-typography) {
