@@ -1,0 +1,77 @@
+@import "/style/Modules/typography";
+.about {
+  :global(.heading) {
+    width: 100%;
+    background-color: $darkblue_1;
+    min-height: 30rem;
+    justify-content: center;
+
+    :global(h2.ant-typography) {
+      color: $white;
+      margin-bottom: 0;
+    }
+    :global(.para) {
+      color: $base-green;
+      font-size: 1.7rem;
+      margin-bottom: 0;
+      letter-spacing: 0.5rem;
+    }
+  }
+  :global(h3.ant-typography) {
+    margin: $space-sm 0;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: $base-green;
+    @include tablet {
+      text-align: center;
+    }
+  }
+  :global(.intro_container) {
+    padding: $space-xl $space-sm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    :global(.para) {
+      text-align: center;
+      min-width: 20rem;
+      font-size: $text-xl;
+    }
+  }
+  :global(.choose_us) {
+    padding: 0 $space-sm;
+    @include tablet {
+      padding: $space-md;
+    }
+  }
+  :global(.our_team) {
+    margin: $space-lg 0;
+    padding: 0 $space-sm;
+    @include tablet {
+      padding: $space-md;
+    }
+
+    :global(.team_member) {
+      text-align: center;
+      margin-top: $space-sm;
+      :global(.ant-card-body) {
+        padding: 1rem 2.4rem;
+      }
+      span {
+        font-size: 1rem;
+        color: $base-text;
+        letter-spacing: 0.2rem;
+      }
+      :global(.ant-layout-content) {
+        font-size: $text-xs;
+      }
+      :global(h4.ant-typography) {
+        margin: 0.2rem 0;
+        font-size: $text-xl;
+        color: $base-green;
+      }
+      :global(.anticon svg) {
+        fill: $hover-green;
+      }
+    }
+  }
+}

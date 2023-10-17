@@ -8,6 +8,7 @@ $xs: 450px;
 
 // colors
 $gray: #d9d9d9;
+$light-gray: #ebedef;
 $blue: #1677ff;
 $darkblue_1: #001529;
 $darkblue_2: #002140;
@@ -18,6 +19,10 @@ $bg-light-gray: #f3f3f3;
 $base-green: #99cc33;
 $hover-green: #6b8e23;
 $base-text: #717171;
+$base-gray-text: #777777;
+$whitesmoke: #fafafa;
+
+$whiteSmoke: #fafafa;
 
 // padding & margin
 $space-2xl: 5rem;
@@ -40,5 +45,7 @@ $text-lg: 1.6rem;
 $text-sm: 1.4rem;
 $text-xs: 1.2rem;
 
+// border for 1px
+$border-thin: 0.063rem;
 //height
 $screen: calc(100vh - 6.4rem);

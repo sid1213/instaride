@@ -1,4 +1,5 @@
-@import "../../style/Modules/typography";
+@import "/style/Modules/variables";
+@import "/style/Modules/mixins";
 
 .navbar {
   background-color: $darkblue_1;
@@ -29,8 +30,9 @@
 
       @include tablet {
         display: block;
-        font-size: 1.7rem;
+        font-size: $heading-md;
         color: $white;
+        padding: 0px 20px;
       }
     }
     @include tablet {
@@ -51,6 +53,13 @@
         font-size: 15px;
         cursor: pointer;
         color: $white;
+        a {
+          cursor: pointer;
+          color: $white;
+          &:hover {
+            color: $base-green;
+          }
+        }
       }
     }
     @include tablet {

@@ -1,0 +1,45 @@
+@import "/style/Modules/typography";
+
+.login_popup {
+  :global(.ant-modal-body) {
+    margin: $space-xl 0;
+  }
+  .flex_box {
+    width: 100%;
+    .heading {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: $space-xl;
+      span {
+        color: $base-green;
+      }
+    }
+    :global(.ant-space-item) {
+      width: 100%;
+    }
+
+    :global(.ant-btn) {
+      margin-top: 2rem;
+      background-color: $base-green;
+      border: none;
+      color: $white;
+      &:is(:hover) {
+        background-color: $hover-green;
+        color: $white;
+      }
+      &:disabled {
+        border-color: #d9d9d9;
+        color: rgba(0, 0, 0, 0.25);
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+    }
+    :global(.ant-input),
+    :global(.ant-select-selector) {
+      border-radius: 0;
+    }
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}

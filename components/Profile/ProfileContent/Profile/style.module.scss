@@ -1,0 +1,98 @@
+@import "/style/Modules/typography";
+.profile {
+  // profile header
+  &_header {
+    padding: $space-xs;
+    width: 100%;
+    .left_arrow {
+      display: none;
+      @include tablet {
+        display: inline;
+        font-size: $text-lg;
+      }
+    }
+    .heading {
+      h5 {
+        margin-bottom: 0;
+        font-size: $heading-sm;
+      }
+      span {
+        color: $base-gray-text;
+        font-size: $text-lg;
+      }
+    }
+    @include tablet {
+      padding: 0;
+    }
+  }
+
+  //Profile Edit
+  &_details {
+    .flex {
+      display: flex;
+      padding: 0 $space-xs;
+      :global(.ant-col) {
+        display: flex;
+        justify-content: space-between;
+
+        .field_label {
+          font-size: $text-lg;
+        }
+        p {
+          font-size: $text-lg;
+          color: $base-text;
+          font-weight: 400;
+        }
+        .edit_btn {
+          border: none;
+          padding: 0;
+          color: $base-green;
+          font-weight: 500;
+          cursor: pointer;
+        }
+      }
+      .form {
+        margin-top: 1rem;
+        :global(.ant-input) {
+          position: static;
+        }
+      }
+      @include tablet {
+        padding: 0;
+      }
+    }
+
+    // mobile field
+    .mobile_verify {
+      padding: 0 $space-sm;
+      span {
+        font-size: $text-lg;
+        color: $base-text;
+        font-weight: 400;
+      }
+      // value of field
+      p {
+        font-size: $text-lg;
+        font-weight: 400;
+        margin: 1rem 0;
+      }
+      .verify_msg {
+        border: none;
+        background-color: transparent;
+        span {
+          font-size: $text-sm;
+          color: $base-green;
+          font-weight: 500;
+        }
+      }
+
+      @include tablet {
+        padding: 0;
+      }
+    }
+  }
+
+  @include tablet {
+    padding: 1.2rem 1.6rem;
+  }
+}
