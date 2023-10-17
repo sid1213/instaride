@@ -7,6 +7,7 @@ interface PropType {
   htmlType?: "button" | "submit" | "reset" | undefined;
   fit?: number | "fit";
   size?: "small" | "medium" | "large";
+  handleClick?: (e?: any) => void;
   disabled?: boolean;
 }
 
@@ -15,6 +16,7 @@ const Button: React.FC<PropType> = ({
   htmlType,
   fit,
   size,
+  handleClick,
   disabled,
 }) => {
   return (
@@ -36,6 +38,7 @@ const Button: React.FC<PropType> = ({
           disabled={disabled}
           htmlType={htmlType ? htmlType : "button"}
           className={Style.button}
+          onClick={handleClick}
           style={{
             width: fit
               ? fit === "fit"

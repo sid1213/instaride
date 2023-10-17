@@ -1,0 +1,18 @@
+@import "/style/Modules/variables";
+@import "/style/Modules/mixins";
+
+.profile_content {
+  margin: 1rem 2rem;
+  padding-bottom: 2rem;
+  border-radius: 0.7rem;
+  border: 1px solid $bg-light-gray;
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    width: 100%;
+    margin: 1rem 0rem;
+    &.none {
+      display: none;
+    }
+  }
+}
