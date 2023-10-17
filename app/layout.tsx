@@ -21,9 +21,9 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={inter.className}>
-        <Providers>
-          <AntdStyledComponents> {children}</AntdStyledComponents>
-        </Providers>
+        <AntdStyledComponents>
+          <Providers> {children}</Providers>
+        </AntdStyledComponents>
       </body>
     </html>
   );
