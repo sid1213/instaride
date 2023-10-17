@@ -47,15 +47,15 @@ const Button: React.FC<PropType> = ({
                 ? `${fit}%`
                 : "100%"
               : "fit-content",
-            padding: size
-              ? size === "large"
-                ? " 1.5rem 2.5rem"
-                : size === "medium"
-                ? " 1rem 2rem"
-                : size === "small"
-                ? " 0.5rem 1rem"
-                : " 0.5rem 1rem"
-              : "0.5rem 1rem",
+            // padding: size
+            // ? size === "large"
+            // ? " 1.5rem 2.5rem"
+            // : size === "medium"
+            // ? " 1rem 2rem"
+            // size === "small"
+            // ? " 0.5rem 1rem"
+            // : " 0.5rem 1rem"
+            // : "0.5rem 1rem",
             fontSize: size
               ? size === "large"
                 ? " 1.6rem"
