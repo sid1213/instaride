@@ -56,7 +56,7 @@
       background-color: $base-green;
       color: $white;
       &:is(:hover, :focus) {
-        color: $white;
+        color: $white !important;
         border: none;
       }
     }
