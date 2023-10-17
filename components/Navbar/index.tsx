@@ -32,7 +32,7 @@ function Navbar() {
       <div className="nav_items">
         <ul className={classNames(isScrolled ? "" : Style.scrolled)}>
           <li>
-            <Link href={"/about"}>about</Link>
+            <Link href={"/about"}>About</Link>
           </li>
           <li>Contact</li>
           <li>Monthly-Rentals</li>
