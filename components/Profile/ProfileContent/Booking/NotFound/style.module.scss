@@ -1,7 +1,14 @@
 @import "/style/Modules/typography";
 
 .booking_empty_container {
-  flex-direction: column;
+  flex-direction: column !important;
+  :global(.tag) {
+    :global(.ant-tag-gold) {
+      color: #d48806;
+      background: #fffbe6;
+      border-color: #ffe58f;
+    }
+  }
   .image {
     margin-top: 1.5rem;
   }
