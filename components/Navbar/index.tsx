@@ -8,29 +8,14 @@ import Link from "next/link";
 import Login from "@/(auth)/login/page";
 
 function Navbar() {
-  // scrollY functionality in navbar
-  const [isScrolled, setIsScrolled] = useState<boolean>(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) setIsScrolled(true);
-      else setIsScrolled(false);
-    };
-    window.addEventListener("scroll", handleScroll);
-
-    // remove the effect
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // handle for navigation show & hide
-
   return (
-    <nav className={classNames(Style.navbar, isScrolled ? "" : Style.scrolled)}>
+    <nav className={classNames(Style.navbar)}>
       <div className="logo">
         <Image src="/assests/logo.png" width={150} height={40} alt="logo" />
         <SideNavbar />
       </div>
       <div className="nav_items">
-        <ul className={classNames(isScrolled ? "" : Style.scrolled)}>
+        <ul>
           <li>
             <Link href={"/about"}>About</Link>
           </li>
