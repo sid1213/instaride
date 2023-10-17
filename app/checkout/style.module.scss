@@ -1,0 +1,54 @@
+@import "/style/Modules/typography";
+
+.checkout {
+  min-height: $screen;
+  padding: $space-2xl;
+  position: relative;
+  background-color: $white;
+  @include mobile() {
+    padding: $space-lg;
+  }
+  @include xs-mobile() {
+    padding: $space-sm;
+  }
+  .header {
+    h5 {
+      margin-bottom: 0;
+    }
+  }
+  .innerlayout {
+    background-color: $white;
+    flex-wrap: wrap;
+    .sider {
+      background: white;
+      border: 1px solid $bg-light-gray;
+      flex: 0 0 800px !important;
+      max-width: 800px !important;
+      min-width: 800px !important;
+      width: 800px !important;
+      @include desktop {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        width: 100% !important;
+      }
+      @include tablet {
+        border: none;
+      }
+    }
+    .content {
+      padding: $space-xs;
+      background-color: transparent;
+      height: 100%;
+      @include desktop {
+        width: 100%;
+      }
+      @include tablet {
+        padding: $space-xs 0;
+      }
+    }
+    @include desktop {
+      flex-direction: column;
+    }
+  }
+}
