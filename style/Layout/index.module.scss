@@ -1,9 +1,16 @@
+@import "/style/Modules/typography";
 .layout {
-  background: white;
+  background: $white;
 
   :global(.ant-layout-header) {
     background-color: transparent;
     padding: 0px 0;
+  }
+  :global(.ant-layout-content) {
+    background-color: $white;
+  }
+  :global(.ant-layout-footer) {
+    background-color: $darkblue_1;
   }
 }
 .container {

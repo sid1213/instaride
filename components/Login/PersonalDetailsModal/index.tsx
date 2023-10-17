@@ -103,7 +103,7 @@ function PersonalDetailsModal({
             </Form.Item>
 
             {/* check box */}
-            <Form.Item name="agree">
+            <Form.Item name="agree" valuePropName="checked">
               <Checkbox>I agree the term and conditions</Checkbox>
             </Form.Item>
 
@@ -116,6 +116,7 @@ function PersonalDetailsModal({
                   block
                   disabled={
                     !clientReady ||
+                    !form.getFieldsValue().agree ||
                     !!form
                       .getFieldsError()
                       .filter(({ errors }) => errors.length).length

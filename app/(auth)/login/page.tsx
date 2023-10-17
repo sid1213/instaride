@@ -9,7 +9,7 @@ import OtpModal from "@/components/Login/OtpModal";
 
 function Login() {
   // for phone number
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
+  const [isNumberModalOpen, setIsNumberModalOpen] = useState<boolean>(false);
   const [phoneNumber, setPhoneNumber] = useState<number | null>(null);
   const [isDisable, setIsDisable] = useState<boolean>(true);
 
@@ -49,8 +49,8 @@ function Login() {
     },
   ]);
 
-  const showLoginModel = () => setIsModalOpen(true);
-  const handleCancel = () => setIsModalOpen(false);
+  const showLoginModel = () => setIsNumberModalOpen(true);
+  const handleCancel = () => setIsNumberModalOpen(false);
 
   const handleForDisableButton = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (Number(e.target.value.length) <= 10) {
@@ -67,7 +67,7 @@ function Login() {
       {/* login popup */}
       <Modal
         title=""
-        open={isModalOpen}
+        open={isNumberModalOpen}
         onCancel={handleCancel}
         className={Style.login_popup}
         centered
@@ -104,7 +104,7 @@ function Login() {
               isNewNumber
                 ? setIsPersonalModelOpen(true)
                 : setIsOtpModalOpen(true);
-              setIsModalOpen(false);
+              setIsNumberModalOpen(false);
             }}
           >
             Send OTP

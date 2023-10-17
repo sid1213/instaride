@@ -34,6 +34,7 @@
       }
       @include tablet {
         border: none;
+        padding: 2rem;
       }
     }
     .content {
@@ -44,7 +45,10 @@
         width: 100%;
       }
       @include tablet {
-        padding: $space-xs 0;
+        :global(.ant-form-item) {
+          margin-bottom: 0;
+          margin-top: 1rem;
+        }
       }
     }
     @include desktop {
