@@ -1,0 +1,27 @@
+@import "/style/Modules/typography";
+
+.booking {
+  &_header {
+    padding: $space-xs;
+    .left_arrow {
+      display: none;
+      @include tablet {
+        display: inline;
+        font-size: $text-lg;
+      }
+    }
+    .heading {
+      h5 {
+        margin-bottom: 0;
+        font-size: $heading-sm;
+      }
+      span {
+        color: $base-gray-text;
+        font-size: $text-lg;
+      }
+    }
+    @include tablet {
+      padding: $space-xs $space-sm;
+    }
+  }
+}

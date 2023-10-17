@@ -1,0 +1,8 @@
+@import "/style/Modules/typography";
+
+.booking_empty_container {
+  flex-direction: column;
+  .image {
+    margin-top: 1.5rem;
+  }
+}

@@ -1,0 +1,109 @@
+@import "/style/Modules/typography";
+
+.floatButton {
+  display: none;
+  left: 50%;
+  transform: translateX(-50%);
+  width: fit-content;
+  min-width: 20rem;
+  height: fit-content;
+  min-height: auto;
+  bottom: 5%;
+  background-color: $base-green;
+  border-radius: 2rem;
+  :global(.ant-float-btn-group) {
+    background-color: $base-green;
+  }
+  :global(.ant-float-btn-square) {
+    border-radius: 0;
+    background-color: transparent;
+    width: 50%;
+    height: fit-content;
+    min-height: auto;
+    border: none !important;
+    padding: 0.5rem;
+  }
+  :global(.ant-divider-vertical) {
+    height: 2em;
+    margin: auto 0.3rem;
+    border-color: white;
+  }
+  :global(.ant-float-btn-body) {
+    width: 100% !important;
+    height: fit-content;
+    min-height: auto;
+    background-color: transparent;
+  }
+  :global(.ant-float-btn-content) {
+    width: 100%;
+  }
+  :global(
+      .ant-float-btn
+        .ant-float-btn-body
+        .ant-float-btn-content
+        .ant-float-btn-icon
+    ) {
+    width: 100%;
+    height: fit-content;
+    min-height: auto;
+
+    color: white;
+    text-align: center;
+  }
+  @include tablet() {
+    display: flex;
+  }
+}
+.drawer {
+  display: none;
+  @include tablet() {
+    display: block;
+  }
+  :global(.ant-drawer-content) {
+    background-color: transparent;
+  }
+  :global(.ant-drawer-content-wrapper) {
+    height: 95% !important;
+  }
+  :global(.ant-drawer-header) {
+    background: transparent;
+  }
+  :global(.ant-drawer-header) {
+    padding: 1.2rem;
+    border-top-right-radius: 1.5rem;
+    border-top-left-radius: 1.5rem;
+    color: white;
+    background: $base-green;
+    @include mobile() {
+      border-top-right-radius: 1rem;
+      border-top-left-radius: 1rem;
+    }
+  }
+  :global(.ant-drawer-body) {
+    padding: 1.4rem;
+    background: white;
+    p {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+    :global(.ant-space) {
+      column-gap: 0.2rem;
+      row-gap: 0.2rem;
+    }
+    :global(.ant-radio-wrapper) {
+      font-size: 1.2rem;
+    }
+    :global(.ant-checkbox-wrapper) {
+      font-size: 1.2rem;
+    }
+    :global(.ant-divider) {
+      margin: 1rem 0;
+    }
+    :global(.ant-checkbox-inner),
+    :global(.ant-radio-inner) {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+  }
+}

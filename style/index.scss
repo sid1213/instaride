@@ -1,8 +1,12 @@
 @import "Modules/typography";
 @import "Modules/variables";
 @import "AntComponent/table";
+@import "AntComponent/tabs";
 @import "AntComponent/heading";
 @import "AntComponent/formItem";
+@import "AntComponent/radio";
+@import "AntComponent/radio";
+@import "AntComponent/checkbox";
 
 * {
   margin: 0;
@@ -33,7 +37,7 @@ body {
   }
 }
 p {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
 .large {
   font-size: $text-lg !important;

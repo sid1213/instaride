@@ -1,0 +1,81 @@
+@import "/style/Modules/typography";
+
+.form {
+  :global(.ant-form-item-label label) {
+    font-weight: 600;
+  }
+  .fare_details {
+    padding: $space-xs $space-md;
+    border: 1px solid $gray;
+    border-radius: 0.4rem;
+    background-color: #fafafa;
+
+    @include tablet {
+      padding: $space-xs;
+    }
+  }
+  :global(.ant-select-arrow) {
+    color: $base-green;
+  }
+}
+.collapse {
+  position: relative;
+  :global(.ant-collapse-header) {
+    padding: 0 !important;
+    padding-top: 1rem !important;
+  }
+  :global(.ant-collapse-expand-icon) {
+    position: absolute;
+    left: 0%;
+    transform: translateX(-80%);
+    @include xs-mobile {
+      transform: translateX(-65%);
+    }
+    svg {
+      fill: $dark-red;
+      font-size: $text-xl !important;
+    }
+  }
+  :global(.ant-collapse-content-box) {
+    padding: 0.8rem 1rem !important;
+    border-left: 0.5px dashed #000;
+  }
+}
+
+.divider {
+  margin: 1.5rem 0 1.5rem 0 !important;
+}
+
+.bookNowButtonMain {
+  .bookNowButtonBig {
+    @include tablet() {
+      display: none;
+    }
+  }
+  .bookNowButton {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    background: white !important;
+    padding: 1rem;
+    box-shadow: 0 -0.3rem 0.6rem rgba(0, 0, 0, 0.05);
+    h4 {
+      margin-bottom: 0;
+    }
+    button {
+      padding: 1rem 1.5rem;
+      font-size: $text-lg;
+    }
+    @include tablet() {
+      display: flex;
+    }
+  }
+  @include tablet() {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 0;
+    z-index: 111111;
+  }
+}
