@@ -62,10 +62,6 @@
     h4 {
       margin-bottom: 0;
     }
-    button {
-      padding: 1rem 1.5rem;
-      font-size: $text-lg;
-    }
     @include tablet() {
       display: flex;
     }
