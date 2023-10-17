@@ -1,0 +1,74 @@
+@import "/style/Modules/variables";
+@import "/style/Modules/mixins";
+
+.profile_sidebar {
+  padding: 1rem;
+
+  // profile image container
+  .image_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem 1rem;
+    background-color: #fafafa;
+    border: 1px solid $light-gray;
+    border-radius: 4px;
+    .img {
+      width: 20rem;
+    }
+    h5 {
+      margin-top: 1.2rem;
+      font-size: $text-lg;
+    }
+  }
+
+  .buttons_container {
+    list-style: none;
+    font-weight: 500;
+
+    .profile_tab {
+      background-color: $white;
+      color: $base-green;
+      border: 1px solid $gray;
+      border-radius: 0.2rem;
+      margin-bottom: $text-xs;
+      font-size: $text-sm;
+      font-weight: 500;
+      height: 4.5rem;
+      cursor: pointer;
+      border-color: $light-gray;
+
+      &:is(:hover, :focus) {
+        color: $base-green;
+        border-color: $light-gray;
+      }
+
+      div {
+        display: flex;
+        align-items: center;
+        column-gap: 1rem;
+      }
+    }
+
+    .change_tab {
+      border: none;
+      background-color: $base-green;
+      color: $white;
+      &:is(:hover, :focus) {
+        color: $white;
+        border: none;
+      }
+    }
+
+    .disabled_btn {
+      width: 100%;
+      opacity: 0.9;
+      button {
+        border: none;
+        background-color: transparent;
+        border: 1px solid $light-gray;
+      }
+    }
+  }
+}

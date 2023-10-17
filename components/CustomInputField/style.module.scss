@@ -1,0 +1,42 @@
+@import "/style/Modules/typography";
+
+// Custom Input Field
+.custom_form {
+  display: flex;
+  gap: 1rem;
+  // background-color: red;
+  // width: 100%;
+}
+.custom_input {
+  border-color: $light-gray;
+}
+
+.custom_item {
+  width: 50%;
+  position: relative;
+
+  :global(.ant-form-item-label) {
+    position: absolute;
+    background-color: $white;
+    z-index: 1;
+    padding: 0;
+    left: 2rem;
+    top: -1rem;
+    label {
+      display: inline;
+      color: $base-green;
+      font-weight: 500;
+      font-size: $text-xs;
+      padding-left: 0.2rem;
+    }
+  }
+}
+
+.custom_input {
+  padding: 1rem 0 0.3rem 1rem;
+  border-radius: 0.4rem;
+  &:is(:hover, :focus) {
+    border-color: $base-green !important;
+    box-shadow: none;
+  }
+}
