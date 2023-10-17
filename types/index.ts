@@ -19,3 +19,12 @@ export interface BikesFeatures {
     | "Mileage";
   subtitle: string;
 }
+
+export interface WhyChooseUs {
+  icon:
+    | "Quality Bikes"
+    | "Easy Reservations"
+    | "Exceptional Customer Service"
+    | "Affordable Rates";
+  subtitle: string;
+}

@@ -51,6 +51,13 @@
         font-size: 15px;
         cursor: pointer;
         color: $white;
+        a {
+          cursor: pointer;
+          color: $white;
+          &:hover {
+            color: $base-green;
+          }
+        }
       }
     }
     @include tablet {
