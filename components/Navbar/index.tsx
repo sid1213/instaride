@@ -19,8 +19,9 @@ function Navbar() {
           <li>
             <Link href={"/about"}>About</Link>
           </li>
-          <li>Contact</li>
-          <li>Monthly-Rentals</li>
+          <li>
+            <Link href={"/contact"}>Contact</Link>
+          </li>
           <Login />
         </ul>
       </div>

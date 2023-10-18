@@ -1,0 +1,22 @@
+@import "/style/Modules/typography";
+.form_container {
+  padding: $space-xl;
+  background-color: $whiteSmoke;
+  box-shadow: 0 0 0.6rem #00000029;
+  border-radius: 0.9rem;
+  :global(.ant-input) {
+    border-radius: 0;
+    border-color: $gray;
+  }
+  :global(.ant-btn) {
+    background-color: $base-green;
+    color: $white;
+  }
+  @include tablet {
+    padding: $space-sm;
+    margin-top: 2rem;
+    h2 {
+      font-size: $heading-md !important;
+    }
+  }
+}

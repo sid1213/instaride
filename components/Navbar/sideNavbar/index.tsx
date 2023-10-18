@@ -5,6 +5,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Image from "next/image";
 import Style from "./style.module.scss";
 import Link from "next/link";
+import Login from "@/(auth)/login/page";
 
 const SideNavbar: React.FC = () => {
   // Drawer functionality
@@ -33,9 +34,10 @@ const SideNavbar: React.FC = () => {
           <li>
             <Link href={"/about"}>About</Link>
           </li>
-          <li>Contact</li>
-          <li>Monthly-Rentals</li>
-          <li>Login</li>
+          <li>
+            <Link href={"/contact"}>Contact</Link>
+          </li>
+          <Login />
         </ul>
       </Drawer>
     </>

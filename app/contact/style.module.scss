@@ -1,0 +1,17 @@
+@import "/style/Modules/typography";
+
+.container {
+  min-height: $screen;
+  .row {
+    // height: $screen;
+    padding: $space-2xl;
+    justify-content: center;
+
+    @include mobile() {
+      padding: $space-lg $space-lg;
+    }
+    @include xs-mobile() {
+      padding: $space-sm;
+    }
+  }
+}
