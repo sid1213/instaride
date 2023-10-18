@@ -10,6 +10,9 @@ function ContactForm() {
   const [form] = Form.useForm();
   const [clientReady, setClientReady] = useState<boolean>(false);
   const [verified, setVerified] = useState<boolean>(false);
+  const [siteKey, setSiteKey] = useState<string>(
+    "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+  );
 
   const onFinish = (values: any) => console.log("Success:", values);
   const onFinishFailed = (errorInfo: any) => console.log("Failed:", errorInfo);
@@ -68,10 +71,7 @@ function ContactForm() {
 
         {/* re-captcha */}
         <Form.Item name="captcha" valuePropName="checked">
-          <ReCAPTCHA
-            sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-            onChange={onChange}
-          />
+          <ReCAPTCHA sitekey={siteKey} onChange={onChange} />
         </Form.Item>
 
         {/* submit button */}
