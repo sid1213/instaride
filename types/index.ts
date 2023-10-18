@@ -21,10 +21,7 @@ export interface BikesFeatures {
 }
 
 export interface WhyChooseUs {
-  icon:
-    | "Quality Bikes"
-    | "Easy Reservations"
-    | "Exceptional Customer Service"
-    | "Affordable Rates";
+  icon: "Quality" | "Reservations" | "Service" | "Rates";
   subtitle: string;
+  description: string;
 }

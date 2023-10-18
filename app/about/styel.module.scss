@@ -41,6 +41,13 @@
   }
   :global(.choose_us) {
     padding: 0 $space-sm;
+    :global(.cardRow) {
+      gap: 1.5rem;
+      :global(.ant-col) {
+        text-align: center;
+        border: 0.1rem solid $gray;
+      }
+    }
     @include tablet {
       padding: $space-md;
     }

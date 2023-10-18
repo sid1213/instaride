@@ -1,0 +1,33 @@
+@import "/style/Modules/typography";
+.card {
+  width: 100%;
+  text-align: center;
+  padding: $space-sm;
+  position: relative;
+  svg {
+    font-size: $heading-2xl;
+    fill: $base-green;
+    margin: 0 1rem;
+    @include mobile() {
+      font-size: $heading-xl;
+    }
+  }
+  .subTitle {
+    font-size: 2rem;
+    color: $base-green;
+    @include mobile() {
+      font-size: $text-sm !important;
+    }
+  }
+  .content {
+    display: inline;
+    width: 100%;
+    font-size: 1.2rem;
+  }
+  @include mobile() {
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    text-align: left !important;
+  }
+}

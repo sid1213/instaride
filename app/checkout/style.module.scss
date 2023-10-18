@@ -1,58 +1,36 @@
 @import "/style/Modules/typography";
-
-.checkout {
-  min-height: $screen;
-  padding: $space-2xl;
-  position: relative;
-  background-color: $white;
-  @include mobile() {
-    padding: $space-lg;
-  }
-  @include xs-mobile() {
-    padding: $space-sm;
+.container {
+  min-height: calc(100vh - 6.4rem);
+  .main {
+    height: inherit;
+    margin-bottom: $space-2xl;
+    gap: 2rem;
   }
   .header {
     h5 {
       margin-bottom: 0;
+      font-size: $text-xl;
     }
   }
-  .innerlayout {
-    background-color: $white;
-    flex-wrap: wrap;
-    .sider {
-      background: white;
-      border: 1px solid $bg-light-gray;
-      flex: 0 0 800px !important;
-      max-width: 800px !important;
-      min-width: 800px !important;
-      width: 800px !important;
-      @include desktop {
-        flex: 0 0 100% !important;
-        max-width: 100% !important;
-        min-width: 100% !important;
-        width: 100% !important;
-      }
-      @include tablet {
-        border: none;
-        padding: 2rem;
-      }
+  .header,
+  .left,
+  .right {
+    padding: $space-2xl;
+    padding-bottom: 0;
+    @include mobile() {
+      padding: $space-lg !important;
     }
-    .content {
-      padding: $space-xs;
-      background-color: transparent;
-      height: 100%;
-      @include desktop {
-        width: 100%;
-      }
-      @include tablet {
-        :global(.ant-form-item) {
-          margin-bottom: 0;
-          margin-top: 1rem;
-        }
-      }
+    @include xs-mobile() {
+      padding: $space-sm !important;
     }
-    @include desktop {
-      flex-direction: column;
+  }
+  .left {
+    border-right: 1px solid $bg-light-gray;
+  }
+  .right {
+    padding-left: 0;
+    @include tablet() {
+      padding-left: $space-2xl;
     }
   }
 }
