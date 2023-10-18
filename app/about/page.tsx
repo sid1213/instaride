@@ -1,34 +1,36 @@
 import React from "react";
-import { Col, Row, Space, Flex, Card } from "antd";
+import { Col, Row, Space, Flex } from "antd";
 import Title from "antd/es/typography/Title";
 import Style from "./styel.module.scss";
 import Paragraph from "antd/es/typography/Paragraph";
-import FeatureCard from "@/components/Ui/FeatureCard";
-import { WhyChooseUs } from "@/types/index";
-import { AiFillTrademarkCircle, AiOutlineDollar } from "react-icons/ai";
-import { RiEBikeFill, RiCustomerService2Fill } from "react-icons/ri";
 import TeamMember from "@/components/About/TeamMember";
+import { WhyChooseUs } from "@/types/index";
+import ChooseUsCard from "@/components/About/ChooseUsCard";
 
 const items: WhyChooseUs[] = [
   {
-    icon: "Quality Bikes",
-    subtitle:
+    icon: "Quality",
+    subtitle: "Quality Bikes",
+    description:
       "We offer a diverse range of bikes, from mountain bikes to city cruisers, all meticulously maintained for your safety and comfort.",
   },
   {
-    icon: "Easy Reservations",
-    subtitle:
+    icon: "Reservations",
+    subtitle: "Easy Reservations",
+    description:
       "Our user-friendly website and booking system make reserving your bike a breeze.",
   },
   {
-    icon: "Exceptional Customer Service",
-    subtitle:
+    icon: "Service",
+    subtitle: "Exceptional Customer Service",
+    description:
       "Our team is always ready to assist you with any inquiries or special requests.",
   },
 
   {
-    icon: "Affordable Rates",
-    subtitle:
+    icon: "Rates",
+    subtitle: "Affordable Rates",
+    description:
       "We believe in making biking accessible to all, offering competitive pricing to fit your budget.",
   },
 ];
@@ -50,25 +52,13 @@ function About() {
       </Col>
       <Col span={24} className="choose_us">
         <Title level={3}>Why Choose Us?</Title>
-        <Row justify={"space-between"}>
+        <Row justify={"space-evenly"} className="cardRow">
           {items.map((item) => (
-            <Col key={item.icon} span={24} md={12} lg={4}>
-              <FeatureCard
-                icon={
-                  item.icon === "Quality Bikes" ? (
-                    <RiEBikeFill />
-                  ) : item.icon === "Easy Reservations" ? (
-                    <AiFillTrademarkCircle />
-                  ) : item.icon === "Exceptional Customer Service" ? (
-                    <RiCustomerService2Fill />
-                  ) : item.icon === "Affordable Rates" ? (
-                    <AiOutlineDollar />
-                  ) : (
-                    ""
-                  )
-                }
-                subTitle={item.subtitle}
-                title={item.icon.split(/(?=[A-Z])/).join(" ")}
+            <Col span={4} xs={24} sm={12} lg={8} xl={4} key={item.icon}>
+              <ChooseUsCard
+                icon={item.icon}
+                description={item.description}
+                subtitle={item.subtitle}
               />
             </Col>
           ))}
