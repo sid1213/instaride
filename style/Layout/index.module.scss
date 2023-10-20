@@ -3,8 +3,9 @@
   background: $white;
 
   :global(.ant-layout-header) {
-    background-color: transparent;
+    background-color: $whiteSmoke;
     padding: 0px 0;
+    height: fit-content;
   }
   :global(.ant-layout-content) {
     background-color: $white;
