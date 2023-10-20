@@ -40,7 +40,6 @@
   @include tablet {
     display: block;
     padding: 0;
-    margin-bottom: $space-xs;
     :global(.ant-btn) {
       height: 4.7rem;
     }
@@ -55,6 +54,13 @@
         fill: $base-green;
         height: 1.5rem;
         width: 1.5rem;
+      }
+    }
+    :global(.ant-row) {
+      :global(.ant-col):nth-child(3) {
+        :global(.ant-form-item) {
+          margin-bottom: 0;
+        }
       }
     }
   }
