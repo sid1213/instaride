@@ -1,0 +1,24 @@
+@import "/style/Modules/typography";
+
+.input {
+  border-radius: 0;
+  width: 100%;
+}
+.greenIcon {
+  :global(.ant-picker-suffix) {
+    svg {
+      width: 2rem;
+      height: 2rem;
+      fill: $base-green;
+    }
+  }
+}
+.redIcon {
+  :global(.ant-picker-suffix) {
+    svg {
+      width: 2rem;
+      height: 2rem;
+      fill: $dark-red;
+    }
+  }
+}

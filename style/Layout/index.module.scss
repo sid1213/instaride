@@ -3,8 +3,9 @@
   background: $white;
 
   :global(.ant-layout-header) {
-    background-color: transparent;
+    background-color: $white;
     padding: 0px 0;
+    height: fit-content;
   }
   :global(.ant-layout-content) {
     background-color: $white;
@@ -18,4 +19,8 @@
   margin: 0 auto;
   max-width: 1440px;
   min-height: calc(100vh - 6.4rem);
+}
+
+.content {
+  margin-top: 6rem;
 }

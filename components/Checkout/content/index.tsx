@@ -57,7 +57,6 @@ function FareDetails({ isPartial }: FareProps) {
       >
         <Form.Item label="Apply Coupon" name="username">
           <Select
-            defaultValue="lucy"
             style={{ width: "100%" }}
             onChange={handleChange}
             options={[

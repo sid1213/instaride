@@ -4,11 +4,15 @@
   min-height: $screen;
   padding: $space-2xl;
   position: relative;
+
   @include mobile() {
     padding: $space-lg $space-lg;
   }
   @include xs-mobile() {
     padding: $space-sm;
+  }
+  :global(.ant-layout-has-sider) {
+    margin-top: 6rem;
   }
   .sider {
     background: white;
@@ -18,7 +22,7 @@
     }
   }
   .content {
-    padding: $space-xs;
+    padding: 0 $space-xs $space-xs;
     height: 100%;
     display: flex;
     gap: 2rem 1.2rem;

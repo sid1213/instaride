@@ -2,7 +2,7 @@
 @import "/style/Modules/mixins";
 
 .navbar {
-  background-color: $darkblue_1;
+  background-color: $white !important;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -13,6 +13,8 @@
   position: fixed;
   top: 0;
   transition: background-color 0.3s ease-in-out;
+  border-bottom: 1px solid $light-gray;
+  padding-bottom: 1.2rem;
 
   // logo
   :global(.logo) {
@@ -31,7 +33,7 @@
       @include tablet {
         display: block;
         font-size: $heading-md;
-        color: $white;
+        color: $darkblue_1;
         padding: 0px 20px;
       }
     }
@@ -50,12 +52,15 @@
       align-items: center;
       li {
         margin: 0 12px;
-        font-size: 15px;
+        color: $black;
+        font-size: $text-xl;
+        font-weight: 600;
         cursor: pointer;
-        color: $white;
         a {
           cursor: pointer;
-          color: $white;
+          color: $black;
+          font-size: $text-xl;
+          font-weight: 600;
           &:hover {
             color: $base-green;
           }
