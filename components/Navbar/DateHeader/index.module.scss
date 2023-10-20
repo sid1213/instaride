@@ -1,0 +1,61 @@
+@import "/style/Modules/typography";
+
+.dateHeader_container {
+  padding-top: 2rem;
+  :global(.ant-btn) {
+    height: 4.7rem;
+  }
+  @include tablet {
+    display: none;
+  }
+  :global(.ant-form-item) {
+    margin-bottom: 0 !important;
+  }
+}
+
+.input {
+  border-radius: 0;
+  width: 100%;
+}
+.greenIcon {
+  :global(.ant-picker-suffix) {
+    svg {
+      width: 2rem;
+      height: 2rem;
+      fill: $base-green;
+    }
+  }
+}
+.redIcon {
+  :global(.ant-picker-suffix) {
+    svg {
+      width: 2rem;
+      height: 2rem;
+      fill: $dark-red;
+    }
+  }
+}
+.mobile_header {
+  display: none;
+  @include tablet {
+    display: block;
+    padding: 0;
+    margin-bottom: $space-xs;
+    :global(.ant-btn) {
+      height: 4.7rem;
+    }
+    :global(.ant-collapse-header) {
+      flex-direction: row-reverse;
+    }
+    :global(.ant-collapse-item) {
+      background-color: $whitesmoke;
+    }
+    :global(.ant-collapse-arrow) {
+      svg {
+        fill: $base-green;
+        height: 1.5rem;
+        width: 1.5rem;
+      }
+    }
+  }
+}
