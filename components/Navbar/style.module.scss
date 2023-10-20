@@ -2,7 +2,7 @@
 @import "/style/Modules/mixins";
 
 .navbar {
-  background-color: $whiteSmoke;
+  background-color: $white !important;
   width: 100%;
   display: flex;
   justify-content: space-between;
