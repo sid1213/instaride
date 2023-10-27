@@ -6,13 +6,18 @@ import classNames from "classnames";
 import SideNavbar from "@/components/Navbar/sideNavbar";
 import Link from "next/link";
 import Login from "@/(auth)/login/page";
-import { Col, Row } from "antd";
+import { Button, Col, Row } from "antd";
 import DateHeader from "./DateHeader";
 import { useParams, usePathname } from "next/navigation";
-
+import { signIn, useSession } from "next-auth/react";
 function Navbar() {
   const params = useParams();
   const pathname = usePathname();
+  const session = useSession();
+  console.log(session);
+  const handleSignIn = async () => {
+    return await signIn("google");
+  };
   return (
     <Row className={classNames(Style.navbar)}>
       <Col span={24}>
@@ -34,7 +39,9 @@ function Navbar() {
               <li>
                 <Link href={"/contact"}>Contact</Link>
               </li>
-              <Login />
+              <li>
+                <Button onClick={handleSignIn}>Login</Button>
+              </li>
             </ul>
           </div>
         </Row>

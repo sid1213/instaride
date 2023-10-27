@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { SessionProvider } from "next-auth/react";
 import Providers from "@/slices/Providers";
 import { Inter } from "next/font/google";
 import "../style/index.scss";
 import AntdStyledComponents from "@/components/AntdStyledComponents";
+import Auth from "@/components/Auth/Auth";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,7 +24,9 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <AntdStyledComponents>
-          <Providers> {children}</Providers>
+          <Auth>
+            <Providers>{children}</Providers>
+          </Auth>
         </AntdStyledComponents>
       </body>
     </html>
