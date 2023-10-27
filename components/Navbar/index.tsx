@@ -1,23 +1,57 @@
 "use client";
+
+// hooks
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Style from "./style.module.scss";
-import classNames from "classnames";
-import SideNavbar from "@/components/Navbar/sideNavbar";
 import Link from "next/link";
-import Login from "@/(auth)/login/page";
-import { Button, Col, Row } from "antd";
+import classNames from "classnames";
+import { useParams, usePathname, useRouter } from "next/navigation";
+import { signIn, useSession } from "next-auth/react"; //hooks and function from next auth
+
+// components
+import SideNavbar from "@/components/Navbar/sideNavbar";
 import DateHeader from "./DateHeader";
-import { useParams, usePathname } from "next/navigation";
-import { signIn, useSession } from "next-auth/react";
+// import Login from "@/(auth)/login/page";   // Ues this Login page while Mobile verification
+
+//antD icons and component
+import { Button, Col, Divider, Dropdown, Row } from "antd";
+import { UserOutlined, CaretDownOutlined } from "@ant-design/icons";
+import type { MenuProps } from "antd";
+import Style from "./style.module.scss";
+
 function Navbar() {
+  // states
   const params = useParams();
   const pathname = usePathname();
+  const router = useRouter();
   const session = useSession();
-  console.log(session);
+
+  // methods
   const handleSignIn = async () => {
     return await signIn("google");
   };
+  const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    router.push("/profile");
+  };
+
+  // antD
+  const items: MenuProps["items"] = [
+    {
+      label: "Orders",
+      key: "1",
+      onClick: () => {
+        console.log("1");
+      },
+    },
+    {
+      label: "SignOut",
+      key: "2",
+      onClick: () => {
+        console.log("2");
+      },
+    },
+  ];
+
   return (
     <Row className={classNames(Style.navbar)}>
       <Col span={24}>
@@ -41,6 +75,16 @@ function Navbar() {
               </li>
               <li>
                 <Button onClick={handleSignIn}>Login</Button>
+              </li>
+              <li>
+                <Dropdown.Button
+                  onClick={handleButtonClick}
+                  menu={{ items }}
+                  placement="bottom"
+                  icon={<CaretDownOutlined />}
+                >
+                  <UserOutlined /> Profile
+                </Dropdown.Button>
               </li>
             </ul>
           </div>
