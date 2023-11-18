@@ -1,12 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import Style from "./style.module.scss";
+// components
 import Title from "antd/es/typography/Title";
-import { Badge, Button, Col, Image, Row, Space, Tooltip } from "antd";
-
+import { Badge, Button, Col, Row, Space } from "antd";
+import Image from "next/image";
 // icons
 import { FaUserAlt, FaLocationArrow, FaWallet } from "react-icons/fa";
+// redux
+import { useAppSelector } from "@/slices/index";
 import classNames from "classnames";
+import Style from "./style.module.scss";
 
 const Profile_List_Data = [
   {
@@ -31,19 +34,26 @@ interface PropsType {
   visible: boolean;
 }
 function ProfileSidebar({ setActive, setVisible, visible }: PropsType) {
+  // states
   const [tabIndex, setTabIndex] = useState<number>(0);
   const toggleTabs = (buttonId: number) => setTabIndex(buttonId);
+
+  // redux
+  const { user } = useAppSelector((state) => state.user);
 
   return (
     <Row className={Style.profile_sidebar} gutter={[0, 16]}>
       {/* profile image */}
       <Col className={Style.image_container} span={24}>
         <Image
-          src="./assests/profile.gif"
-          preview={false}
+          unoptimized={true}
+          src={"/assests/profile.gif"}
+          width={200}
+          height={200}
           className={Style.img}
+          alt={user?.name || "profile_img"}
         />
-        <Title level={5}> Jagrati Gupta</Title>
+        <Title level={5}>{user?.name}</Title>
       </Col>
 
       {/* Links */}
