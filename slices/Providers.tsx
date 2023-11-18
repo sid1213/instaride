@@ -20,7 +20,7 @@ const Providers: React.FC<ProviderType> = ({ children }) => {
             <Navbar />
           </Header>
           <Content className={Style.content}>{children}</Content>
-          <Footer>
+          <Footer className={Style.footer}>
             <FooterComponent />
           </Footer>
         </Layout>
