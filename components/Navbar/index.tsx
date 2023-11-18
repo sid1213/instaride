@@ -1,7 +1,7 @@
 "use client";
 
 // hooks
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import classNames from "classnames";
@@ -21,25 +21,19 @@ import Style from "./style.module.scss";
 import { useAppDispatch, useAppSelector } from "@/slices/index";
 import { setUser } from "@/slices/auth";
 
-// states from redux
-
 function Navbar() {
   // states
   const params = useParams();
   const pathname = usePathname();
-  const router = useRouter();
   const session = useSession(); //track the login status
 
   // redux state
   const dispatch = useAppDispatch();
   const { user } = useAppSelector((state) => state.user);
+
   // methods
   const handleSignIn = async () => {
     await signIn("google");
-  };
-
-  const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    router.push("/profile");
   };
 
   useEffect(() => {
@@ -106,7 +100,7 @@ function Navbar() {
                         style={{ backgroundColor: "#87d068" }}
                         icon={<UserOutlined />}
                       />
-                      Profile
+                      <Link href={"/profile"}>Profile</Link>
                     </Space>
                   </Dropdown>
                 </li>
