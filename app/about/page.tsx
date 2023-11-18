@@ -36,54 +36,59 @@ const items: WhyChooseUs[] = [
 ];
 function About() {
   return (
-    <Row className={Style.about} justify={"center"}>
-      <Space direction="vertical" align="center" className="heading">
-        <Title level={2}>ABOUT US</Title>
-        <Paragraph className="para">Welcome to InstaRide</Paragraph>
-      </Space>
-      <Col xl={12} xs={24} className="intro_container">
-        <Paragraph className="para">
-          At InstaRide, we are passionate about providing the best vehicle
-          experience for our customers. We take pride in offering a wide range
-          of high-quality bikes and exceptional customer service. Our team of
-          dedicated cycling enthusiasts is here to make your bike rental
-          experience unforgettable.
-        </Paragraph>
-      </Col>
-      <Col span={24} className="choose_us">
-        <Title level={3}>Why Choose Us?</Title>
-        <Row justify={"space-evenly"} className="cardRow">
-          {items.map((item) => (
-            <Col span={4} xs={24} sm={12} lg={8} xl={4} key={item.icon}>
-              <ChooseUsCard
-                icon={item.icon}
-                description={item.description}
-                subtitle={item.subtitle}
-              />
-            </Col>
-          ))}
-        </Row>
-      </Col>
-      <Col span={24} className="our_team">
-        <Title level={3}>Our Team</Title>
-        <Flex gap={"5rem"} justify="center" wrap="wrap">
-          <TeamMember
-            image="/demo/Jagrati.jpg"
-            tag="Developer"
-            title="Jagrati Gupta"
-            description="  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque,
+    <>
+      <head>
+        <title>About | InstaRide </title>
+      </head>
+      <Row className={Style.about} justify={"center"}>
+        <Space direction="vertical" align="center" className="heading">
+          <Title level={2}>ABOUT US</Title>
+          <Paragraph className="para">Welcome to InstaRide</Paragraph>
+        </Space>
+        <Col xl={12} xs={24} className="intro_container">
+          <Paragraph className="para">
+            At InstaRide, we are passionate about providing the best vehicle
+            experience for our customers. We take pride in offering a wide range
+            of high-quality bikes and exceptional customer service. Our team of
+            dedicated cycling enthusiasts is here to make your bike rental
+            experience unforgettable.
+          </Paragraph>
+        </Col>
+        <Col span={24} className="choose_us">
+          <Title level={3}>Why Choose Us?</Title>
+          <Row justify={"space-evenly"} className="cardRow">
+            {items.map((item) => (
+              <Col span={4} xs={24} sm={12} lg={8} xl={4} key={item.icon}>
+                <ChooseUsCard
+                  icon={item.icon}
+                  description={item.description}
+                  subtitle={item.subtitle}
+                />
+              </Col>
+            ))}
+          </Row>
+        </Col>
+        <Col span={24} className="our_team">
+          <Title level={3}>Our Team</Title>
+          <Flex gap={"5rem"} justify="center" wrap="wrap">
+            <TeamMember
+              image="/demo/Jagrati.jpg"
+              tag="Developer"
+              title="Jagrati Gupta"
+              description="  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque,
             culpa."
-          />
-          <TeamMember
-            image="/demo/Siddharth.jpg"
-            tag="Developer"
-            title="Siddharth Soni"
-            description="  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque,
+            />
+            <TeamMember
+              image="/demo/Siddharth.jpg"
+              tag="Developer"
+              title="Siddharth Soni"
+              description="  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque,
             culpa."
-          />
-        </Flex>
-      </Col>
-    </Row>
+            />
+          </Flex>
+        </Col>
+      </Row>
+    </>
   );
 }
 

@@ -12,20 +12,27 @@ function page() {
   const [visible, setVisible] = useState<boolean>(false);
 
   return (
-    <Layout hasSider className={Style.profile_Layout}>
-      <Sider className={classNames(Style.sidebar, visible ? Style.hidden : "")}>
-        <ProfileSidebar
-          setActive={setActive}
-          setVisible={setVisible}
-          visible={visible}
-        />
-      </Sider>
-      <Content
-        className={classNames(Style.content, !visible ? Style.hidden : "")}
-      >
-        <ProfileContent active={active} setVisible={setVisible} />
-      </Content>
-    </Layout>
+    <>
+      <head>
+        <title>Profile | InstaRide </title>
+      </head>
+      <Layout hasSider className={Style.profile_Layout}>
+        <Sider
+          className={classNames(Style.sidebar, visible ? Style.hidden : "")}
+        >
+          <ProfileSidebar
+            setActive={setActive}
+            setVisible={setVisible}
+            visible={visible}
+          />
+        </Sider>
+        <Content
+          className={classNames(Style.content, !visible ? Style.hidden : "")}
+        >
+          <ProfileContent active={active} setVisible={setVisible} />
+        </Content>
+      </Layout>
+    </>
   );
 }
 
