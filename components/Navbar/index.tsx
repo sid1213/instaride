@@ -14,26 +14,39 @@ import DateHeader from "./DateHeader";
 // import Login from "@/(auth)/login/page";   // Ues this Login page while Mobile verification
 
 //antD icons and component
-import { Button, Col, Divider, Dropdown, Row } from "antd";
-import { UserOutlined, CaretDownOutlined } from "@ant-design/icons";
+import { Avatar, Button, Col, Dropdown, Row, Space } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import Style from "./style.module.scss";
+import { useAppDispatch, useAppSelector } from "@/slices/index";
+import { setUser } from "@/slices/auth";
+
+// states from redux
 
 function Navbar() {
   // states
   const params = useParams();
   const pathname = usePathname();
   const router = useRouter();
-  const session = useSession();
+  const session = useSession(); //track the login status
 
+  // redux state
+  const dispatch = useAppDispatch();
+  const { user } = useAppSelector((state) => state.user);
   // methods
   const handleSignIn = async () => {
-    return await signIn("google");
+    await signIn("google");
   };
+
   const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     router.push("/profile");
   };
 
+  useEffect(() => {
+    if (session.status === "authenticated") {
+      dispatch(setUser({ ...session.data.user }));
+    }
+  }, [session, dispatch]);
   // antD
   const items: MenuProps["items"] = [
     {
@@ -73,19 +86,31 @@ function Navbar() {
               <li>
                 <Link href={"/contact"}>Contact</Link>
               </li>
-              <li>
-                <Button onClick={handleSignIn}>Login</Button>
-              </li>
-              <li>
-                <Dropdown.Button
-                  onClick={handleButtonClick}
-                  menu={{ items }}
-                  placement="bottom"
-                  icon={<CaretDownOutlined />}
-                >
-                  <UserOutlined /> Profile
-                </Dropdown.Button>
-              </li>
+
+              {session.status === "unauthenticated" ||
+              session.status === "loading" ? (
+                <li>
+                  <Button onClick={handleSignIn}>Login</Button>
+                </li>
+              ) : (
+                <li>
+                  <Dropdown
+                    menu={{ items }}
+                    placement="bottomLeft"
+                    arrow
+                    className="profile_dropdown"
+                  >
+                    <Space align="center">
+                      <Avatar
+                        src={user?.image}
+                        style={{ backgroundColor: "#87d068" }}
+                        icon={<UserOutlined />}
+                      />
+                      Profile
+                    </Space>
+                  </Dropdown>
+                </li>
+              )}
             </ul>
           </div>
         </Row>
