@@ -24,9 +24,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <AntdStyledComponents>
-          <Auth>
-            <Providers>{children}</Providers>
-          </Auth>
+          <Providers>{children}</Providers>
         </AntdStyledComponents>
       </body>
     </html>
