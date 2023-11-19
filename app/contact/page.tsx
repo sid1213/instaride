@@ -6,16 +6,21 @@ import ContactForm from "@/components/Contact/ContactForm";
 
 function Contact() {
   return (
-    <section className={Style.container}>
-      <Row className={Style.row}>
-        <Col md={24} lg={10} xl={10} span={24}>
-          <Content />
-        </Col>
-        <Col md={24} lg={10} xl={10} span={24}>
-          <ContactForm />
-        </Col>
-      </Row>
-    </section>
+    <>
+      <head>
+        <title>Contact | InstaRide </title>
+      </head>
+      <section className={Style.container}>
+        <Row className={Style.row}>
+          <Col md={24} lg={10} xl={10} span={24}>
+            <Content />
+          </Col>
+          <Col md={24} lg={10} xl={10} span={24}>
+            <ContactForm />
+          </Col>
+        </Row>
+      </section>
+    </>
   );
 }
 

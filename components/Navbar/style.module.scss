@@ -53,16 +53,24 @@
       li {
         margin: 0 12px;
         color: $black;
-        font-size: $text-xl;
+        font-size: $text-lg;
         font-weight: 600;
         cursor: pointer;
         a {
           cursor: pointer;
           color: $black;
-          font-size: $text-xl;
+          font-size: $text-lg;
           font-weight: 600;
           &:hover {
             color: $base-green;
+          }
+        }
+        .profile_dropdown {
+          :global(.ant-space-item) {
+            cursor: pointer;
+            color: $black;
+            font-size: $text-lg;
+            font-weight: 600;
           }
         }
       }

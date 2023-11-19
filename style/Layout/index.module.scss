@@ -1,4 +1,6 @@
 @import "/style/Modules/typography";
+@import "/style/Modules/mixins";
+
 .layout {
   background: $white;
 
@@ -20,7 +22,11 @@
   max-width: 1440px;
   min-height: calc(100vh - 6.4rem);
 }
-
 .content {
   margin-top: 6rem;
+}
+.footer {
+  @include tablet {
+    padding: 20px 0 !important;
+  }
 }
