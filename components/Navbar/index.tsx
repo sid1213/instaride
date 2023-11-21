@@ -64,12 +64,15 @@ function Navbar() {
       <Col span={24}>
         <Row justify={"space-between"}>
           <div className="logo">
-            <Image
-              src="/assests/Group.svg"
-              width={100}
-              height={55}
-              alt="logo"
-            />
+            <Link href="/">
+              <Image
+                src="/assests/Group.svg"
+                width={100}
+                height={55}
+                alt="logo"
+              />
+            </Link>
+
             <SideNavbar />
           </div>
           <div className="nav_items">
