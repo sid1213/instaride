@@ -11,6 +11,11 @@
   height: fit-content;
   top: 0;
   transition: background-color 0.3s ease-in-out;
+
+  :global(.ant-col) {
+    width: 100%;
+  }
+
   // logo
   :global(.logo) {
     display: flex;

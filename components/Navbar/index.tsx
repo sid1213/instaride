@@ -63,7 +63,7 @@ function Navbar() {
   return (
     <ContainerMain className={Style.container}>
       <Row className={classNames(Style.navbar)}>
-        <Col span={24}>
+        <Col>
           <Row justify={"space-between"}>
             <div className="logo">
               <Link href="/">
