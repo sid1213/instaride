@@ -20,6 +20,7 @@ import type { MenuProps } from "antd";
 import Style from "./style.module.scss";
 import { useAppDispatch, useAppSelector } from "@/slices/index";
 import { setUser } from "@/slices/auth";
+import ContainerMain from "../ContainerMain";
 
 function Navbar() {
   // states
@@ -60,66 +61,69 @@ function Navbar() {
   ];
 
   return (
-    <Row className={classNames(Style.navbar)}>
-      <Col span={24}>
-        <Row justify={"space-between"}>
-          <div className="logo">
-            <Link href="/">
-              <Image
-                src="/assests/Group.svg"
-                width={100}
-                height={55}
-                alt="logo"
-              />
-            </Link>
-
-            <SideNavbar />
-          </div>
-          <div className="nav_items">
-            <ul>
-              <li>
-                <Link href={"/about"}>About</Link>
-              </li>
-              <li>
-                <Link href={"/contact"}>Contact</Link>
-              </li>
-
-              {session.status === "unauthenticated" ||
-              session.status === "loading" ? (
-                <li>
-                  <Button onClick={handleSignIn}>Login</Button>
-                </li>
-              ) : (
-                <li>
-                  <Dropdown
-                    menu={{ items }}
-                    placement="bottomLeft"
-                    arrow
-                    className="profile_dropdown"
-                  >
-                    <Space align="center">
-                      <Avatar
-                        src={user?.image}
-                        style={{ backgroundColor: "#87d068" }}
-                        icon={<UserOutlined />}
-                      />
-                      <Link href={"/profile"}>Profile</Link>
-                    </Space>
-                  </Dropdown>
-                </li>
-              )}
-            </ul>
-          </div>
-        </Row>
-      </Col>
-      {(pathname === "/checkout" ||
-        pathname === `/${params.cityname}` ||
-        pathname === `/${params.cityname}/${params.vehiclename}`) && (
+    <ContainerMain className={Style.container}>
+      <Row className={classNames(Style.navbar)}>
         <Col span={24}>
-          <DateHeader />
+          <Row justify={"space-between"}>
+            <div className="logo">
+              <Link href="/">
+                <Image
+                  src="/assests/Group.svg"
+                  width={100}
+                  height={55}
+                  alt="logo"
+                  className={Style.logoH}
+                />
+              </Link>
+
+              <SideNavbar />
+            </div>
+            <div className="nav_items">
+              <ul>
+                <li>
+                  <Link href={"/about"}>About</Link>
+                </li>
+                <li>
+                  <Link href={"/contact"}>Contact</Link>
+                </li>
+
+                {session.status === "unauthenticated" ||
+                session.status === "loading" ? (
+                  <li>
+                    <Button onClick={handleSignIn}>Login</Button>
+                  </li>
+                ) : (
+                  <li>
+                    <Dropdown
+                      menu={{ items }}
+                      placement="bottomLeft"
+                      arrow
+                      className="profile_dropdown"
+                    >
+                      <Space align="center">
+                        <Avatar
+                          src={user?.image}
+                          style={{ backgroundColor: "#87d068" }}
+                          icon={<UserOutlined />}
+                        />
+                        <Link href={"/profile"}>Profile</Link>
+                      </Space>
+                    </Dropdown>
+                  </li>
+                )}
+              </ul>
+            </div>
+          </Row>
         </Col>
-      )}
-    </Row>
+        {(pathname === "/checkout" ||
+          pathname === `/${params.cityname}` ||
+          pathname === `/${params.cityname}/${params.vehiclename}`) && (
+          <Col span={24}>
+            <DateHeader />
+          </Col>
+        )}
+      </Row>
+    </ContainerMain>
   );
 }
 

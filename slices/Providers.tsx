@@ -16,7 +16,7 @@ const Providers: React.FC<ProviderType> = ({ children }) => {
     <Provider store={store}>
       <SessionProvider>
         <Layout className={Style.layout}>
-          <Header>
+          <Header className={Style.header}>
             <Navbar />
           </Header>
           <Content className={Style.content}>{children}</Content>
