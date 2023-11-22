@@ -11,6 +11,9 @@
   :global(.ant-form-item) {
     margin-bottom: 0 !important;
   }
+  :global(.ant-form .ant-row) {
+    align-items: baseline;
+  }
 }
 
 .input {
