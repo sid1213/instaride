@@ -1,6 +1,6 @@
 @import "/style/Modules/typography";
 
-.vehicle_card {
+.vehicle_card_col {
   :global(.available_btn) {
     position: absolute;
     top: 28%;
@@ -22,18 +22,36 @@
       color: $darkblue_1 !important;
     }
   }
-
+  @include mobile {
+    width: 100%;
+  }
   .vehicle_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border-radius: 0.25rem;
-    width: 28rem;
-    // margin-top: 1.2rem;
+    width: 34rem;
+    height: 100%;
     position: relative;
     border: 1px solid $gray;
     overflow: hidden;
 
+    @include desktop {
+      width: 32rem;
+    }
+    @include tablet {
+      width: 36rem;
+    }
+    @include min-tablet {
+      width: 28rem;
+    }
+    @include mobile {
+      width: 100%;
+    }
+
     // vehicle header
     :global(.ant-card-head) {
-      padding: 1rem 0 0 1rem;
+      padding: 1rem;
 
       // header
       :global(.ant-card-head-title) {
@@ -83,7 +101,8 @@
         position: absolute;
         width: 12.5rem;
         top: -2rem;
-        left: 7rem;
+        left: 50%;
+        transform: translateX(-50%);
         padding: 0.2rem 0;
         border: $border-thin solid $bg-light-gray;
         border-radius: 2em;

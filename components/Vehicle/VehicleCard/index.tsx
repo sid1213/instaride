@@ -41,7 +41,7 @@ const VehicleCard = ({ data }: vehicleProps) => {
   const handleChange = (value: string) => {};
 
   return (
-    <Col className={Style.vehicle_card}>
+    <Col className={Style.vehicle_card_col}>
       {/* Available button */}
       {data.available && (
         <Button className="available_btn">
@@ -67,10 +67,6 @@ const VehicleCard = ({ data }: vehicleProps) => {
                 Pay at Pickup Available
               </Tag>
             )}
-
-            <Tag color="warning" className={Style.ribbon}>
-              {data.tips} trips
-            </Tag>
           </Space>
         }
         cover={

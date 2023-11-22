@@ -3,8 +3,8 @@
 
 .vehicleCard {
   border-radius: 0.25rem;
-  width: 28rem;
-
+  width: 30rem;
+  height: 100%;
   // card header
   :global(.ant-card-head) {
     padding: 0 1rem;
