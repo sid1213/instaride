@@ -5,9 +5,9 @@ import Sider from "antd/es/layout/Sider";
 import { Bike_Data } from "Mock_Data/bike";
 import VehicleCard from "@/components/Vehicle/VehicleCard";
 import Filter from "@/components/Vehicle/Filter";
-import Vehicle from "@/components/Vehicle";
 import Style from "./style.module.scss";
 import ContainerMain from "@/components/ContainerMain";
+import MobileFilter from "@/components/Vehicle/MobileFilter";
 
 const City = () => {
   return (
@@ -16,12 +16,15 @@ const City = () => {
         <Layout hasSider>
           <Sider className={Style.sider} width={250}>
             <Filter />
+            {/* <MobileFilter /> */}
           </Sider>
           <Content className={Style.content}>
             {Bike_Data.length > 0 &&
               Bike_Data?.map((item) => {
                 return <VehicleCard data={item} key={item.id} />;
               })}
+
+            <MobileFilter />
           </Content>
         </Layout>
       </Layout>
