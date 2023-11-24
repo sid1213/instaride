@@ -5,6 +5,7 @@ import { Col, Divider, Form, Input, Row, Space, Tag, Typography } from "antd";
 import { CheckCircleOutlined } from "@ant-design/icons";
 import { AiOutlineLeft } from "react-icons/ai";
 import Button from "@/components/Ui/Button";
+import { useAppSelector } from "@/slices/index";
 
 const { Title, Text } = Typography;
 interface PropsType {
@@ -18,10 +19,13 @@ interface FormValues {
   address: string;
 }
 function Profile({ setVisible }: PropsType) {
+  // redux
+  const { user } = useAppSelector((state) => state.user);
+
   // initial Data for form values
   const initialData = {
-    nameField: "Jagrati Gupta",
-    emailField: "123jagratigupta@gmail.com",
+    nameField: user?.name || "abc",
+    emailField: user?.email || "abc@gmail.com",
     addressField: "Not provided",
   };
   const [form] = Form.useForm();
@@ -209,10 +213,10 @@ function Profile({ setVisible }: PropsType) {
             </Tag>
           </p>
         </Space>
-        <Divider />
 
+        {/* <Divider /> */}
         {/* edit for address */}
-        <Space direction="vertical" className={Style.flex}>
+        {/* <Space direction="vertical" className={Style.flex}>
           <Col span={24}>
             <p>Address</p>
             <p
@@ -257,7 +261,7 @@ function Profile({ setVisible }: PropsType) {
               </Form.Item>
             </Form>
           )}
-        </Space>
+        </Space> */}
       </Col>
     </Row>
   );
