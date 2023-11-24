@@ -2,16 +2,8 @@
 
 .container {
   min-height: $screen;
+  padding: $space-sm;
   .row {
-    // height: $screen;
-    padding: $space-2xl;
-    justify-content: center;
-
-    @include mobile() {
-      padding: $space-lg $space-lg;
-    }
-    @include xs-mobile() {
-      padding: $space-sm;
-    }
+    justify-content: space-between;
   }
 }
