@@ -38,8 +38,9 @@ function About() {
   return (
     <>
       <head>
-        <title>About | InstaRide </title>
+        <title>About | InstaRide</title>
       </head>
+
       <Row className={Style.about} justify={"center"}>
         <Space direction="vertical" align="center" className="heading">
           <Title level={2}>ABOUT US</Title>
@@ -58,7 +59,7 @@ function About() {
           <Title level={3}>Why Choose Us?</Title>
           <Row justify={"space-evenly"} className="cardRow">
             {items.map((item) => (
-              <Col span={4} xs={24} sm={12} lg={8} xl={4} key={item.icon}>
+              <Col span={4} xs={24} md={8} lg={6} xl={4} key={item.icon}>
                 <ChooseUsCard
                   icon={item.icon}
                   description={item.description}
@@ -70,7 +71,7 @@ function About() {
         </Col>
         <Col span={24} className="our_team">
           <Title level={3}>Our Team</Title>
-          <Flex gap={"5rem"} justify="center" wrap="wrap">
+          <Flex justify="center" wrap="wrap">
             <TeamMember
               image="/demo/Jagrati.jpg"
               tag="Developer"
