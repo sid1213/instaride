@@ -1,11 +1,10 @@
 @import "/style/Modules/typography";
 .about {
+  max-width: 1440px;
   :global(.heading) {
     width: 100%;
-    background-color: $white;
     min-height: 30rem;
     justify-content: center;
-    border-bottom: 0.1rem solid $bg-light-gray;
 
     :global(h2.ant-typography) {
       color: $darkblue_1;
@@ -18,9 +17,12 @@
       letter-spacing: 0.5rem;
       font-weight: 500;
     }
+    @include min-tablet {
+      min-height: 20rem;
+    }
   }
   :global(h3.ant-typography) {
-    margin: $space-sm 0;
+    padding: $space-sm 0;
     text-align: center;
     text-decoration: underline;
     text-decoration-color: $base-green;
@@ -29,8 +31,6 @@
     }
   }
   :global(.intro_container) {
-    // padding: $space-xl $space-sm;
-    padding: $space-xs;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,8 +41,6 @@
     }
   }
   :global(.choose_us) {
-    // padding: 0 $space-sm;
-    padding: $space-xs;
     :global(.cardRow) {
       gap: 1.5rem;
       :global(.ant-col) {
@@ -50,17 +48,8 @@
         border: 0.1rem solid $gray;
       }
     }
-    @include tablet {
-      padding: $space-md;
-    }
   }
   :global(.our_team) {
-    // margin: $space-lg 0;
-    padding: 0 $space-sm;
-    padding: $space-xs;
-    @include tablet {
-      padding: $space-md;
-    }
     :global(.ant-flex) {
       gap: 5rem;
       @include mobile {
@@ -91,4 +80,8 @@
       }
     }
   }
+}
+
+.container {
+  padding: $space-sm;
 }
