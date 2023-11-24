@@ -1,11 +1,13 @@
 import React from "react";
 import {
+  Col,
   Collapse,
   CollapseProps,
   Divider,
   Form,
   Input,
   Radio,
+  Select,
   Space,
   Tag,
 } from "antd";
@@ -30,6 +32,11 @@ const listItem = [
     title: "hello",
     body: "hii",
   },
+];
+const options = [
+  { value: "plan1", label: "plan1" },
+  { value: "plan2", label: "plan2" },
+  { value: "plan3", label: "plan3" },
 ];
 const listItemHead = [
   {
@@ -60,7 +67,9 @@ const BookNowFrom = () => {
         className={Style.form}
       >
         <Form.Item label="Select Package" name="username">
-          <Input />
+          <Col className={Style.select_box}>
+            <Select options={options} />
+          </Col>
         </Form.Item>
 
         <Form.Item label="Payment Option" name="password">

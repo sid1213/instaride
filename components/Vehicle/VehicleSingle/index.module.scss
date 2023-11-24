@@ -4,22 +4,24 @@
   height: inherit;
   margin-bottom: $space-2xl;
   margin-top: 6rem;
-}
-.left,
-.bottomOne,
-.right {
-  padding: $space-2xl;
-  padding-bottom: 0;
-  @include mobile() {
-    padding: $space-lg !important;
+  max-width: 1440px;
+  .left,
+  .bottomOne,
+  .right {
+    padding-right: $space-2xl;
+
+    @include tablet() {
+      padding: $space-lg 0;
+    }
+    @include xs-mobile() {
+      padding: $space-sm 0;
+    }
   }
-  @include xs-mobile() {
-    padding: $space-sm !important;
+  .right {
+    padding: 0;
   }
-}
-.right {
-  padding-left: 0;
-  @include tablet() {
-    padding-left: $space-2xl;
+  @include large-desktop() {
+    padding: $space-md;
+    margin-top: 0;
   }
 }

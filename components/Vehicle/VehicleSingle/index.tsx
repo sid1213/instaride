@@ -10,6 +10,7 @@ import InformationCard from "./InformationCard";
 import BikeFeatures from "./BikeFeatures";
 import Title from "antd/es/typography/Title";
 import Button from "@/components/Ui/Button";
+import ContainerMain from "@/components/ContainerMain";
 
 const list = [
   `Documents Required:- Copy of Aadhar Card and Driving License. Digilocker documents are also accepted.
@@ -28,22 +29,24 @@ const list = [
 
 const VehicleSingle = () => {
   return (
-    <Row className={Style.main}>
-      <Col span={24} md={24} lg={14} xl={14} className={Style.left}>
-        <VehicleCard />
-      </Col>
-      <Col span={24} md={24} lg={10} xl={10} className={Style.right}>
-        <BookNowFrom />
-        <RulesTable />
-        <RulesList title="Terms and Conditions" list={list} />
-      </Col>
-      <Col span={24} className={Style.bottomOne}>
-        <InformationCard />
-      </Col>
-      <Col span={24} className={Style.bottomOne}>
-        <BikeFeatures />
-      </Col>
-    </Row>
+    <ContainerMain>
+      <Row className={Style.main}>
+        <Col span={24} md={24} lg={14} xl={14} className={Style.left}>
+          <VehicleCard />
+        </Col>
+        <Col span={24} md={24} lg={10} xl={10} className={Style.right}>
+          <BookNowFrom />
+          <RulesTable />
+          <RulesList title="Terms and Conditions" list={list} />
+        </Col>
+        <Col span={24} className={Style.bottomOne}>
+          <InformationCard />
+        </Col>
+        <Col span={24} className={Style.bottomOne}>
+          <BikeFeatures />
+        </Col>
+      </Row>
+    </ContainerMain>
   );
 };
 

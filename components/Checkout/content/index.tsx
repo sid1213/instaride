@@ -55,18 +55,6 @@ function FareDetails({ isPartial }: FareProps) {
         title="Checkout"
         className={Style.form}
       >
-        <Form.Item label="Apply Coupon" name="username">
-          <Select
-            style={{ width: "100%" }}
-            onChange={handleChange}
-            options={[
-              { value: "jack", label: "Jack" },
-              { value: "lucy", label: "Lucy" },
-              { value: "Yiminghe", label: "yiminghe" },
-            ]}
-          />
-        </Form.Item>
-
         <Form.Item label="Fare Details" className={Style.fare_details}>
           <Collapse
             ghost
