@@ -1,9 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Style from "./index.module.scss";
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, Checkbox } from "antd";
 import Title from "antd/es/typography/Title";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
 const { TextArea } = Input;
 function ContactForm() {
   // state
@@ -13,7 +13,7 @@ function ContactForm() {
 
   const onFinish = (values: any) => console.log("Success:", values);
   const onFinishFailed = (errorInfo: any) => console.log("Failed:", errorInfo);
-  const onChange = (value: any) => setVerified(true);
+  const onChange = (value: any) => setVerified(!verified);
 
   // To disable submit button at the beginning.
   useEffect(() => {
@@ -55,7 +55,7 @@ function ContactForm() {
           name="number"
           rules={[{ required: true, message: "Please input your number!" }]}
         >
-          <Input placeholder="Mobile*" />
+          <Input placeholder="Mobile*" maxLength={10} />
         </Form.Item>
 
         {/* message */}
@@ -67,11 +67,16 @@ function ContactForm() {
         </Form.Item>
 
         {/* re-captcha */}
-        <Form.Item name="captcha" valuePropName="checked">
-          <ReCAPTCHA
-            sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+        <Form.Item
+          name="captcha"
+          valuePropName="checked"
+          rules={[{ required: true, message: "select the box" }]}
+        >
+          {/* <ReCAPTCHA
+            sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" //default sidekey
             onChange={onChange}
-          />
+          /> */}
+          <Checkbox onChange={onChange}> Are you ready to connect?</Checkbox>
         </Form.Item>
 
         {/* submit button */}
