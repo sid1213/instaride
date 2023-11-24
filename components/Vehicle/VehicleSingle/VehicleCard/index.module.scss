@@ -62,6 +62,7 @@
     }
     :global(.slick-prev) {
       left: 0%;
+      z-index: 11;
       @include mobile() {
         left: 10%;
       }

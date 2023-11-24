@@ -16,14 +16,16 @@
     background-color: $darkblue_1;
   }
 }
-.container {
+.header {
+  background-color: $white !important;
   width: 100%;
-  margin: 0 auto;
-  max-width: 1440px;
-  min-height: calc(100vh - 6.4rem);
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid $light-gray;
 }
 .content {
-  margin-top: 6rem;
+  background: #f5f5f5 !important;
 }
 .footer {
   @include tablet {

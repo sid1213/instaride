@@ -10,7 +10,7 @@ const Home = () => {
         <Col className={Style.left} xs={24} sm={24} md={24} lg={12}>
           <SearchCard />
         </Col>
-        <Col md={24} lg={12} className={Style.right} order={1}>
+        <Col className={Style.right} order={1}>
           <Image
             src="/delhi.webp"
             alt="delhi"

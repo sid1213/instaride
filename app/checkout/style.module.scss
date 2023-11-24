@@ -2,10 +2,12 @@
 .container {
   min-height: calc(100vh - 6.4rem);
   .main {
+    max-width: 1440px;
     height: inherit;
     margin-bottom: $space-2xl;
     gap: 2rem;
     margin-top: 4rem;
+    justify-content: space-around;
   }
   .header {
     h5 {
@@ -16,13 +18,12 @@
   .header,
   .left,
   .right {
-    padding: $space-2xl;
     padding-bottom: 0;
-    @include mobile() {
-      padding: $space-lg !important;
+    @include tablet() {
+      padding: $space-lg;
     }
     @include xs-mobile() {
-      padding: $space-sm !important;
+      padding: $space-sm;
     }
   }
   .left {

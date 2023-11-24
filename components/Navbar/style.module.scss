@@ -2,25 +2,24 @@
 @import "/style/Modules/mixins";
 
 .navbar {
-  background-color: $white !important;
+  // background-color: $white !important;
   width: 100%;
+  max-width: 1440px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 20px;
-  height: inherit;
-  z-index: 1000;
-  position: fixed;
+  height: fit-content;
   top: 0;
   transition: background-color 0.3s ease-in-out;
-  border-bottom: 1px solid $light-gray;
-  padding-bottom: 1.2rem;
+
+  :global(.ant-col) {
+    width: 100%;
+  }
 
   // logo
   :global(.logo) {
     display: flex;
     align-items: center;
-
     :global(img) {
       @include tablet {
         padding: 0px 20px;
@@ -92,4 +91,16 @@
     align-items: start;
     padding: 0;
   }
+}
+.container {
+  padding: 1rem;
+  @include tablet {
+    flex-direction: column;
+    align-items: start;
+    padding: 0;
+  }
+}
+.logoH {
+  margin: auto 0;
+  display: block;
 }

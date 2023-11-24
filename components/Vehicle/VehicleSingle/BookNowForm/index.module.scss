@@ -36,7 +36,7 @@
   margin: 1rem 0;
   margin-bottom: 0;
   padding: 0.4rem 1rem;
-  white-space: pre-wrap;
+  white-space: wrap !important;
 }
 .bookNowButtonBig {
   @include tablet() {
@@ -69,5 +69,28 @@
     width: 100%;
     margin-bottom: 0 !important;
     z-index: 111111;
+  }
+}
+
+// select box
+.select_box {
+  width: 100%;
+  position: relative;
+  div,
+  input {
+    border-radius: 0 !important;
+  }
+  :global(.ant-select) {
+    position: relative;
+    width: 100%;
+  }
+
+  :global(.ant-select-selector) {
+    border-radius: 0.125rem;
+    padding: 1.4rem 1rem;
+  }
+  :global(.ant-select:not(.ant-select-customize-input) .ant-select-selector) {
+    background-color: $white;
+    color: $black;
   }
 }

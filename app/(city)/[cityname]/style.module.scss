@@ -1,21 +1,13 @@
 @import "/style/Modules/typography";
 
 .city {
+  max-width: 1440px;
   min-height: $screen;
-  padding: $space-2xl;
   position: relative;
 
-  @include mobile() {
-    padding: $space-lg $space-lg;
-  }
-  @include xs-mobile() {
-    padding: $space-sm;
-  }
-  :global(.ant-layout-has-sider) {
-    margin-top: 6rem;
-  }
   .sider {
     background: white;
+    height: 100%;
     border: 1px solid $gray;
     @include tablet {
       display: none;
@@ -25,12 +17,15 @@
     padding: 0 $space-xs $space-xs;
     height: 100%;
     display: flex;
-    gap: 2rem 1.2rem;
+    gap: 2rem;
     flex-wrap: wrap;
     background-color: transparent;
     @include tablet {
       padding: 0;
-      justify-content: center;
+      margin-bottom: 8rem;
     }
   }
+}
+.container {
+  padding: $space-xs;
 }
