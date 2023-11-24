@@ -29,7 +29,8 @@
     }
   }
   :global(.intro_container) {
-    padding: $space-xl $space-sm;
+    // padding: $space-xl $space-sm;
+    padding: $space-xs;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +41,8 @@
     }
   }
   :global(.choose_us) {
-    padding: 0 $space-sm;
+    // padding: 0 $space-sm;
+    padding: $space-xs;
     :global(.cardRow) {
       gap: 1.5rem;
       :global(.ant-col) {
@@ -53,12 +55,18 @@
     }
   }
   :global(.our_team) {
-    margin: $space-lg 0;
+    // margin: $space-lg 0;
     padding: 0 $space-sm;
+    padding: $space-xs;
     @include tablet {
       padding: $space-md;
     }
-
+    :global(.ant-flex) {
+      gap: 5rem;
+      @include mobile {
+        gap: 1rem;
+      }
+    }
     :global(.team_member) {
       text-align: center;
       margin-top: $space-sm;
