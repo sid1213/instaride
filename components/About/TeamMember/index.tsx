@@ -7,6 +7,7 @@ import {
   LinkedinOutlined,
   GithubOutlined,
 } from "@ant-design/icons";
+import Image from "next/image";
 type TeamProps = {
   image: string;
   tag: string;
@@ -18,7 +19,7 @@ function TeamMember({ image, tag, title, description }: TeamProps) {
     <Card
       className="team_member"
       style={{ width: 300 }}
-      cover={<img alt="example" src={image} />}
+      cover={<Image src={image} width={100} height={100} alt="profile" />}
       actions={[
         <InstagramOutlined key="instagram" />,
         <GithubOutlined key="github" />,

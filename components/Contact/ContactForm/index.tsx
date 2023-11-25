@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import Style from "./index.module.scss";
 import { Form, Input, Button } from "antd";
 import Title from "antd/es/typography/Title";
-import ReCAPTCHA from "react-google-recaptcha";
+// import ReCAPTCHA from "react-google-recaptcha";
+
 const { TextArea } = Input;
 function ContactForm() {
   // state
@@ -13,7 +14,7 @@ function ContactForm() {
 
   const onFinish = (values: any) => console.log("Success:", values);
   const onFinishFailed = (errorInfo: any) => console.log("Failed:", errorInfo);
-  const onChange = (value: any) => setVerified(true);
+  const onChange = () => setVerified(true);
 
   // To disable submit button at the beginning.
   useEffect(() => {
@@ -31,7 +32,7 @@ function ContactForm() {
         autoComplete="off"
       >
         <Form.Item>
-          <Title level={2}>We're here for you</Title>
+          <Title level={2}>We&apos;re here for you</Title>
         </Form.Item>
 
         {/* name */}
@@ -68,10 +69,10 @@ function ContactForm() {
 
         {/* re-captcha */}
         <Form.Item name="captcha" valuePropName="checked">
-          <ReCAPTCHA
+          {/* <ReCAPTCHA
             sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
             onChange={onChange}
-          />
+          /> */}
         </Form.Item>
 
         {/* submit button */}

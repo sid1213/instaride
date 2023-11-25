@@ -7,7 +7,7 @@ import ProfileContent from "@/components/Profile/ProfileContent";
 import classNames from "classnames";
 const { Sider, Content } = Layout;
 
-function page() {
+const Page = () => {
   const [active, setActive] = useState<string>("profile");
   const [visible, setVisible] = useState<boolean>(false);
 
@@ -34,6 +34,6 @@ function page() {
       </Layout>
     </>
   );
-}
+};
 
-export default page;
+export default Page;
