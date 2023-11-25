@@ -1,4 +1,5 @@
-import { Col, Image, Row, Tag } from "antd";
+import { Col, Row, Tag } from "antd";
+import Image from "next/image";
 import Style from "./style.module.scss";
 import React from "react";
 
@@ -14,7 +15,7 @@ function NotFound() {
       </Col>
 
       <Col className={Style.image}>
-        <Image src="/assests/empty-bookings.svg" width={220} preview={false} />
+        <Image src="/assests/empty-bookings.svg" width={220} alt=" 404" />
       </Col>
     </Row>
   );
