@@ -1,8 +1,8 @@
 @import "/style/Modules/typography";
 
 .floatButton {
-  display: none;
   left: 50%;
+  display: none !important;
   transform: translateX(-50%);
   width: fit-content;
   min-width: 20rem;
@@ -32,7 +32,7 @@
     width: 100% !important;
     height: fit-content;
     min-height: auto;
-    background-color: transparent;
+    background-color: transparent !important;
   }
   :global(.ant-float-btn-content) {
     width: 100%;
@@ -51,7 +51,7 @@
     text-align: center;
   }
   @include tablet() {
-    display: flex;
+    display: flex !important;
   }
 }
 .drawer {
@@ -60,7 +60,7 @@
     display: block;
   }
   :global(.ant-drawer-content) {
-    background-color: transparent;
+    background-color: transparent !important;
   }
   :global(.ant-drawer-content-wrapper) {
     height: 95% !important;

@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import Style from "./index.module.scss";
+
 import {
   Checkbox,
   Col,
@@ -13,7 +15,6 @@ import {
 } from "antd";
 import { BsFilterCircle } from "react-icons/bs";
 import { IoLocateOutline } from "react-icons/io5";
-import Style from "./index.module.scss";
 
 const MobileFilter = () => {
   const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
