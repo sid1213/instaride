@@ -11,7 +11,7 @@
     background-color: #fafafa;
 
     @include tablet {
-      padding: $space-xs;
+      padding: $space-xs 2.5rem;
     }
   }
   :global(.ant-select-arrow) {
