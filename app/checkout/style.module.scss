@@ -1,6 +1,7 @@
 @import "/style/Modules/typography";
 .container {
   min-height: calc(100vh - 6.4rem);
+  padding: $space-sm;
   .main {
     max-width: 1440px;
     height: inherit;
@@ -8,23 +9,30 @@
     gap: 2rem;
     margin-top: 4rem;
     justify-content: space-around;
+    @include tablet {
+      margin-top: 0;
+      gap: 0;
+    }
   }
   .header {
     h5 {
       margin-bottom: 0;
       font-size: $text-xl;
     }
+    @include tablet() {
+      padding: $space-sm 0 !important;
+    }
   }
   .header,
   .left,
   .right {
     padding-bottom: 0;
-    @include tablet() {
-      padding: $space-lg;
-    }
-    @include xs-mobile() {
-      padding: $space-sm;
-    }
+    // @include tablet() {
+    //   padding: $space-lg;
+    // }
+    // @include xs-mobile() {
+    //   padding: $space-sm;
+    // }
   }
   .left {
     border-right: 1px solid $bg-light-gray;
@@ -32,7 +40,7 @@
   .right {
     padding-left: 0;
     @include tablet() {
-      padding-left: $space-2xl;
+      margin-top: 2rem;
     }
   }
 }
