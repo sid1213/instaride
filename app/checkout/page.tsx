@@ -11,8 +11,8 @@ function Checkout() {
   // set partial payment true-false
   const [isPartial, setIsPartial] = useState<boolean>(false);
   return (
-    <section className={Style.container}>
-      <ContainerMain>
+    <ContainerMain>
+      <section className={Style.container}>
         <Row className={Style.main}>
           <Col span={24} className={Style.header}>
             <Title level={5}>Summary</Title>
@@ -24,8 +24,8 @@ function Checkout() {
             <FareDetails isPartial={isPartial} />
           </Col>
         </Row>
-      </ContainerMain>
-    </section>
+      </section>
+    </ContainerMain>
   );
 }
 

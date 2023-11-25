@@ -17,18 +17,18 @@ const contactItems: propsType[] = [
   {
     icon: "Company",
     title: "Registered Company",
-    description: "GoBikes Automotive Private Limited",
+    description: "InstaRide Automotive Private Limited",
   },
   {
     icon: "Address",
     title: "Registered Address",
     description:
-      "5th Floor, Seminar Building, Incubation Center IIIT Delhi, New Delhi, Delhi 110020",
+      "5th Floor, Seminar Building, Incubation Center  Delhi, New Delhi, Delhi 110020",
   },
   {
     icon: "Number",
     title: "Mobile Number",
-    description: "+91-8448444897",
+    description: "+91-123456789",
   },
 ];
 function Content() {

@@ -3,7 +3,8 @@
 .contact {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  justify-content: start;
+  // height: 100%;
   padding: $space-xl;
   h1 {
     margin: 0 !important;
@@ -43,8 +44,10 @@
     }
   }
 
+  @include tablet {
+    padding: $space-sm 0.5rem;
+  }
   @include mobile() {
-    padding: 0;
     h1 {
       font-size: $heading-md !important;
     }

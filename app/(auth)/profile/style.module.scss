@@ -1,16 +1,12 @@
 @import "/style/Modules/typography";
 .profile_Layout {
-  width: 90%;
-  margin: 0 auto;
-  min-height: 100vh !important;
-  padding-top: 5rem;
-  background-color: $white !important;
-
+  // width: 90%;
+  max-width: 1440px;
+  padding: $space-sm 0;
   .sidebar {
     min-width: 25% !important;
     width: 25% !important;
-    background-color: $white !important;
-
+    background-color: transparent !important;
     @include tablet {
       min-width: 100% !important;
       width: 100% !important;
@@ -21,6 +17,7 @@
     }
   }
   .content {
+    background-color: $off-white;
     @include tablet {
       min-width: 100% !important;
       width: 100% !important;
@@ -30,4 +27,9 @@
       }
     }
   }
+}
+.container {
+  padding: $space-xs;
+  min-height: 100vh;
+  align-items: start;
 }

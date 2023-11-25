@@ -62,18 +62,19 @@ function ProfileSidebar({ setActive, setVisible, visible }: PropsType) {
           return (
             <React.Fragment key={i}>
               {data.btn_name === "goCoins" ? (
-                <Badge
-                  count={"Coming Soon.."}
-                  className={Style.disabled_btn}
-                  color="orange"
-                >
-                  <Button key={i} block disabled={true}>
-                    <Space>
-                      {data.icon}
-                      {data.name}
-                    </Space>
-                  </Button>
-                </Badge>
+                // <Badge
+                //   count={"Coming Soon.."}
+                //   className={Style.disabled_btn}
+                //   color="orange"
+                // >
+                //   <Button key={i} block disabled={true}>
+                //     <Space>
+                //       {data.icon}
+                //       {data.name}
+                //     </Space>
+                //   </Button>
+                // </Badge>
+                <></>
               ) : (
                 <Button
                   key={i}

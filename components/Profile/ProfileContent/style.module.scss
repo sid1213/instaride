@@ -5,7 +5,8 @@
   margin: 1rem 2rem;
   padding-bottom: 2rem;
   border-radius: 0.7rem;
-  border: 1px solid $bg-light-gray;
+  // border: 1px solid $white;
+  background-color: $white;
   display: flex;
   flex-direction: column;
   @include tablet {

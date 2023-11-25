@@ -1,10 +1,9 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Style from "./index.module.scss";
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, Checkbox } from "antd";
 import Title from "antd/es/typography/Title";
 // import ReCAPTCHA from "react-google-recaptcha";
-
 const { TextArea } = Input;
 function ContactForm() {
   // state
@@ -56,7 +55,7 @@ function ContactForm() {
           name="number"
           rules={[{ required: true, message: "Please input your number!" }]}
         >
-          <Input placeholder="Mobile*" />
+          <Input placeholder="Mobile*" maxLength={10} />
         </Form.Item>
 
         {/* message */}
@@ -68,11 +67,16 @@ function ContactForm() {
         </Form.Item>
 
         {/* re-captcha */}
-        <Form.Item name="captcha" valuePropName="checked">
+        <Form.Item
+          name="captcha"
+          valuePropName="checked"
+          rules={[{ required: true, message: "select the box" }]}
+        >
           {/* <ReCAPTCHA
-            sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+            sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" //default sidekey
             onChange={onChange}
           /> */}
+          <Checkbox onChange={onChange}> Are you ready to connect?</Checkbox>
         </Form.Item>
 
         {/* submit button */}

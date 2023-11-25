@@ -20,9 +20,13 @@
     }
   }
   .content {
-    display: inline;
+    display: inline-block;
     width: 100%;
     font-size: 1.2rem;
+  }
+  .subTitle,
+  .content {
+    text-align: center;
   }
   @include mobile() {
     flex-direction: row;
