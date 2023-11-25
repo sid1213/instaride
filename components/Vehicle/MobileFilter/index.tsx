@@ -1,5 +1,7 @@
 "use client";
 import React, { useState } from "react";
+import Style from "./index.module.scss";
+
 import {
   Checkbox,
   Col,
@@ -13,7 +15,6 @@ import {
 } from "antd";
 import { BsFilterCircle } from "react-icons/bs";
 import { IoLocateOutline } from "react-icons/io5";
-import Style from "./index.module.scss";
 
 const MobileFilter = () => {
   const [isFilterOpen, setIsFilterOpen] = useState<boolean>(false);
@@ -83,18 +84,18 @@ const MobileFilter = () => {
         <Divider />
         <p>TRANSMISSION TYPE</p>
         <Space direction="vertical">
-          <Checkbox value="A">A</Checkbox>
-          <Checkbox value="A">A</Checkbox>
-          <Checkbox value="A">A</Checkbox>
-          <Checkbox value="A">A</Checkbox>
+          <Checkbox>A</Checkbox>
+          <Checkbox>A</Checkbox>
+          <Checkbox>A</Checkbox>
+          <Checkbox>A</Checkbox>
         </Space>
         <Divider />
         <p>BRANDS</p>
         <Space direction="vertical">
-          <Checkbox value="A">A</Checkbox>
-          <Checkbox value="A">A</Checkbox>
-          <Checkbox value="A">A</Checkbox>
-          <Checkbox value="A">A</Checkbox>
+          <Checkbox>A</Checkbox>
+          <Checkbox>A</Checkbox>
+          <Checkbox>A</Checkbox>
+          <Checkbox>A</Checkbox>
         </Space>
       </Drawer>
       <Drawer
@@ -106,10 +107,10 @@ const MobileFilter = () => {
         rootClassName={Style.drawer}
       >
         <Space direction="vertical">
-          <Checkbox value="A">A</Checkbox>
-          <Checkbox value="A">A</Checkbox>
-          <Checkbox value="A">A</Checkbox>
-          <Checkbox value="A">A</Checkbox>
+          <Checkbox>A</Checkbox>
+          <Checkbox>A</Checkbox>
+          <Checkbox>A</Checkbox>
+          <Checkbox>A</Checkbox>
         </Space>
       </Drawer>
     </FloatButton.Group>

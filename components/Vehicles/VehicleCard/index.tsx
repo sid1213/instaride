@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Style from "./style.module.scss";
 import { Select, Card, Badge, Button, Col, Row } from "antd";
 import classNames from "classnames";
+import Image from "next/image";
 
 interface filterProps {
   data: {
@@ -66,7 +67,7 @@ function FilterCard({ data }: filterProps) {
           </>
         }
         cover={
-          <img
+          <Image
             alt="example"
             src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
           />

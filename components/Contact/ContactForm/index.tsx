@@ -13,7 +13,7 @@ function ContactForm() {
 
   const onFinish = (values: any) => console.log("Success:", values);
   const onFinishFailed = (errorInfo: any) => console.log("Failed:", errorInfo);
-  const onChange = (value: any) => setVerified(!verified);
+  const onChange = () => setVerified(true);
 
   // To disable submit button at the beginning.
   useEffect(() => {
@@ -31,7 +31,7 @@ function ContactForm() {
         autoComplete="off"
       >
         <Form.Item>
-          <Title level={2}>We're here for you</Title>
+          <Title level={2}>We&apos;re here for you</Title>
         </Form.Item>
 
         {/* name */}
