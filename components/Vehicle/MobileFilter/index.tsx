@@ -83,18 +83,18 @@ const MobileFilter = () => {
         <Divider />
         <p>TRANSMISSION TYPE</p>
         <Space direction="vertical">
-          <Checkbox value="A">A</Checkbox>
-          <Checkbox value="A">A</Checkbox>
-          <Checkbox value="A">A</Checkbox>
-          <Checkbox value="A">A</Checkbox>
+          <Checkbox>A</Checkbox>
+          <Checkbox>A</Checkbox>
+          <Checkbox>A</Checkbox>
+          <Checkbox>A</Checkbox>
         </Space>
         <Divider />
         <p>BRANDS</p>
         <Space direction="vertical">
-          <Checkbox value="A">A</Checkbox>
-          <Checkbox value="A">A</Checkbox>
-          <Checkbox value="A">A</Checkbox>
-          <Checkbox value="A">A</Checkbox>
+          <Checkbox>A</Checkbox>
+          <Checkbox>A</Checkbox>
+          <Checkbox>A</Checkbox>
+          <Checkbox>A</Checkbox>
         </Space>
       </Drawer>
       <Drawer
@@ -106,10 +106,10 @@ const MobileFilter = () => {
         rootClassName={Style.drawer}
       >
         <Space direction="vertical">
-          <Checkbox value="A">A</Checkbox>
-          <Checkbox value="A">A</Checkbox>
-          <Checkbox value="A">A</Checkbox>
-          <Checkbox value="A">A</Checkbox>
+          <Checkbox>A</Checkbox>
+          <Checkbox>A</Checkbox>
+          <Checkbox>A</Checkbox>
+          <Checkbox>A</Checkbox>
         </Space>
       </Drawer>
     </FloatButton.Group>

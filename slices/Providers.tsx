@@ -7,15 +7,15 @@ import Style from "../style/Layout/index.module.scss";
 import Navbar from "@/components/Navbar";
 import FooterComponent from "@/components/Footer";
 import { SessionProvider } from "next-auth/react";
-import useWindowDimensions from "utils/UseWindowDimensions";
+import useDeviceSize from "utils/UseDeviceSize";
+
 const { Header, Footer, Content } = Layout;
 interface ProviderType {
   children: ReactNode;
 }
 
 const Providers: React.FC<ProviderType> = ({ children }) => {
-  const { width } = useWindowDimensions();
-
+  const [width] = useDeviceSize();
   return (
     <Provider store={store}>
       <SessionProvider>
@@ -24,10 +24,12 @@ const Providers: React.FC<ProviderType> = ({ children }) => {
             <Navbar />
           </Header>
           <Content className={Style.content}>{children}</Content>
-          {width >= 992 && (
+          {width > 991 ? (
             <Footer className={Style.footer}>
               <FooterComponent />
             </Footer>
+          ) : (
+            ""
           )}
         </Layout>
       </SessionProvider>
