@@ -19,7 +19,15 @@ function TeamMember({ image, tag, title, description }: TeamProps) {
     <Card
       className="team_member"
       style={{ width: 300 }}
-      cover={<Image src={image} width={100} height={100} alt="profile" />}
+      cover={
+        <Image
+          alt="profile"
+          src={image}
+          width={500}
+          height={250}
+          style={{ width: "100%", height: "auto" }} //overcome the image style error
+        />
+      }
       actions={[
         <InstagramOutlined key="instagram" />,
         <GithubOutlined key="github" />,
