@@ -68,6 +68,8 @@ function FilterCard({ data }: filterProps) {
         }
         cover={
           <Image
+            height={200}
+            width={200}
             alt="example"
             src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
           />
