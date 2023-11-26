@@ -27,7 +27,7 @@ const VehicleCard: React.FC = () => {
                     src="/demo/Suzuki-Access-125.png"
                     width={400}
                     height={260}
-                    objectFit="contain"
+                    // objectFit="contain"
                     alt="demo"
                   />
                 </div>
@@ -36,7 +36,7 @@ const VehicleCard: React.FC = () => {
                     src="/demo/Suzuki-Access-125.png"
                     width={400}
                     height={260}
-                    objectFit="contain"
+                    // objectFit="contain"
                     alt="demo"
                   />
                 </div>
@@ -45,7 +45,7 @@ const VehicleCard: React.FC = () => {
                     src="/demo/Suzuki-Access-125.png"
                     width={400}
                     height={260}
-                    objectFit="contain"
+                    // objectFit="contain"
                     alt="demo"
                   />
                 </div>
