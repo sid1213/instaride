@@ -15,7 +15,12 @@ function NotFound() {
       </Col>
 
       <Col className={Style.image}>
-        <Image src="/assests/empty-bookings.svg" width={220} alt=" 404" />
+        <Image
+          src="/assests/empty-bookings.svg"
+          width={220}
+          height={220}
+          alt=" 404"
+        />
       </Col>
     </Row>
   );

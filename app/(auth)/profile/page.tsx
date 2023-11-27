@@ -8,35 +8,30 @@ import classNames from "classnames";
 import ContainerMain from "@/components/ContainerMain";
 const { Sider, Content } = Layout;
 
-const Page = () => {
+const Profile = () => {
   const [active, setActive] = useState<string>("profile");
   const [visible, setVisible] = useState<boolean>(false);
 
   return (
-    <>
-      <head>
-        <title>Profile | InstaRide </title>
-      </head>
-      <ContainerMain className={Style.container}>
-        <Layout hasSider className={Style.profile_Layout}>
-          <Sider
-            className={classNames(Style.sidebar, visible ? Style.hidden : "")}
-          >
-            <ProfileSidebar
-              setActive={setActive}
-              setVisible={setVisible}
-              visible={visible}
-            />
-          </Sider>
-          <Content
-            className={classNames(Style.content, !visible ? Style.hidden : "")}
-          >
-            <ProfileContent active={active} setVisible={setVisible} />
-          </Content>
-        </Layout>
-      </ContainerMain>
-    </>
+    <ContainerMain className={Style.container}>
+      <Layout hasSider className={Style.profile_Layout}>
+        <Sider
+          className={classNames(Style.sidebar, visible ? Style.hidden : "")}
+        >
+          <ProfileSidebar
+            setActive={setActive}
+            setVisible={setVisible}
+            visible={visible}
+          />
+        </Sider>
+        <Content
+          className={classNames(Style.content, !visible ? Style.hidden : "")}
+        >
+          <ProfileContent active={active} setVisible={setVisible} />
+        </Content>
+      </Layout>
+    </ContainerMain>
   );
 };
 
-export default Page;
+export default Profile;
