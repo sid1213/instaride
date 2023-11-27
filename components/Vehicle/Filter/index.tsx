@@ -30,26 +30,22 @@ const Filter = () => {
       <Divider />
       <p>TRANSMISSION TYPE</p>
       <Space direction="vertical">
-        <Checkbox>A</Checkbox>
-        <Checkbox>A</Checkbox>
-        <Checkbox>A</Checkbox>
-        <Checkbox>A</Checkbox>
+        <Checkbox>Gear</Checkbox>
+        <Checkbox>Gearless</Checkbox>
       </Space>
       <Divider />
       <p>GO HUBS</p>
       <Space direction="vertical">
-        <Checkbox>A</Checkbox>
-        <Checkbox>A</Checkbox>
-        <Checkbox>A</Checkbox>
-        <Checkbox>A</Checkbox>
+        <Checkbox>sector A indrapuri</Checkbox>
+        <Checkbox>sector B indrapuri</Checkbox>
+        <Checkbox>sector C indrapuri</Checkbox>
       </Space>
       <Divider />
       <p>BRANDS</p>
       <Space direction="vertical">
-        <Checkbox>A</Checkbox>
-        <Checkbox>A</Checkbox>
-        <Checkbox>A</Checkbox>
-        <Checkbox>A</Checkbox>
+        <Checkbox>Honda</Checkbox>
+        <Checkbox>Activa</Checkbox>
+        <Checkbox>Royal</Checkbox>
       </Space>
     </Space>
   );
