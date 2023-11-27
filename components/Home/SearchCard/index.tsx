@@ -5,7 +5,7 @@ import Style from "./index.module.scss";
 import classNames from "classnames";
 import dayjs, { Dayjs } from "dayjs";
 import Button from "@/components/Ui/Button";
-
+import { useRouter } from "next/navigation";
 interface FormValues {
   place: string;
   startDate: Dayjs;
@@ -19,9 +19,9 @@ const SearchCard = () => {
   const [form] = Form.useForm<FormValues>();
   const startDate = Form.useWatch<Dayjs>("startDate", form);
   const endDate = Form.useWatch<Dayjs>("endDate", form);
-
   const [isStartDateToday, setIsStartDateToday] = useState<boolean>(false);
   const [isEndDateToday, setIsEndDateToday] = useState<boolean>(false);
+  const router = useRouter();
 
   const disabledStatDateHours = (): number[] => {
     return [...Array(!isStartDateToday ? currentHour : 0).keys()];
@@ -34,6 +34,7 @@ const SearchCard = () => {
 
   const handleSubmit = (values: FormValues) => {
     console.log(values.startDate);
+    router.push(`${values.place}/`);
   };
 
   const handleStartChange = (values: Dayjs) => {
@@ -50,7 +51,7 @@ const SearchCard = () => {
   return (
     <Card className={Style.card}>
       <Title level={4}>Commuting Made Easy, Affordable and Quick</Title>
-      <Text>Scooter/Scooty/Bike on Rent in Delhi</Text>
+      <Text>Scooter/Scooty/Bike on Rent in Bhopal</Text>
       <Form
         name="trigger"
         layout="vertical"
@@ -78,10 +79,8 @@ const SearchCard = () => {
           <Select
             className={Style.select}
             options={[
-              { value: "jack", label: "Jack" },
-              { value: "lucy", label: "Lucy" },
-              { value: "Yiminghe", label: "yiminghe" },
-              { value: "disabled", label: "Disabled", disabled: true },
+              { value: "Bhopal", label: "Bhopal" },
+              { value: "Delhi", label: "Delhi" },
             ]}
           />
         </Form.Item>
