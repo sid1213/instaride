@@ -6,6 +6,8 @@ import { CheckCircleOutlined } from "@ant-design/icons";
 import { Typography } from "antd";
 import classNames from "classnames";
 import Image from "next/image";
+import Link from "next/link";
+import { useParams, useRouter } from "next/navigation";
 
 const { Title, Text } = Typography;
 interface vehicleProps {
@@ -33,6 +35,8 @@ interface vehicleProps {
 }
 const VehicleCard = ({ data }: vehicleProps) => {
   const [isFlip, setIsFlip] = useState<boolean>(false);
+  const params = useParams();
+  const router = useRouter();
 
   // For flip card
   const handelFlipCard = () => setIsFlip(!isFlip);
@@ -40,6 +44,10 @@ const VehicleCard = ({ data }: vehicleProps) => {
   // for select box
   const handleChange = (value: string) => {};
 
+  // for booking
+  const handleBookNow = () => {
+    router.push(`${params.cityname}/indrapuri`);
+  };
   return (
     <Col className={Style.vehicle_card_col}>
       {/* Available button */}
@@ -101,7 +109,12 @@ const VehicleCard = ({ data }: vehicleProps) => {
                 &#8377; {data.price}
                 <span>{data.limit} Km limit</span>
               </Text>
-              <Button type="primary" className={Style.book_now_btn}>
+
+              <Button
+                type="primary"
+                className={Style.book_now_btn}
+                onClick={handleBookNow}
+              >
                 Book Now
               </Button>
             </Col>
