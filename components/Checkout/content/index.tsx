@@ -5,6 +5,7 @@ import TableList from "@/components/Ui/TableList";
 import Button from "@/components/Ui/Button";
 import Style from "./index.module.scss";
 import Title from "antd/es/typography/Title";
+import Link from "next/link";
 
 const listItem = [
   {
