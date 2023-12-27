@@ -1,30 +1,37 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Style from "./style.module.scss";
 import { Col, Divider, Form, Input, Row, Space, Tag, Typography } from "antd";
 import { CheckCircleOutlined } from "@ant-design/icons";
 import { AiOutlineLeft } from "react-icons/ai";
 import Button from "@/components/Ui/Button";
-import { useAppSelector } from "@/slices/index";
+import { useAppDispatch, useAppSelector } from "@/slices/index";
+import { useSession } from "next-auth/react"; //hooks and function from next auth
+import { setUser } from "@/slices/auth";
 
 const { Title, Text } = Typography;
 interface PropsType {
   setVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
-
 interface FormValues {
   firstname: string;
   lastname: string;
   email: string;
   address: string;
 }
+interface dataValues {
+  nameField: string;
+  emailField: string;
+  addressField: string;
+}
 function Profile({ setVisible }: PropsType) {
   // redux
   const { user } = useAppSelector((state) => state.user);
+  const dispatch = useAppDispatch();
 
   // initial Data for form values
-  const initialData = {
-    nameField: user?.name || "abc",
+  const initialData: dataValues = {
+    nameField: user?.name || "abc abc",
     emailField: user?.email || "abc@gmail.com",
     addressField: "Not provided",
   };
