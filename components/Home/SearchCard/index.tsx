@@ -58,7 +58,7 @@ const SearchCard = () => {
         form={form}
         onFinish={handleSubmit}
         initialValues={{
-          place: "Jack",
+          place: "Bhopal",
           startDate: dayjs().add(1, "hour"),
           endDate: dayjs().add(1, "day").add(1, "hour"),
         }}
@@ -78,10 +78,7 @@ const SearchCard = () => {
         >
           <Select
             className={Style.select}
-            options={[
-              { value: "Bhopal", label: "Bhopal" },
-              { value: "Delhi", label: "Delhi" },
-            ]}
+            options={[{ value: "Bhopal", label: "Bhopal" }]}
           />
         </Form.Item>
 
